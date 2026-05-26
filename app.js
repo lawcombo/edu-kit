@@ -1418,37 +1418,39 @@ let currentIndex = 0;
 /* 화면 캡처 억제용 공통 스크립트 */
     (function() {
         const GUARD_MESSAGE = '화면 캡처가 감지되어 화면을 보호합니다.';
-        let guardTimer = null;
-        let lastGuardAt = 0;
+        let guardActive = false;
 
         function ensureGuardElements() {
             if (!document.getElementById('captureGuardOverlay')) {
                 const overlay = document.createElement('div');
                 overlay.id = 'captureGuardOverlay';
                 overlay.setAttribute('aria-hidden', 'true');
-                overlay.innerHTML = '<div class="capture-guard-box"><div class="capture-guard-title">화면 보호 중</div><p class="capture-guard-text">' + GUARD_MESSAGE + '<br>잠시 후 다시 표시됩니다.</p></div>';
+                overlay.innerHTML = '<div class="capture-guard-box"><div class="capture-guard-title">화면 보호 중</div><p class="capture-guard-text">' + GUARD_MESSAGE + '<br>다시 화면을 클릭하면 보호가 해제됩니다.</p></div>';
                 document.body.appendChild(overlay);
             }
 
         }
 
-        function showGuard(duration) {
+        function showGuard() {
             ensureGuardElements();
 
             const overlay = document.getElementById('captureGuardOverlay');
             if (!overlay) return;
 
-            lastGuardAt = Date.now();
+            guardActive = true;
             document.documentElement.classList.add('capture-guard-active');
             document.body.classList.add('capture-guard-active');
             overlay.classList.add('active');
+        }
 
-            clearTimeout(guardTimer);
-            guardTimer = setTimeout(function() {
-                overlay.classList.remove('active');
-                document.documentElement.classList.remove('capture-guard-active');
-                document.body.classList.remove('capture-guard-active');
-            }, duration || 1700);
+        function hideGuard() {
+            const overlay = document.getElementById('captureGuardOverlay');
+            if (!overlay || !guardActive) return;
+
+            guardActive = false;
+            overlay.classList.remove('active');
+            document.documentElement.classList.remove('capture-guard-active');
+            document.body.classList.remove('capture-guard-active');
         }
 
         function blockEvent(e) {
@@ -1466,11 +1468,11 @@ let currentIndex = 0;
         document.addEventListener('selectstart', blockEvent, true);
         document.addEventListener('dragstart', blockEvent, true);
         document.addEventListener('copy', function(e) {
-            showGuard(1400);
+            showGuard();
             return blockEvent(e);
         }, true);
         document.addEventListener('cut', function(e) {
-            showGuard(1400);
+            showGuard();
             return blockEvent(e);
         }, true);
 
@@ -1484,7 +1486,7 @@ let currentIndex = 0;
             const isDevTool = key === 'f12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].includes(key));
 
             if (isPrintScreen || isSave || isPrint || isDevTool) {
-                showGuard(1800);
+                showGuard();
                 return blockEvent(e);
             }
         }, true);
@@ -1494,7 +1496,7 @@ let currentIndex = 0;
             const code = (e.code || '').toLowerCase();
 
             if (key === 'printscreen' || code === 'printscreen') {
-                showGuard(1800);
+                showGuard();
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText('화면 캡처는 허용되지 않습니다.').catch(function() {});
                 }
@@ -1503,18 +1505,19 @@ let currentIndex = 0;
         }, true);
 
         window.addEventListener('blur', function() {
-            showGuard(1600);
+            showGuard();
         });
 
         document.addEventListener('visibilitychange', function() {
             if (document.hidden) {
-                showGuard(1600);
+                showGuard();
             }
         });
 
-        window.addEventListener('focus', function() {
-            if (Date.now() - lastGuardAt < 400) {
-                showGuard(1200);
-            }
+        document.addEventListener('pointerdown', function(e) {
+            if (!guardActive) return;
+
+            hideGuard();
+            return blockEvent(e);
         });
     })();
