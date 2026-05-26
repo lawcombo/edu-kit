@@ -22,6 +22,7 @@ let currentIndex = 0;
     let longTextRunning = false;
     let longTextPaused = false;
     let longTextSelectedTokenIndex = -1;
+    let cachedKoreanVoice = null;
 
     function showPage(pageId) {
         $(".page").removeClass("active");
@@ -125,27 +126,66 @@ let currentIndex = 0;
     }
 
     function speakText(text) {
-        if (!window.speechSynthesis) return;
+        if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return false;
 
         window.speechSynthesis.cancel();
 
-        const utterance = new SpeechSynthesisUtterance(text);
+        const utterance = new window.SpeechSynthesisUtterance(text);
         utterance.lang = "ko-KR";
         utterance.rate = 0.9;
         utterance.pitch = 1.0;
         utterance.volume = 1.0;
 
-        const voices = window.speechSynthesis.getVoices();
-
-        const koreanVoice = voices.find(function(voice) {
-            return voice.lang === "ko-KR" || voice.lang.indexOf("ko") === 0;
-        });
+        const koreanVoice = getKoreanVoice();
 
         if (koreanVoice) {
             utterance.voice = koreanVoice;
         }
 
         window.speechSynthesis.speak(utterance);
+
+        if (window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+        }
+
+        return true;
+    }
+
+    function getKoreanVoice() {
+        if (!window.speechSynthesis) return null;
+
+        const voices = window.speechSynthesis.getVoices();
+
+        cachedKoreanVoice = voices.find(function(voice) {
+            return voice.lang === "ko-KR" || voice.lang.indexOf("ko") === 0;
+        }) || voices.find(function(voice) {
+            return voice.lang && voice.lang.indexOf("ko") === 0;
+        }) || cachedKoreanVoice || null;
+
+        return cachedKoreanVoice;
+    }
+
+    function primeSpeechSynthesis() {
+        if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) return;
+
+        try {
+            const utterance = new window.SpeechSynthesisUtterance(".");
+            utterance.lang = "ko-KR";
+            utterance.volume = 0;
+            utterance.rate = 1;
+
+            const koreanVoice = getKoreanVoice();
+            if (koreanVoice) {
+                utterance.voice = koreanVoice;
+            }
+
+            window.speechSynthesis.speak(utterance);
+            if (window.speechSynthesis.paused) {
+                window.speechSynthesis.resume();
+            }
+        } catch (error) {
+            // TTS support differs by browser; practice screens still work without audio.
+        }
     }
 
 
@@ -1311,9 +1351,9 @@ let currentIndex = 0;
         syncSentenceListHeight();
 
         if (window.speechSynthesis) {
-            window.speechSynthesis.getVoices();
+            getKoreanVoice();
             window.speechSynthesis.onvoiceschanged = function() {
-                window.speechSynthesis.getVoices();
+                getKoreanVoice();
             };
         }
 
@@ -1566,6 +1606,7 @@ let currentIndex = 0;
         });
 
         $("#btnPlay").on("click", function() {
+            primeSpeechSynthesis();
             playAnimation();
         });
 
@@ -1573,6 +1614,7 @@ let currentIndex = 0;
             const item = getCurrentWordData()[currentIndex] || wordData[0];
 
             if (hasResult) {
+                primeSpeechSynthesis();
                 speakText(item.result);
             }
 
@@ -1586,6 +1628,7 @@ let currentIndex = 0;
         });
 
         $("#btnGrammarPlay").on("click", function() {
+            primeSpeechSynthesis();
             playGrammarAnimation();
         });
 
@@ -1593,6 +1636,7 @@ let currentIndex = 0;
             const item = getCurrentGrammarData()[currentGrammarIndex] || grammarData[0];
 
             if (hasGrammarResult) {
+                primeSpeechSynthesis();
                 speakText(item.result);
             }
 
@@ -1606,6 +1650,7 @@ let currentIndex = 0;
         });
 
         $("#btnSentencePlay").on("click", function() {
+            primeSpeechSynthesis();
             playSentenceAnimation();
         });
 
@@ -1613,6 +1658,7 @@ let currentIndex = 0;
             const item = sentenceData[currentSentenceIndex];
 
             if (hasSentenceResult) {
+                primeSpeechSynthesis();
                 speakText(item.spoken);
             }
         });
