@@ -84,6 +84,13 @@
                 </div>
             </div>
 
+            <div class="category-card" id="btnLongTextCategory">
+                <div>
+                    <div class="category-title">장문</div>
+                    <div class="category-desc">긴 글을 읽으며 도달 시간 확인</div>
+                </div>
+            </div>
+
 
             <div class="category-card" id="btnFinalCategory">
                 <div>
@@ -421,6 +428,72 @@
                     연음화가 일어나는 부분만 찾아 자연스럽게 이어 말하는 연습을 합니다.
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="pageLongTextList" class="page">
+    <div class="container">
+        <div class="top-nav">
+            <h2>장문 연습 선택</h2>
+            <div class="top-actions">
+                <button class="btn gray" id="btnBackCategoryFromLongTextList">카테고리로</button>
+            </div>
+        </div>
+
+        <div class="sub-title">읽기 흐름을 확인할 장문 주제를 선택하세요.</div>
+        <div class="long-text-grid" id="longTextList"></div>
+
+        <div class="final-page-guide">
+            <strong>활용 흐름</strong><br>
+            장문 선택 → 시작 → 읽다가 목표 위치 터치 → 처음부터 터치한 위치까지 걸린 시간 확인 → 다시 터치해 이어 읽기 순서로 진행합니다.
+        </div>
+    </div>
+</section>
+
+<section id="pageLongTextPractice" class="page">
+    <div class="container">
+        <div class="top-nav">
+            <h2 id="longTextPracticeHeading">장문 읽기 연습</h2>
+            <div class="top-actions">
+                <button class="btn gray" id="btnBackLongTextList">목록으로</button>
+                <button class="btn gray" id="btnBackCategoryFromLongTextPractice">카테고리로</button>
+            </div>
+        </div>
+
+        <div class="long-text-dashboard">
+            <div class="long-text-stat">
+                <div class="long-text-stat-label">현재 시간</div>
+                <div class="long-text-stat-value" id="longTextTimer">0.0초</div>
+            </div>
+            <div class="long-text-stat">
+                <div class="long-text-stat-label">도달 시간</div>
+                <div class="long-text-stat-value accent" id="longTextCheckpoint">-</div>
+            </div>
+            <div class="long-text-stat">
+                <div class="long-text-stat-label">상태</div>
+                <div class="long-text-stat-value status" id="longTextStatus">대기</div>
+            </div>
+        </div>
+
+        <div class="long-text-stage">
+            <div class="sentence-badge-row">
+                <div class="sentence-badge" id="longTextLevelBadge">장문 단계</div>
+                <div class="sentence-badge" id="longTextLengthBadge">0문단</div>
+            </div>
+            <div class="long-text-title" id="longTextTitle">장문 제목</div>
+            <div class="long-text-guide" id="longTextGuide">시작을 누른 뒤 글을 읽고, 확인하고 싶은 위치를 터치하세요.</div>
+            <div class="long-text-body" id="longTextBody"></div>
+        </div>
+
+        <div class="control-row">
+            <button class="btn" id="btnLongTextStart">시작</button>
+            <button class="btn secondary" id="btnLongTextReset">처음부터</button>
+        </div>
+
+        <div class="small-note">
+            읽는 중 단어나 위치를 터치하면 시간이 멈추고, <strong>처음부터 터치한 곳까지</strong> 색으로 표시됩니다.
+            다시 글을 터치하면 표시가 사라지고 멈춘 시간부터 이어서 진행됩니다.
         </div>
     </div>
 </section>

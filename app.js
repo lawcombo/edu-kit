@@ -15,6 +15,14 @@ let currentIndex = 0;
     let isSentenceAnimating = false;
     let hasSentenceResult = false;
 
+    let currentLongTextIndex = 0;
+    let longTextTimerId = null;
+    let longTextElapsedMs = 0;
+    let longTextStartedAt = 0;
+    let longTextRunning = false;
+    let longTextPaused = false;
+    let longTextSelectedTokenIndex = -1;
+
     function showPage(pageId) {
         $(".page").removeClass("active");
         $("#" + pageId).addClass("active");
@@ -24,6 +32,50 @@ let currentIndex = 0;
             syncGrammarListHeight();
             syncSentenceListHeight();
         }, 50);
+    }
+
+    function formatLongTextTime(ms) {
+        return (ms / 1000).toFixed(1) + "초";
+    }
+
+    function updateLongTextTimerDisplay() {
+        $("#longTextTimer").text(formatLongTextTime(longTextElapsedMs));
+    }
+
+    function setLongTextStatus(text) {
+        $("#longTextStatus").text(text);
+    }
+
+    function stopLongTextTimer() {
+        if (longTextTimerId) {
+            clearInterval(longTextTimerId);
+            longTextTimerId = null;
+        }
+    }
+
+    function startLongTextTimer() {
+        stopLongTextTimer();
+        longTextStartedAt = Date.now() - longTextElapsedMs;
+        longTextRunning = true;
+        longTextPaused = false;
+        setLongTextStatus("진행 중");
+
+        longTextTimerId = setInterval(function() {
+            longTextElapsedMs = Date.now() - longTextStartedAt;
+            updateLongTextTimerDisplay();
+        }, 100);
+    }
+
+    function resetLongTextTimer() {
+        stopLongTextTimer();
+        longTextElapsedMs = 0;
+        longTextRunning = false;
+        longTextPaused = false;
+        longTextSelectedTokenIndex = -1;
+        updateLongTextTimerDisplay();
+        $("#longTextCheckpoint").text("-");
+        setLongTextStatus("대기");
+        clearLongTextHighlight();
     }
 
     function syncPracticeListHeight() {
@@ -1116,6 +1168,131 @@ let currentIndex = 0;
         }, 850 + (item.targets.length * 180));
     }
 
+    function renderLongTextList() {
+        const $list = $("#longTextList");
+        $list.empty();
+
+        longTextData.forEach(function(item, index) {
+            const paragraphCount = item.paragraphs.length;
+            const wordCount = item.paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
+
+            $list.append(`
+                <button class="long-text-card" type="button" data-long-text-index="${index}">
+                    <div class="long-text-card-title">${item.title}</div>
+                    <div class="long-text-card-desc">${item.guide}</div>
+                    <div class="long-text-card-meta">
+                        <span class="final-chip">${item.level}</span>
+                        <span class="final-chip">${paragraphCount}문단</span>
+                        <span class="final-chip">약 ${wordCount}어절</span>
+                    </div>
+                </button>
+            `);
+        });
+    }
+
+    function buildLongTextParagraphHtml(paragraph, tokenState) {
+        return paragraph.split(/(\s+)/).map(function(part) {
+            if (/^\s+$/.test(part)) {
+                return part;
+            }
+
+            const tokenIndex = tokenState.index;
+            tokenState.index += 1;
+
+            return `<button class="long-text-token" type="button" data-long-text-token="${tokenIndex}">${escapeHtml(part)}</button>`;
+        }).join("");
+    }
+
+    function renderLongTextBody(item) {
+        const tokenState = { index: 0 };
+        const html = item.paragraphs.map(function(paragraph) {
+            return `<p class="long-text-paragraph">${buildLongTextParagraphHtml(paragraph, tokenState)}</p>`;
+        }).join("");
+
+        $("#longTextBody").html(html);
+    }
+
+    function clearLongTextHighlight() {
+        $("#longTextBody .long-text-token")
+            .removeClass("read-highlight touch-point");
+    }
+
+    function applyLongTextHighlight(tokenIndex) {
+        clearLongTextHighlight();
+
+        $("#longTextBody .long-text-token").each(function() {
+            const currentTokenIndex = Number($(this).data("long-text-token"));
+
+            if (currentTokenIndex <= tokenIndex) {
+                $(this).addClass("read-highlight");
+            }
+
+            if (currentTokenIndex === tokenIndex) {
+                $(this).addClass("touch-point");
+            }
+        });
+    }
+
+    function setLongTextPractice(index) {
+        currentLongTextIndex = Math.max(0, Math.min(index, longTextData.length - 1));
+        const item = longTextData[currentLongTextIndex];
+
+        stopLongTextTimer();
+        longTextElapsedMs = 0;
+        longTextRunning = false;
+        longTextPaused = false;
+        longTextSelectedTokenIndex = -1;
+
+        $("#longTextPracticeHeading").text(item.title + " 읽기 연습");
+        $("#longTextTitle").text(item.title);
+        $("#longTextGuide").text(item.guide);
+        $("#longTextLevelBadge").text(item.level);
+        $("#longTextLengthBadge").text(item.paragraphs.length + "문단");
+        $("#longTextCheckpoint").text("-");
+        $("#btnLongTextStart").text("시작");
+        setLongTextStatus("대기");
+        updateLongTextTimerDisplay();
+        renderLongTextBody(item);
+    }
+
+    function pauseLongTextAt(tokenIndex) {
+        if (!longTextRunning) return;
+
+        longTextElapsedMs = Date.now() - longTextStartedAt;
+        stopLongTextTimer();
+        longTextRunning = false;
+        longTextPaused = true;
+        longTextSelectedTokenIndex = tokenIndex;
+
+        updateLongTextTimerDisplay();
+        $("#longTextCheckpoint").text(formatLongTextTime(longTextElapsedMs));
+        $("#btnLongTextStart").text("이어하기");
+        setLongTextStatus("멈춤");
+        applyLongTextHighlight(tokenIndex);
+    }
+
+    function resumeLongText() {
+        if (!longTextPaused) return;
+
+        longTextPaused = false;
+        longTextSelectedTokenIndex = -1;
+        clearLongTextHighlight();
+        $("#longTextCheckpoint").text("-");
+        $("#btnLongTextStart").text("진행 중");
+        startLongTextTimer();
+    }
+
+    function toggleLongTextAt(tokenIndex) {
+        if (longTextPaused) {
+            resumeLongText();
+            return;
+        }
+
+        if (longTextRunning) {
+            pauseLongTextAt(tokenIndex);
+        }
+    }
+
 
     $(document).ready(function() {
         renderWordList();
@@ -1124,9 +1301,11 @@ let currentIndex = 0;
         renderEndingCategoryList();
         renderGrammarList();
         renderSentenceList();
+        renderLongTextList();
         setPractice(0);
         setGrammarPractice(0);
         setSentencePractice(0);
+        setLongTextPractice(0);
         syncPracticeListHeight();
         syncGrammarListHeight();
         syncSentenceListHeight();
@@ -1262,6 +1441,17 @@ let currentIndex = 0;
             setSentencePractice(currentSentenceIndex);
         });
 
+        $("#btnLongTextCategory").on("click", function() {
+            renderLongTextList();
+            showPage("pageLongTextList");
+        });
+
+        $(document).on("click", "#longTextList .long-text-card", function() {
+            const index = Number($(this).data("long-text-index"));
+            setLongTextPractice(index);
+            showPage("pageLongTextPractice");
+        });
+
         $("#btnBackCategory").on("click", function() {
             if (wordPracticeMode === "final") {
                 showPage("pageFinalCategory");
@@ -1298,6 +1488,20 @@ let currentIndex = 0;
         });
 
         $("#btnBackCategoryFromSentence").on("click", function() {
+            showPage("pageCategory");
+        });
+
+        $("#btnBackCategoryFromLongTextList").on("click", function() {
+            showPage("pageCategory");
+        });
+
+        $("#btnBackLongTextList").on("click", function() {
+            stopLongTextTimer();
+            showPage("pageLongTextList");
+        });
+
+        $("#btnBackCategoryFromLongTextPractice").on("click", function() {
+            stopLongTextTimer();
             showPage("pageCategory");
         });
 
@@ -1356,6 +1560,11 @@ let currentIndex = 0;
             setSentencePractice(index);
         });
 
+        $(document).on("click", "#longTextBody .long-text-token", function() {
+            const tokenIndex = Number($(this).data("long-text-token"));
+            toggleLongTextAt(tokenIndex);
+        });
+
         $("#btnPlay").on("click", function() {
             playAnimation();
         });
@@ -1411,6 +1620,23 @@ let currentIndex = 0;
         $("#btnSentenceNext").on("click", function() {
             const nextIndex = (currentSentenceIndex + 1) % sentenceData.length;
             setSentencePractice(nextIndex);
+        });
+
+        $("#btnLongTextStart").on("click", function() {
+            if (longTextRunning) return;
+
+            if (longTextPaused) {
+                resumeLongText();
+                return;
+            }
+
+            $("#btnLongTextStart").text("진행 중");
+            startLongTextTimer();
+        });
+
+        $("#btnLongTextReset").on("click", function() {
+            resetLongTextTimer();
+            $("#btnLongTextStart").text("시작");
         });
 
     });
