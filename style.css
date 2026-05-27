@@ -729,11 +729,15 @@
         }
 
         .control-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
             margin-top: 24px;
+        }
+
+        .control-row .action-main {
+            grid-column: 1 / -1;
+            width: 100%;
         }
 
         .small-note {
@@ -1233,14 +1237,8 @@
             }
 
             .control-row {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
                 gap: 10px;
                 margin-top: 16px;
-            }
-
-            #btnPlay {
-                grid-column: 1 / -1;
             }
 
             .small-note {
@@ -1391,11 +1389,7 @@
             }
 
             .control-row {
-                grid-template-columns: 1fr;
-            }
-
-            #btnPlay {
-                grid-column: auto;
+                gap: 8px;
             }
         }
 
