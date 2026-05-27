@@ -1535,11 +1535,6 @@ let currentIndex = 0;
             showPage("pageCategory");
         });
 
-        $("#btnBackLongTextList").on("click", function() {
-            stopLongTextTimer();
-            showPage("pageLongTextList");
-        });
-
         $("#btnBackCategoryFromLongTextPractice").on("click", function() {
             stopLongTextTimer();
             showPage("pageCategory");
