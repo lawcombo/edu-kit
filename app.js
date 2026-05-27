@@ -1537,7 +1537,7 @@ let currentIndex = 0;
 
         $("#btnBackCategoryFromLongTextPractice").on("click", function() {
             stopLongTextTimer();
-            showPage("pageCategory");
+            showPage("pageLongTextList");
         });
 
         $("#btnToggleList").on("click", function() {
