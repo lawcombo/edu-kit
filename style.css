@@ -729,13 +729,21 @@
         }
 
         .control-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .practice-action-row {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
             margin-top: 24px;
         }
 
-        .control-row .action-main {
+        .practice-action-row .action-main {
             grid-column: 1 / -1;
             width: 100%;
         }
@@ -1236,7 +1244,7 @@
                 letter-spacing: -0.09em;
             }
 
-            .control-row {
+            .practice-action-row {
                 gap: 10px;
                 margin-top: 16px;
             }
@@ -1388,7 +1396,7 @@
                 font-size: 34px;
             }
 
-            .control-row {
+            .practice-action-row {
                 gap: 8px;
             }
         }
