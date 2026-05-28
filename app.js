@@ -1389,7 +1389,19 @@ let currentIndex = 0;
         });
 
         $("#btnPhonologyType").on("click", function() {
+            showPage("pagePhonologyType");
+        });
+
+        $("#btnBackLearningTypeFromPhonology").on("click", function() {
+            showPage("pageLearningType");
+        });
+
+        $("#btnLiaisonType").on("click", function() {
             showPage("pageInfo");
+        });
+
+        $("#btnBackPhonologyFromInfo").on("click", function() {
+            showPage("pagePhonologyType");
         });
 
         $("#btnStart").on("click", function() {

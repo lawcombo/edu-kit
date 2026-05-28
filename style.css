@@ -261,6 +261,20 @@
             margin-right: auto;
         }
 
+        .phonology-type-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 28px;
+        }
+
+        .phonology-type-card {
+            min-height: 150px;
+            padding: 22px 18px;
+        }
+
+        .phonology-type-card .category-title {
+            font-size: 25px;
+        }
+
         .category-card {
             position: relative;
             min-height: 205px;
@@ -987,6 +1001,15 @@
 
             .learning-type-grid {
                 max-width: none;
+            }
+
+            .phonology-type-grid {
+                grid-template-columns: 1fr;
+                margin-top: 20px;
+            }
+
+            .phonology-type-card {
+                min-height: 104px;
             }
 
             .category-card {
