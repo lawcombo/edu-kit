@@ -480,6 +480,9 @@
         }
 
         .practice-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
             padding: 32px;
             text-align: center;
             border: 1px solid var(--line);
@@ -491,7 +494,7 @@
         .practice-word-card {
             position: relative;
             max-width: 420px;
-            margin: 0 auto 26px;
+            margin: 0 auto;
             padding: 22px 26px 24px;
             border: 1px solid rgba(37, 99, 235, 0.18);
             border-radius: 30px;
@@ -734,7 +737,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
-            margin-top: 22px;
+            margin-top: 0;
         }
 
         .result-card {
@@ -778,7 +781,8 @@
             align-items: center;
             justify-content: flex-end;
             gap: 10px;
-            margin-top: 18px;
+            margin-top: 0;
+            padding-top: 2px;
         }
 
         .practice-action-row .action-main {
@@ -817,10 +821,6 @@
             background: linear-gradient(135deg, var(--primary), #3b82f6);
         }
 
-        .practice-action-row .icon-replay {
-            background: linear-gradient(135deg, var(--accent), #fb923c);
-        }
-
         .practice-action-row .icon-next {
             background: linear-gradient(135deg, #059669, #10b981);
         }
@@ -830,11 +830,16 @@
         }
 
         .small-note {
-            margin-top: 18px;
+            margin-top: 0;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
             color: var(--muted);
+            background: #f8fafc;
             font-size: 15px;
             line-height: 1.65;
             letter-spacing: -0.02em;
+            text-align: left;
         }
 
         .small-note strong {
@@ -1260,13 +1265,13 @@
 
             .practice-panel {
                 order: 2;
+                gap: 14px;
                 padding: 18px 14px;
                 border-radius: 22px;
             }
 
             .practice-word-card {
                 max-width: 100%;
-                margin-bottom: 18px;
                 padding: 18px 18px 20px;
                 border-radius: 24px;
             }
@@ -1365,7 +1370,6 @@
             .result-box {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 10px;
-                margin-top: 14px;
             }
 
             .result-card {
@@ -1391,7 +1395,7 @@
 
             .practice-action-row {
                 gap: 9px;
-                margin-top: 16px;
+                margin-top: 0;
             }
 
             .practice-action-row .btn {
@@ -1406,7 +1410,7 @@
             }
 
             .small-note {
-                margin-top: 14px;
+                padding: 12px 13px;
                 font-size: 13px;
             }
         }
@@ -1933,7 +1937,7 @@
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 14px;
-            margin-top: 20px;
+            margin-top: 0;
         }
 
         .sentence-change-card {
