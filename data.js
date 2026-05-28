@@ -408,6 +408,10 @@
     function makeEnding(written, leftSyllable, rightSyllable, leftBase, final, changedRight, result, type, ending) {
         const item = makeGrammar(written, leftSyllable, rightSyllable, leftBase, final, changedRight, result, type, null);
         item.ending = ending;
+        if (ending === "으려고") {
+            item.targetLeft = 38;
+            item.targetTop = 58;
+        }
         return item;
     }
 
