@@ -224,6 +224,7 @@
 
 
     function makeGrammar(written, leftSyllable, rightSyllable, leftBase, final, changedRight, result, type, particle) {
+        const isLeadingEuTarget = rightSyllable.length >= 2 && rightSyllable.indexOf("으") === 0;
         const isBackVowelTarget = rightSyllable === "을" || rightSyllable === "은" || rightSyllable === "으로";
 
         return {
@@ -237,8 +238,8 @@
             desc: leftSyllable + " + " + rightSyllable + " → " + result,
             type: type,
             particle: particle,
-            targetLeft: isBackVowelTarget ? 90 : 63,
-            targetTop: isBackVowelTarget ? 30 : 66
+            targetLeft: isLeadingEuTarget ? 38 : (isBackVowelTarget ? 90 : 63),
+            targetTop: isLeadingEuTarget ? 58 : (isBackVowelTarget ? 30 : 66)
         };
     }
 
@@ -408,10 +409,6 @@
     function makeEnding(written, leftSyllable, rightSyllable, leftBase, final, changedRight, result, type, ending) {
         const item = makeGrammar(written, leftSyllable, rightSyllable, leftBase, final, changedRight, result, type, null);
         item.ending = ending;
-        if (ending === "으려고") {
-            item.targetLeft = 38;
-            item.targetTop = 58;
-        }
         return item;
     }
 
