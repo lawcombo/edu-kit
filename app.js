@@ -1408,6 +1408,10 @@ let currentIndex = 0;
             showPage("pageCategory");
         });
 
+        $("#btnBackInfoFromCategory").on("click", function() {
+            showPage("pageInfo");
+        });
+
         $("#btnWordCategory").on("click", function() {
             $("#practiceLayout").removeClass("list-open");
             $("#btnToggleList")
