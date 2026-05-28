@@ -1375,7 +1375,7 @@ let currentIndex = 0;
 
             if (password === "1111") {
                 $("#loginError").hide();
-                showPage("pageInfo");
+                showPage("pageLearningType");
             } else {
                 $("#loginError").fadeIn(150);
                 $("#passwordInput").val("").focus();
@@ -1386,6 +1386,10 @@ let currentIndex = 0;
             if (e.key === "Enter") {
                 $("#btnLogin").click();
             }
+        });
+
+        $("#btnPhonologyType").on("click", function() {
+            showPage("pageInfo");
         });
 
         $("#btnStart").on("click", function() {
