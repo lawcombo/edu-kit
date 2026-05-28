@@ -774,15 +774,59 @@
         }
 
         .practice-action-row {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 18px;
         }
 
         .practice-action-row .action-main {
-            grid-column: 1 / -1;
-            width: 100%;
+            width: 48px;
+        }
+
+        .practice-action-row .btn {
+            width: 48px;
+            min-width: 48px;
+            height: 48px;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border-radius: 999px;
+            font-size: 0;
+            letter-spacing: 0;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.13);
+        }
+
+        .practice-action-row .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .practice-action-row .icon-label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            font-weight: 950;
+            line-height: 1;
+        }
+
+        .practice-action-row .icon-play {
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+        }
+
+        .practice-action-row .icon-replay {
+            background: linear-gradient(135deg, var(--accent), #fb923c);
+        }
+
+        .practice-action-row .icon-next {
+            background: linear-gradient(135deg, #059669, #10b981);
+        }
+
+        .practice-action-row .icon-next .icon-label {
+            transform: translateX(1px);
         }
 
         .small-note {
@@ -1346,8 +1390,19 @@
             }
 
             .practice-action-row {
-                gap: 10px;
+                gap: 9px;
                 margin-top: 16px;
+            }
+
+            .practice-action-row .btn {
+                width: 44px;
+                min-width: 44px;
+                height: 44px;
+                min-height: 44px;
+            }
+
+            .practice-action-row .icon-label {
+                font-size: 21px;
             }
 
             .small-note {
@@ -1503,6 +1558,13 @@
 
             .practice-action-row {
                 gap: 8px;
+            }
+
+            .practice-action-row .btn {
+                width: 42px;
+                min-width: 42px;
+                height: 42px;
+                min-height: 42px;
             }
         }
 
