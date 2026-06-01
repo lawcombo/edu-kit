@@ -93,11 +93,11 @@ button {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 18px;
+    justify-content: center;
     margin-bottom: 28px;
-    padding: 0;
-    text-align: left;
+    min-height: 56px;
+    padding: 0 168px 0 74px;
+    text-align: center;
 }
 
 .top-nav h2 {
@@ -109,6 +109,7 @@ button {
     font-weight: 950;
     line-height: 1.12;
     letter-spacing: -0.055em;
+    text-align: center;
 }
 
 .top-nav h2::before {
@@ -122,14 +123,10 @@ button {
     background: linear-gradient(180deg, var(--primary), var(--accent));
 }
 
-.top-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
 .top-nav .back-icon-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
     width: 54px;
     min-width: 54px;
     height: 54px;
@@ -140,6 +137,7 @@ button {
     color: var(--primary);
     border: 1px solid #dbeafe;
     box-shadow: var(--shadow-sm);
+    transform: translateY(-50%);
 }
 
 .top-nav .back-icon-btn span {
@@ -402,8 +400,12 @@ button {
 }
 
 .list-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
     min-width: 144px;
     height: 52px;
+    transform: translateY(-50%);
 }
 
 .hamburger-icon {
@@ -521,10 +523,10 @@ button {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 0;
+    top: calc(50% + 58px);
     width: 160px;
     height: 5px;
-    border-radius: 999px 999px 0 0;
+    border-radius: 999px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
     transform: translateX(-50%);
 }
@@ -889,13 +891,9 @@ body.capture-guard-active main {
     }
 
     .top-nav {
-        align-items: flex-start;
-        gap: 12px;
         margin-bottom: 18px;
-    }
-
-    .top-actions {
-        gap: 8px;
+        min-height: 50px;
+        padding: 0 118px 0 54px;
     }
 
     .top-nav .btn {
@@ -907,11 +905,17 @@ body.capture-guard-active main {
     }
 
     .top-nav .back-icon-btn {
+        left: 0;
         width: 46px;
         min-width: 46px;
         height: 46px;
         min-height: 46px;
         padding: 0;
+    }
+
+    .list-toggle {
+        right: 0;
+        min-width: 110px;
     }
 
     .intro-layout,
@@ -976,6 +980,11 @@ body.capture-guard-active main {
     .practice-word-card {
         min-height: 126px;
         padding: 20px 16px;
+    }
+
+    .practice-word-card::before {
+        top: calc(50% + 43px);
+        width: 120px;
     }
 
     .practice-title {
