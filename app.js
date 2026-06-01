@@ -1505,6 +1505,10 @@ let currentIndex = 0;
             window.location.href = "h-deletion.html";
         });
 
+        $("#btnTensingType").on("click", function() {
+            window.location.href = "tensing.html";
+        });
+
         $("#btnBackPhonologyFromInfo").on("click", function() {
             showPage("pagePhonologyType");
         });
