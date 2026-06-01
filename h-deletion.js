@@ -55,7 +55,6 @@ const writtenWord = $("#writtenWord");
 const leftSyllable = $("#leftSyllable");
 const leftBase = $("#leftBase");
 const rightSyllable = $("#rightSyllable");
-const spokenResult = $("#spokenResult");
 
 let currentIndex = 0;
 let animationTimers = [];
@@ -78,24 +77,22 @@ function resetAnimation() {
     clearAnimationTimers();
     leftSyllable.classList.remove("hidden");
     leftBase.classList.remove("revealed");
-    spokenResult.classList.remove("ready");
-    spokenResult.textContent = "?";
 }
 
 function renderExampleList() {
     exampleList.innerHTML = hDeletionExamples.map((example, index) => (
-        `<button class="example-item" type="button" data-index="${index}">${example.written}</button>`
+        `<button class="word-item" type="button" data-index="${index}">${example.written}</button>`
     )).join("");
 
     exampleList.addEventListener("click", (event) => {
-        const button = event.target.closest(".example-item");
+        const button = event.target.closest(".word-item");
         if (!button) return;
         setExample(Number(button.dataset.index));
     });
 }
 
 function updateActiveExample() {
-    document.querySelectorAll(".example-item").forEach((button, index) => {
+    document.querySelectorAll(".word-item").forEach((button, index) => {
         button.classList.toggle("active", index === currentIndex);
     });
 }
@@ -116,8 +113,6 @@ function setExample(index) {
 }
 
 function playExample() {
-    const example = hDeletionExamples[currentIndex];
-
     resetAnimation();
 
     animationTimers.push(setTimeout(() => {
@@ -128,10 +123,6 @@ function playExample() {
         leftBase.classList.add("revealed");
     }, 360));
 
-    animationTimers.push(setTimeout(() => {
-        spokenResult.textContent = example.result;
-        spokenResult.classList.add("ready");
-    }, 600));
 }
 
 function goNextExample() {
@@ -151,6 +142,13 @@ $("#btnStartPractice").addEventListener("click", () => {
 $("#btnBackInfo").addEventListener("click", () => {
     setActiveScreen("info");
     resetAnimation();
+});
+
+$("#btnToggleHDeletionList").addEventListener("click", (event) => {
+    const practiceLayout = $("#hDeletionPracticeLayout");
+    const isOpen = practiceLayout.classList.toggle("list-open");
+    event.currentTarget.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    event.currentTarget.querySelector(".toggle-label").textContent = isOpen ? "목록닫기" : "연습목록";
 });
 
 $("#btnPlay").addEventListener("click", playExample);

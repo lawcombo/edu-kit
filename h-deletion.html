@@ -14,7 +14,7 @@
 
                 <header class="lesson-header">
                     <span class="lesson-badge">음운변동</span>
-                    <h1>ㅎ탈락 배우기</h1>
+                    <h1>ㅎ탈락이란?</h1>
                     <p>받침 ㅎ이 모음 앞에서 자연스럽게 사라지는 소리를 익혀요.</p>
                 </header>
 
@@ -63,13 +63,19 @@
 
                 <header class="lesson-header compact">
                     <span class="lesson-badge">ㅎ탈락</span>
-                    <h1>소리 변화 연습</h1>
+                    <h1>ㅎ탈락 연습하기</h1>
                     <p>왼쪽 예제를 고르고 실행을 눌러 바뀐 소리를 확인해요.</p>
                 </header>
 
-                <div class="practice-grid">
-                    <aside class="example-list" aria-label="연습 목록">
-                        <div class="list-title">연습 목록</div>
+                <div class="practice-top-actions">
+                    <button class="btn list-toggle" id="btnToggleHDeletionList" type="button" aria-expanded="false">
+                        <span class="hamburger-icon">☰</span><span class="toggle-label">연습목록</span>
+                    </button>
+                </div>
+
+                <div class="practice-layout" id="hDeletionPracticeLayout">
+                    <aside class="word-list" aria-label="연습 목록">
+                        <h3>연습 목록</h3>
                         <div id="exampleList"></div>
                     </aside>
 
@@ -94,14 +100,9 @@
                             </div>
                         </div>
 
-                        <div class="result-card">
-                            <div class="result-label">소리로 말하면</div>
-                            <div class="result-text" id="spokenResult">?</div>
-                        </div>
-
-                        <div class="action-row">
-                            <button class="round-btn play" id="btnPlay" type="button" aria-label="실행" title="실행">▶</button>
-                            <button class="round-btn next" id="btnNext" type="button" aria-label="다음" title="다음">→</button>
+                        <div class="control-row practice-action-row">
+                            <button class="btn action-main icon-play" id="btnPlay" type="button" aria-label="실행" title="실행"><span aria-hidden="true" class="icon-label">&#9654;</span></button>
+                            <button class="btn secondary icon-next" id="btnNext" type="button" aria-label="다음" title="다음"><span aria-hidden="true" class="icon-label">&#8594;</span></button>
                         </div>
                     </section>
                 </div>
