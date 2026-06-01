@@ -55,7 +55,6 @@ const writtenWord = $("#writtenWord");
 const leftSyllable = $("#leftSyllable");
 const leftBase = $("#leftBase");
 const rightSyllable = $("#rightSyllable");
-const hMarker = $("#hMarker");
 const spokenResult = $("#spokenResult");
 
 let currentIndex = 0;
@@ -77,7 +76,6 @@ function setLongTextClass(element, text) {
 
 function resetAnimation() {
     clearAnimationTimers();
-    hMarker.classList.remove("disappear");
     leftSyllable.classList.remove("hidden");
     leftBase.classList.remove("revealed");
     spokenResult.classList.remove("ready");
@@ -121,20 +119,19 @@ function playExample() {
     const example = hDeletionExamples[currentIndex];
 
     resetAnimation();
-    hMarker.classList.add("disappear");
 
     animationTimers.push(setTimeout(() => {
         leftSyllable.classList.add("hidden");
-    }, 220));
+    }, 140));
 
     animationTimers.push(setTimeout(() => {
         leftBase.classList.add("revealed");
-    }, 480));
+    }, 360));
 
     animationTimers.push(setTimeout(() => {
         spokenResult.textContent = example.result;
         spokenResult.classList.add("ready");
-    }, 720));
+    }, 600));
 }
 
 function goNextExample() {
@@ -142,6 +139,7 @@ function goNextExample() {
 }
 
 $("#btnBackHome").addEventListener("click", () => {
+    sessionStorage.setItem("eduKitReturnToPhonology", "1");
     window.location.href = "index.html";
 });
 
@@ -160,3 +158,103 @@ $("#btnNext").addEventListener("click", goNextExample);
 
 renderExampleList();
 setExample(0);
+
+(function() {
+    const GUARD_MESSAGE = "화면 캡처가 감지되어 화면을 보호합니다.";
+    let guardActive = false;
+
+    function ensureGuardElements() {
+        if (document.getElementById("captureGuardOverlay")) return;
+
+        const overlay = document.createElement("div");
+        overlay.id = "captureGuardOverlay";
+        overlay.setAttribute("aria-hidden", "true");
+        overlay.innerHTML = '<div class="capture-guard-box"><div class="capture-guard-title">화면 보호 중</div><p class="capture-guard-text">' + GUARD_MESSAGE + '<br>다시 화면을 클릭하면 보호가 해제됩니다.</p></div>';
+        document.body.appendChild(overlay);
+    }
+
+    function showGuard() {
+        ensureGuardElements();
+
+        const overlay = document.getElementById("captureGuardOverlay");
+        if (!overlay) return;
+
+        guardActive = true;
+        document.documentElement.classList.add("capture-guard-active");
+        document.body.classList.add("capture-guard-active");
+        overlay.classList.add("active");
+    }
+
+    function hideGuard() {
+        const overlay = document.getElementById("captureGuardOverlay");
+        if (!overlay || !guardActive) return;
+
+        guardActive = false;
+        overlay.classList.remove("active");
+        document.documentElement.classList.remove("capture-guard-active");
+        document.body.classList.remove("capture-guard-active");
+    }
+
+    function blockEvent(event) {
+        if (!event) return false;
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
+
+    ensureGuardElements();
+
+    document.addEventListener("contextmenu", blockEvent, true);
+    document.addEventListener("selectstart", blockEvent, true);
+    document.addEventListener("dragstart", blockEvent, true);
+
+    document.addEventListener("copy", (event) => {
+        showGuard();
+        return blockEvent(event);
+    }, true);
+
+    document.addEventListener("cut", (event) => {
+        showGuard();
+        return blockEvent(event);
+    }, true);
+
+    document.addEventListener("keydown", (event) => {
+        const key = (event.key || "").toLowerCase();
+        const code = (event.code || "").toLowerCase();
+
+        const isPrintScreen = key === "printscreen" || code === "printscreen";
+        const isSave = (event.ctrlKey || event.metaKey) && key === "s";
+        const isPrint = (event.ctrlKey || event.metaKey) && key === "p";
+        const isDevTool = key === "f12" || ((event.ctrlKey || event.metaKey) && event.shiftKey && ["i", "j", "c"].includes(key));
+
+        if (isPrintScreen || isSave || isPrint || isDevTool) {
+            showGuard();
+            return blockEvent(event);
+        }
+    }, true);
+
+    document.addEventListener("keyup", (event) => {
+        const key = (event.key || "").toLowerCase();
+        const code = (event.code || "").toLowerCase();
+
+        if (key === "printscreen" || code === "printscreen") {
+            showGuard();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText("화면 캡처는 허용되지 않습니다.").catch(() => {});
+            }
+            return blockEvent(event);
+        }
+    }, true);
+
+    window.addEventListener("blur", showGuard);
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) showGuard();
+    });
+
+    document.addEventListener("pointerdown", (event) => {
+        if (!guardActive) return;
+        hideGuard();
+        return blockEvent(event);
+    });
+})();

@@ -1453,6 +1453,11 @@ let currentIndex = 0;
             };
         }
 
+        if (sessionStorage.getItem("eduKitReturnToPhonology") === "1") {
+            sessionStorage.removeItem("eduKitReturnToPhonology");
+            showPage("pagePhonologyType");
+        }
+
         $(window).on("resize orientationchange", function() {
             applyTargetPosition();
             applyGrammarTargetPosition();

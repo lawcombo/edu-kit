@@ -9,20 +9,19 @@
 <body>
     <main>
         <section class="screen active" id="infoScreen">
-            <div class="shell">
-                <div class="top-nav">
-                    <h1>ㅎ탈락이란?</h1>
-                    <button class="back-btn" id="btnBackHome" type="button" aria-label="뒤로가기">&larr;</button>
-                </div>
+            <div class="container intro-container">
+                <button class="back-btn" id="btnBackHome" type="button" aria-label="뒤로가기">&larr;</button>
+
+                <header class="lesson-header">
+                    <span class="lesson-badge">음운변동</span>
+                    <h1>ㅎ탈락 배우기</h1>
+                    <p>받침 ㅎ이 모음 앞에서 자연스럽게 사라지는 소리를 익혀요.</p>
+                </header>
 
                 <div class="intro-layout">
                     <div class="intro-copy">
                         <p class="eyebrow">ㅎ 받침 + 모음</p>
                         <h2>말할 때 ㅎ이 사라져요</h2>
-                        <p>
-                            앞말의 받침 <strong>ㅎ</strong>이 뒤에 오는 모음과 만나면,
-                            소리에서는 ㅎ이 약해지거나 사라져 자연스럽게 이어집니다.
-                        </p>
                     </div>
 
                     <div class="intro-demo" aria-label="ㅎ탈락 예시">
@@ -39,18 +38,18 @@
                 <div class="info-steps">
                     <div class="step-card">
                         <span>1</span>
-                        <strong>ㅎ 찾기</strong>
-                        <p>받침 ㅎ이 있는 말을 봅니다.</p>
+                        <strong>받침 보기</strong>
+                        <p>ㅎ 받침이 들어 있는 말을 봅니다.</p>
                     </div>
                     <div class="step-card">
                         <span>2</span>
-                        <strong>사라짐 보기</strong>
-                        <p>실행을 누르면 ㅎ이 사라집니다.</p>
+                        <strong>소리 바꾸기</strong>
+                        <p>실행을 누르면 ㅎ이 빠진 소리를 봅니다.</p>
                     </div>
                     <div class="step-card">
                         <span>3</span>
                         <strong>따라 말하기</strong>
-                        <p>소리 나는 대로 천천히 말합니다.</p>
+                        <p>보이는 소리를 천천히 따라 말합니다.</p>
                     </div>
                 </div>
 
@@ -59,11 +58,14 @@
         </section>
 
         <section class="screen" id="practiceScreen">
-            <div class="shell practice-shell">
-                <div class="top-nav">
-                    <h1>ㅎ탈락 연습</h1>
-                    <button class="back-btn" id="btnBackInfo" type="button" aria-label="뒤로가기">&larr;</button>
-                </div>
+            <div class="container practice-container">
+                <button class="back-btn" id="btnBackInfo" type="button" aria-label="뒤로가기">&larr;</button>
+
+                <header class="lesson-header compact">
+                    <span class="lesson-badge">ㅎ탈락</span>
+                    <h1>소리 변화 연습</h1>
+                    <p>왼쪽 예제를 고르고 실행을 눌러 바뀐 소리를 확인해요.</p>
+                </header>
 
                 <div class="practice-grid">
                     <aside class="example-list" aria-label="연습 목록">
@@ -73,7 +75,7 @@
 
                     <section class="practice-panel">
                         <div class="focus-card">
-                            <div class="focus-label" id="exampleType">ㅎ 받침 + 모음</div>
+                            <div class="focus-label" id="exampleType">좋 + 아</div>
                             <div class="focus-word" id="writtenWord">좋아</div>
                         </div>
 
@@ -82,7 +84,6 @@
                                 <div class="box-label">앞말</div>
                                 <div class="syllable-main" id="leftSyllable">좋</div>
                                 <div class="base-syllable" id="leftBase">조</div>
-                                <div class="h-marker" id="hMarker">ㅎ</div>
                             </div>
 
                             <div class="stage-arrow">+</div>
@@ -108,6 +109,6 @@
         </section>
     </main>
 
-    <script src="h-deletion.js?v=20260601"></script>
+    <script src="h-deletion.js?v=20260601-fix"></script>
 </body>
 </html>
