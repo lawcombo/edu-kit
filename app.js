@@ -1496,6 +1496,10 @@ let currentIndex = 0;
             showPage("pageInfo");
         });
 
+        $("#btnHDeletionType").on("click", function() {
+            window.location.href = "h-deletion.html";
+        });
+
         $("#btnBackPhonologyFromInfo").on("click", function() {
             showPage("pagePhonologyType");
         });

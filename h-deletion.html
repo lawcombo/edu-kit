@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ㅎ탈락 치료교구</title>
+    <link rel="stylesheet" href="h-deletion.css">
+</head>
+<body>
+    <main>
+        <section class="screen active" id="infoScreen">
+            <div class="shell">
+                <div class="top-nav">
+                    <h1>ㅎ탈락이란?</h1>
+                    <button class="back-btn" id="btnBackHome" type="button" aria-label="뒤로가기">&larr;</button>
+                </div>
+
+                <div class="intro-layout">
+                    <div class="intro-copy">
+                        <p class="eyebrow">ㅎ 받침 + 모음</p>
+                        <h2>말할 때 ㅎ이 사라져요</h2>
+                        <p>
+                            앞말의 받침 <strong>ㅎ</strong>이 뒤에 오는 모음과 만나면,
+                            소리에서는 ㅎ이 약해지거나 사라져 자연스럽게 이어집니다.
+                        </p>
+                    </div>
+
+                    <div class="intro-demo" aria-label="ㅎ탈락 예시">
+                        <div class="demo-row">
+                            <span class="demo-word">좋</span>
+                            <span class="demo-plus">+</span>
+                            <span class="demo-word">아</span>
+                        </div>
+                        <div class="demo-arrow">↓</div>
+                        <div class="demo-result">조아</div>
+                    </div>
+                </div>
+
+                <div class="info-steps">
+                    <div class="step-card">
+                        <span>1</span>
+                        <strong>ㅎ 찾기</strong>
+                        <p>받침 ㅎ이 있는 말을 봅니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span>2</span>
+                        <strong>사라짐 보기</strong>
+                        <p>실행을 누르면 ㅎ이 사라집니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span>3</span>
+                        <strong>따라 말하기</strong>
+                        <p>소리 나는 대로 천천히 말합니다.</p>
+                    </div>
+                </div>
+
+                <button class="primary-btn wide" id="btnStartPractice" type="button">연습 시작</button>
+            </div>
+        </section>
+
+        <section class="screen" id="practiceScreen">
+            <div class="shell practice-shell">
+                <div class="top-nav">
+                    <h1>ㅎ탈락 연습</h1>
+                    <button class="back-btn" id="btnBackInfo" type="button" aria-label="뒤로가기">&larr;</button>
+                </div>
+
+                <div class="practice-grid">
+                    <aside class="example-list" aria-label="연습 목록">
+                        <div class="list-title">연습 목록</div>
+                        <div id="exampleList"></div>
+                    </aside>
+
+                    <section class="practice-panel">
+                        <div class="focus-card">
+                            <div class="focus-label" id="exampleType">ㅎ 받침 + 모음</div>
+                            <div class="focus-word" id="writtenWord">좋아</div>
+                        </div>
+
+                        <div class="sound-stage">
+                            <div class="syllable-box">
+                                <div class="box-label">앞말</div>
+                                <div class="syllable-main" id="leftSyllable">좋</div>
+                                <div class="base-syllable" id="leftBase">조</div>
+                                <div class="h-marker" id="hMarker">ㅎ</div>
+                            </div>
+
+                            <div class="stage-arrow">+</div>
+
+                            <div class="syllable-box">
+                                <div class="box-label">뒤 모음</div>
+                                <div class="syllable-main" id="rightSyllable">아</div>
+                            </div>
+                        </div>
+
+                        <div class="result-card">
+                            <div class="result-label">소리로 말하면</div>
+                            <div class="result-text" id="spokenResult">?</div>
+                        </div>
+
+                        <div class="action-row">
+                            <button class="round-btn play" id="btnPlay" type="button" aria-label="실행" title="실행">▶</button>
+                            <button class="round-btn next" id="btnNext" type="button" aria-label="다음" title="다음">→</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="h-deletion.js?v=20260601"></script>
+</body>
+</html>
