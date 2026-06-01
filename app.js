@@ -22,6 +22,9 @@ let currentIndex = 0;
     let longTextRunning = false;
     let longTextPaused = false;
     let longTextSelectedTokenIndex = -1;
+    let longTextRangeStartIndex = -1;
+    let longTextRangeActive = false;
+    let longTextRangeComplete = false;
     let cachedKoreanVoice = null;
 
     function showPage(pageId) {
@@ -73,6 +76,9 @@ let currentIndex = 0;
         longTextRunning = false;
         longTextPaused = false;
         longTextSelectedTokenIndex = -1;
+        longTextRangeStartIndex = -1;
+        longTextRangeActive = false;
+        longTextRangeComplete = false;
         updateLongTextTimerDisplay();
         $("#longTextCheckpoint").text("-");
         setLongTextStatus("대기");
@@ -1254,7 +1260,7 @@ let currentIndex = 0;
 
     function clearLongTextHighlight() {
         $("#longTextBody .long-text-token")
-            .removeClass("read-highlight touch-point");
+            .removeClass("read-highlight touch-point range-start");
     }
 
     function applyLongTextHighlight(tokenIndex) {
@@ -1273,6 +1279,33 @@ let currentIndex = 0;
         });
     }
 
+    function applyLongTextRangeHighlight(startIndex, endIndex) {
+        clearLongTextHighlight();
+
+        $("#longTextBody .long-text-token").each(function() {
+            const currentTokenIndex = Number($(this).data("long-text-token"));
+
+            if (currentTokenIndex >= startIndex && currentTokenIndex <= endIndex) {
+                $(this).addClass("read-highlight");
+            }
+
+            if (currentTokenIndex === startIndex) {
+                $(this).addClass("range-start");
+            }
+
+            if (currentTokenIndex === endIndex) {
+                $(this).addClass("touch-point");
+            }
+        });
+    }
+
+    function markLongTextRangeStart(tokenIndex) {
+        clearLongTextHighlight();
+
+        $(`#longTextBody .long-text-token[data-long-text-token='${tokenIndex}']`)
+            .addClass("range-start");
+    }
+
     function setLongTextPractice(index) {
         currentLongTextIndex = Math.max(0, Math.min(index, longTextData.length - 1));
         const item = longTextData[currentLongTextIndex];
@@ -1282,6 +1315,9 @@ let currentIndex = 0;
         longTextRunning = false;
         longTextPaused = false;
         longTextSelectedTokenIndex = -1;
+        longTextRangeStartIndex = -1;
+        longTextRangeActive = false;
+        longTextRangeComplete = false;
 
         $("#longTextPracticeHeading").text(item.title + " 읽기 연습");
         $("#longTextTitle").text(item.title);
@@ -1303,6 +1339,9 @@ let currentIndex = 0;
         longTextRunning = false;
         longTextPaused = true;
         longTextSelectedTokenIndex = tokenIndex;
+        longTextRangeStartIndex = -1;
+        longTextRangeActive = false;
+        longTextRangeComplete = false;
 
         updateLongTextTimerDisplay();
         $("#longTextCheckpoint").text(formatLongTextTime(longTextElapsedMs));
@@ -1316,13 +1355,67 @@ let currentIndex = 0;
 
         longTextPaused = false;
         longTextSelectedTokenIndex = -1;
+        longTextRangeStartIndex = -1;
+        longTextRangeActive = false;
+        longTextRangeComplete = false;
         clearLongTextHighlight();
         $("#longTextCheckpoint").text("-");
         $("#btnLongTextStart").text("진행 중");
         startLongTextTimer();
     }
 
+    function startLongTextRangeAt(tokenIndex) {
+        stopLongTextTimer();
+        longTextElapsedMs = 0;
+        longTextStartedAt = Date.now();
+        longTextRunning = true;
+        longTextPaused = false;
+        longTextSelectedTokenIndex = -1;
+        longTextRangeStartIndex = tokenIndex;
+        longTextRangeActive = true;
+        longTextRangeComplete = false;
+
+        updateLongTextTimerDisplay();
+        $("#longTextCheckpoint").text("-");
+        $("#btnLongTextStart").text("진행 중");
+        setLongTextStatus("구간 진행 중");
+        markLongTextRangeStart(tokenIndex);
+
+        longTextTimerId = setInterval(function() {
+            longTextElapsedMs = Date.now() - longTextStartedAt;
+            updateLongTextTimerDisplay();
+        }, 100);
+    }
+
+    function finishLongTextRangeAt(tokenIndex) {
+        if (!longTextRangeActive || tokenIndex <= longTextRangeStartIndex) return;
+
+        longTextElapsedMs = Date.now() - longTextStartedAt;
+        stopLongTextTimer();
+        longTextRunning = false;
+        longTextPaused = true;
+        longTextSelectedTokenIndex = tokenIndex;
+        longTextRangeActive = false;
+        longTextRangeComplete = true;
+
+        updateLongTextTimerDisplay();
+        $("#longTextCheckpoint").text(formatLongTextTime(longTextElapsedMs));
+        $("#btnLongTextStart").text("새 구간 시작");
+        setLongTextStatus("구간 완료");
+        applyLongTextRangeHighlight(longTextRangeStartIndex, tokenIndex);
+    }
+
     function toggleLongTextAt(tokenIndex) {
+        if (longTextRangeComplete) {
+            startLongTextRangeAt(tokenIndex);
+            return;
+        }
+
+        if (longTextRangeActive) {
+            finishLongTextRangeAt(tokenIndex);
+            return;
+        }
+
         if (longTextPaused) {
             resumeLongText();
             return;
@@ -1330,7 +1423,10 @@ let currentIndex = 0;
 
         if (longTextRunning) {
             pauseLongTextAt(tokenIndex);
+            return;
         }
+
+        startLongTextRangeAt(tokenIndex);
     }
 
 
@@ -1687,10 +1783,20 @@ let currentIndex = 0;
             if (longTextRunning) return;
 
             if (longTextPaused) {
+                if (longTextRangeComplete) {
+                    resetLongTextTimer();
+                    $("#btnLongTextStart").text("시작");
+                    return;
+                }
+
                 resumeLongText();
                 return;
             }
 
+            longTextRangeStartIndex = -1;
+            longTextRangeActive = false;
+            longTextRangeComplete = false;
+            clearLongTextHighlight();
             $("#btnLongTextStart").text("진행 중");
             startLongTextTimer();
         });
