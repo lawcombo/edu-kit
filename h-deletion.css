@@ -523,10 +523,10 @@ button {
     content: "";
     position: absolute;
     left: 50%;
-    top: calc(50% + 58px);
-    width: 160px;
+    top: 0;
+    width: 180px;
     height: 5px;
-    border-radius: 999px;
+    border-radius: 0 0 999px 999px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
     transform: translateX(-50%);
 }
@@ -983,7 +983,6 @@ body.capture-guard-active main {
     }
 
     .practice-word-card::before {
-        top: calc(50% + 43px);
         width: 120px;
     }
 
