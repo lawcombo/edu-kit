@@ -50,7 +50,6 @@ const $ = (selector) => document.querySelector(selector);
 const infoScreen = $("#infoScreen");
 const practiceScreen = $("#practiceScreen");
 const exampleList = $("#exampleList");
-const exampleType = $("#exampleType");
 const writtenWord = $("#writtenWord");
 const leftSyllable = $("#leftSyllable");
 const leftBase = $("#leftBase");
@@ -101,7 +100,6 @@ function setExample(index) {
     currentIndex = (index + hDeletionExamples.length) % hDeletionExamples.length;
     const example = hDeletionExamples[currentIndex];
 
-    exampleType.textContent = example.type;
     writtenWord.textContent = example.written;
     leftSyllable.textContent = example.left;
     leftBase.textContent = example.base;
