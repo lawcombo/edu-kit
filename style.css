@@ -41,6 +41,7 @@
             --radius-lg: 32px;
             --font-heading: "Jua", "NanumSquareRound", "Malgun Gothic", "맑은 고딕", sans-serif;
             --font-body: "NanumSquareRound", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
+            --font-practice: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "NanumSquareRound", Arial, sans-serif;
         }
 
         * {
@@ -586,6 +587,7 @@
         .practice-title {
             margin: 0;
             color: var(--ink);
+            font-family: var(--font-practice);
             font-size: clamp(72px, 7.5vw, 100px);
             font-weight: 950;
             line-height: 1.05;
@@ -674,6 +676,7 @@
             top: 47px;
             text-align: center;
             color: var(--ink);
+            font-family: var(--font-practice);
             font-size: 82px;
             font-weight: 950;
             line-height: 1;

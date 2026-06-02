@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260602-fonts");
+@import url("h-deletion.css?v=20260602-fontsafe");
 
 .changed-syllable {
     position: absolute;
@@ -6,6 +6,7 @@
     right: 0;
     top: 47px;
     color: var(--danger);
+    font-family: var(--font-practice);
     font-size: 82px;
     font-weight: 950;
     line-height: 1;
