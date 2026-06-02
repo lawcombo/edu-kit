@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>겹받침 규칙 치료교구</title>
+    <link rel="stylesheet" href="double-final.css">
+</head>
+<body>
+    <main>
+        <section class="screen active" id="infoScreen">
+            <div class="container intro-container">
+                <button class="back-btn" id="btnBackHome" type="button" aria-label="뒤로가기">&larr;</button>
+
+                <header class="lesson-header">
+                    <span class="lesson-badge">음운변동</span>
+                    <h1>겹받침 규칙이란?</h1>
+                    <p>겹받침에서 실제로 소리 나는 받침을 고르고, 뒤 소리 변화까지 함께 익혀요.</p>
+                </header>
+
+                <div class="intro-layout">
+                    <div class="intro-copy">
+                        <p class="eyebrow">겹받침 + 뒤 소리</p>
+                        <h2>두 음절이<br>함께 바뀔 수 있어요</h2>
+                    </div>
+
+                    <div class="intro-demo" aria-label="겹받침 규칙 예시">
+                        <div class="demo-row">
+                            <span class="demo-word">앉</span>
+                            <span class="demo-plus">+</span>
+                            <span class="demo-word">다</span>
+                        </div>
+                        <div class="demo-arrow">↓</div>
+                        <div class="demo-result">안따</div>
+                    </div>
+                </div>
+
+                <div class="info-steps">
+                    <div class="step-card">
+                        <span>1</span>
+                        <strong>겹받침 보기</strong>
+                        <p>앞말 끝에 있는 겹받침을 봅니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span>2</span>
+                        <strong>남는 받침 보기</strong>
+                        <p>겹받침 중 실제로 소리 나는 받침을 확인합니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span>3</span>
+                        <strong>뒤 소리 바꾸기</strong>
+                        <p>뒤 음절이 된소리로 바뀌는지도 함께 봅니다.</p>
+                    </div>
+                </div>
+
+                <button class="primary-btn wide" id="btnStartPractice" type="button">연습 시작</button>
+            </div>
+        </section>
+
+        <section class="screen" id="practiceScreen">
+            <div class="container practice-container">
+                <div class="top-nav">
+                    <button class="btn back-icon-btn" id="btnBackInfo" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
+                    <h2>겹받침 규칙 연습하기</h2>
+                    <button class="btn list-toggle" id="btnToggleDoubleFinalList" type="button" aria-expanded="false">
+                        <span class="hamburger-icon">☰</span><span class="toggle-label">연습목록</span>
+                    </button>
+                </div>
+
+                <div class="practice-layout" id="doubleFinalPracticeLayout">
+                    <aside class="word-list" aria-label="연습 목록">
+                        <h3>연습 목록</h3>
+                        <div id="exampleList"></div>
+                    </aside>
+
+                    <section class="practice-panel">
+                        <div class="practice-word-card">
+                            <div class="practice-title" id="writtenWord">앉다</div>
+                        </div>
+
+                        <div class="visual-area">
+                            <div class="syllable-wrap">
+                                <div class="syllable-label">앞말</div>
+                                <div class="syllable-card">
+                                    <div class="syllable-text" id="leftSyllable">앉</div>
+                                    <div class="changed-syllable" id="leftChanged">안</div>
+                                </div>
+                            </div>
+
+                            <div class="arrow">→</div>
+
+                            <div class="syllable-wrap">
+                                <div class="syllable-label">뒤 소리</div>
+                                <div class="syllable-card">
+                                    <div class="syllable-text" id="rightSyllable">다</div>
+                                    <div class="changed-syllable" id="rightChanged">따</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-row practice-action-row">
+                            <button class="btn action-main icon-play" id="btnPlay" type="button" aria-label="실행" title="실행"><span aria-hidden="true" class="icon-label">&#9654;</span></button>
+                            <button class="btn secondary icon-next" id="btnNext" type="button" aria-label="다음" title="다음"><span aria-hidden="true" class="icon-label">&#8594;</span></button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="double-final.js?v=20260602"></script>
+</body>
+</html>

@@ -1513,6 +1513,10 @@ let currentIndex = 0;
             window.location.href = "nasalization.html";
         });
 
+        $("#btnDoubleFinalType").on("click", function() {
+            window.location.href = "double-final.html";
+        });
+
         $("#btnBackPhonologyFromInfo").on("click", function() {
             showPage("pagePhonologyType");
         });
