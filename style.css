@@ -1,4 +1,30 @@
 
+        @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+        @font-face {
+            font-family: "NanumSquareRound";
+            src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "NanumSquareRound";
+            src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "NanumSquareRound";
+            src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-ExtraBold.woff2") format("woff2");
+            font-weight: 800 950;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -13,6 +39,8 @@
             --shadow-md: 0 18px 45px rgba(15, 23, 42, 0.10);
             --shadow-lg: 0 28px 80px rgba(15, 23, 42, 0.14);
             --radius-lg: 32px;
+            --font-heading: "Jua", "NanumSquareRound", "Malgun Gothic", "맑은 고딕", sans-serif;
+            --font-body: "NanumSquareRound", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
         }
 
         * {
@@ -26,7 +54,7 @@
         body {
             min-width: 320px;
             margin: 0;
-            font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif;
+            font-family: var(--font-body);
             color: var(--ink);
             background:
                 radial-gradient(circle at 15% 12%, rgba(37, 99, 235, 0.18) 0, transparent 34%),
@@ -92,10 +120,11 @@
 
         .main-title {
             margin: 0 0 14px;
+            font-family: var(--font-heading);
             font-size: clamp(38px, 5vw, 56px);
-            font-weight: 950;
+            font-weight: 400;
             line-height: 1.12;
-            letter-spacing: -0.055em;
+            letter-spacing: 0;
             color: var(--ink);
         }
 
@@ -116,6 +145,23 @@
             font-size: 20px;
             line-height: 1.72;
             letter-spacing: -0.025em;
+        }
+
+        .info-box h2,
+        .category-title,
+        .top-nav h2,
+        .word-list h3,
+        .result-text,
+        .final-title,
+        .sentence-step-title,
+        .sentence-change-main,
+        .sentence-result-text,
+        .long-text-card-title,
+        .long-text-stage,
+        .capture-guard-title {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            letter-spacing: 0;
         }
 
         .btn {

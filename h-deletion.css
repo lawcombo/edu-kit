@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+@font-face {
+    font-family: "NanumSquareRound";
+    src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NanumSquareRound";
+    src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NanumSquareRound";
+    src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-ExtraBold.woff2") format("woff2");
+    font-weight: 800 950;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
@@ -12,6 +38,8 @@
     --shadow-md: 0 18px 45px rgba(15, 23, 42, 0.10);
     --shadow-lg: 0 28px 80px rgba(15, 23, 42, 0.14);
     --radius-lg: 32px;
+    --font-heading: "Jua", "NanumSquareRound", "Malgun Gothic", "맑은 고딕", sans-serif;
+    --font-body: "NanumSquareRound", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
 }
 
 * {
@@ -25,7 +53,7 @@ html {
 body {
     min-width: 320px;
     margin: 0;
-    font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+    font-family: var(--font-body);
     color: var(--ink);
     background: linear-gradient(135deg, #f8fbff 0%, #f6f7ff 42%, #fff8f1 100%);
     overflow-x: hidden;
@@ -105,10 +133,11 @@ button {
     margin: 0;
     padding-left: 18px;
     color: var(--ink);
+    font-family: var(--font-heading);
     font-size: clamp(28px, 4vw, 42px);
-    font-weight: 950;
+    font-weight: 400;
     line-height: 1.12;
-    letter-spacing: -0.055em;
+    letter-spacing: 0;
     text-align: center;
 }
 
@@ -196,10 +225,11 @@ button {
 .lesson-header h1 {
     margin: 0 0 12px;
     color: var(--ink);
+    font-family: var(--font-heading);
     font-size: clamp(38px, 5vw, 56px);
-    font-weight: 950;
+    font-weight: 400;
     line-height: 1.12;
-    letter-spacing: -0.055em;
+    letter-spacing: 0;
 }
 
 .lesson-header h1::after {
@@ -220,6 +250,14 @@ button {
     font-weight: 750;
     line-height: 1.6;
     word-break: keep-all;
+}
+
+.step-card strong,
+.word-list h3,
+.capture-guard-title {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0;
 }
 
 .intro-layout {
@@ -261,10 +299,11 @@ button {
 .intro-copy h2 {
     max-width: 100%;
     margin: 0;
+    font-family: var(--font-heading);
     font-size: clamp(32px, 3.6vw, 44px);
-    font-weight: 950;
+    font-weight: 400;
     line-height: 1.14;
-    letter-spacing: -0.05em;
+    letter-spacing: 0;
     word-break: keep-all;
 }
 

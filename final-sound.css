@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260602-final-sound");
+@import url("h-deletion.css?v=20260602-fonts");
 
 .final-choice-grid {
     display: grid;
@@ -80,8 +80,10 @@
 
 .final-choice-title {
     color: var(--ink);
+    font-family: var(--font-heading);
     font-size: 22px;
-    font-weight: 950;
+    font-weight: 400;
+    letter-spacing: 0;
 }
 
 .final-choice-desc {
