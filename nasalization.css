@@ -1,0 +1,42 @@
+@import url("h-deletion.css?v=20260602-nasalization");
+
+.changed-syllable {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 47px;
+    color: var(--danger);
+    font-size: 82px;
+    font-weight: 950;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.08em;
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    z-index: 1;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.changed-syllable.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.changed-syllable.long-part {
+    top: 58px;
+    font-size: 45px;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+    .changed-syllable {
+        top: 42px;
+        font-size: 54px;
+    }
+
+    .changed-syllable.long-part {
+        top: 50px;
+        font-size: 30px;
+    }
+}

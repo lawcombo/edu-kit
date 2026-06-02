@@ -1509,6 +1509,10 @@ let currentIndex = 0;
             window.location.href = "tensing.html";
         });
 
+        $("#btnNasalizationType").on("click", function() {
+            window.location.href = "nasalization.html";
+        });
+
         $("#btnBackPhonologyFromInfo").on("click", function() {
             showPage("pagePhonologyType");
         });
