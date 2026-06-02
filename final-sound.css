@@ -7,6 +7,53 @@
     margin-top: 26px;
 }
 
+.intro-demo {
+    min-height: 260px;
+    gap: 20px;
+    background: linear-gradient(180deg, #fffdf8, #fff7ed);
+}
+
+.intro-demo .demo-row {
+    gap: 18px;
+}
+
+.intro-demo .demo-word {
+    width: 118px;
+    min-width: 118px;
+    min-height: 104px;
+    border: 2px solid rgba(251, 146, 60, 0.24);
+    border-radius: 24px;
+    font-size: 60px;
+}
+
+.intro-demo .demo-plus {
+    width: 54px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--accent);
+    font-size: 36px;
+    box-shadow: var(--shadow-sm);
+}
+
+.final-demo-note {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    font-size: 19px;
+    font-weight: 950;
+    line-height: 1.2;
+    word-break: keep-all;
+}
+
 .final-choice-card {
     min-height: 158px;
     display: flex;
@@ -87,6 +134,34 @@
 
     .final-choice-letter {
         font-size: 34px;
+    }
+
+    .intro-demo {
+        min-height: 220px;
+        padding: 22px 16px;
+    }
+
+    .intro-demo .demo-row {
+        gap: 10px;
+    }
+
+    .intro-demo .demo-word {
+        width: 92px;
+        min-width: 92px;
+        min-height: 82px;
+        border-radius: 20px;
+        font-size: 48px;
+    }
+
+    .intro-demo .demo-plus {
+        width: 42px;
+        height: 42px;
+        font-size: 28px;
+    }
+
+    .final-demo-note {
+        font-size: 16px;
+        padding: 0 14px;
     }
 
     .changed-syllable {
