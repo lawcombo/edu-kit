@@ -1,3 +1,19 @@
+function redirectRefreshToLearningType() {
+    const navigationEntry = window.performance &&
+        window.performance.getEntriesByType &&
+        window.performance.getEntriesByType("navigation")[0];
+    const isReload = navigationEntry ?
+        navigationEntry.type === "reload" :
+        window.performance && window.performance.navigation && window.performance.navigation.type === 1;
+
+    if (!isReload) return;
+
+    sessionStorage.setItem("eduKitRefreshToLearningType", "1");
+    window.location.replace("index.html");
+}
+
+redirectRefreshToLearningType();
+
 const finalSoundGroups = [
     {
         key: "basic",

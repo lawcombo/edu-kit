@@ -38,6 +38,20 @@ let currentIndex = 0;
         }, 50);
     }
 
+    function isRefreshNavigation() {
+        const navigationEntry = window.performance &&
+            window.performance.getEntriesByType &&
+            window.performance.getEntriesByType("navigation")[0];
+
+        if (navigationEntry) {
+            return navigationEntry.type === "reload";
+        }
+
+        return window.performance &&
+            window.performance.navigation &&
+            window.performance.navigation.type === 1;
+    }
+
     function formatLongTextTime(ms) {
         return (ms / 1000).toFixed(1) + "초";
     }
@@ -1453,7 +1467,11 @@ let currentIndex = 0;
             };
         }
 
-        if (sessionStorage.getItem("eduKitReturnToPhonology") === "1") {
+        if (sessionStorage.getItem("eduKitRefreshToLearningType") === "1" || isRefreshNavigation()) {
+            sessionStorage.removeItem("eduKitRefreshToLearningType");
+            sessionStorage.removeItem("eduKitReturnToPhonology");
+            showPage("pageLearningType");
+        } else if (sessionStorage.getItem("eduKitReturnToPhonology") === "1") {
             sessionStorage.removeItem("eduKitReturnToPhonology");
             showPage("pagePhonologyType");
         }

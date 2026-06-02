@@ -1,3 +1,19 @@
+function redirectRefreshToLearningType() {
+    const navigationEntry = window.performance &&
+        window.performance.getEntriesByType &&
+        window.performance.getEntriesByType("navigation")[0];
+    const isReload = navigationEntry ?
+        navigationEntry.type === "reload" :
+        window.performance && window.performance.navigation && window.performance.navigation.type === 1;
+
+    if (!isReload) return;
+
+    sessionStorage.setItem("eduKitRefreshToLearningType", "1");
+    window.location.replace("index.html");
+}
+
+redirectRefreshToLearningType();
+
 const hDeletionExamples = [
     { written: "좋아", type: "좋 + 아", left: "좋", base: "조", right: "아", result: "조아" },
     { written: "좋아요", type: "좋 + 아요", left: "좋", base: "조", right: "아요", result: "조아요" },

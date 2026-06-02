@@ -1,3 +1,19 @@
+function redirectRefreshToLearningType() {
+    const navigationEntry = window.performance &&
+        window.performance.getEntriesByType &&
+        window.performance.getEntriesByType("navigation")[0];
+    const isReload = navigationEntry ?
+        navigationEntry.type === "reload" :
+        window.performance && window.performance.navigation && window.performance.navigation.type === 1;
+
+    if (!isReload) return;
+
+    sessionStorage.setItem("eduKitRefreshToLearningType", "1");
+    window.location.replace("index.html");
+}
+
+redirectRefreshToLearningType();
+
 const doubleFinalExamples = [
     { written: "앉다", left: "앉", leftChanged: "안", right: "다", rightChanged: "따" },
     { written: "앉고", left: "앉", leftChanged: "안", right: "고", rightChanged: "꼬" },
