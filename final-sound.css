@@ -1,0 +1,106 @@
+@import url("h-deletion.css?v=20260602-final-sound");
+
+.final-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 26px;
+}
+
+.final-choice-card {
+    min-height: 158px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 22px 18px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+}
+
+.final-choice-letter {
+    color: var(--primary);
+    font-size: 52px;
+    font-weight: 950;
+    line-height: 1;
+}
+
+.final-choice-title {
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 950;
+}
+
+.final-choice-desc {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+    word-break: keep-all;
+}
+
+.changed-syllable {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 47px;
+    color: var(--danger);
+    font-size: 82px;
+    font-weight: 950;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.08em;
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    z-index: 1;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.changed-syllable.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.changed-syllable.long-part {
+    top: 58px;
+    font-size: 45px;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+    .final-choice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .final-choice-card {
+        min-height: 132px;
+        border-radius: 22px;
+    }
+
+    .final-choice-letter {
+        font-size: 42px;
+    }
+
+    .changed-syllable {
+        top: 42px;
+        font-size: 54px;
+    }
+
+    .changed-syllable.long-part {
+        top: 50px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 390px) {
+    .final-choice-grid {
+        grid-template-columns: 1fr;
+    }
+}

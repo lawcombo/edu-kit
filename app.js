@@ -1517,6 +1517,10 @@ let currentIndex = 0;
             window.location.href = "double-final.html";
         });
 
+        $("#btnFinalSoundType").on("click", function() {
+            window.location.href = "final-sound.html";
+        });
+
         $("#btnBackPhonologyFromInfo").on("click", function() {
             showPage("pagePhonologyType");
         });
