@@ -26,6 +26,10 @@
     font-size: 60px;
 }
 
+.intro-demo .final-demo-result {
+    color: var(--danger);
+}
+
 .intro-demo .demo-plus {
     width: 54px;
     height: 54px;
