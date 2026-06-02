@@ -1124,6 +1124,172 @@ body.capture-guard-active main {
     }
 }
 
+@media (max-width: 860px) {
+    .screen {
+        padding: 12px 10px;
+    }
+
+    .container {
+        padding: 22px 12px 18px;
+        border-radius: 22px;
+    }
+
+    .back-btn {
+        left: 12px;
+        top: 12px;
+    }
+
+    .lesson-header {
+        margin-bottom: 16px;
+        padding: 0 42px;
+    }
+
+    .lesson-header h1 {
+        font-size: clamp(30px, 8.5vw, 39px);
+    }
+
+    .lesson-header p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .intro-layout {
+        gap: 12px;
+    }
+
+    .intro-copy {
+        min-height: 132px;
+        padding: 18px 12px;
+        border-radius: 18px;
+    }
+
+    .intro-demo {
+        min-height: 206px;
+        padding: 18px 12px;
+        border-radius: 18px;
+    }
+
+    .info-steps {
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .step-card {
+        min-height: auto;
+        padding: 14px;
+        border-radius: 17px;
+    }
+
+    .primary-btn.wide {
+        margin-top: 14px;
+    }
+
+    .top-nav {
+        margin-bottom: 14px;
+        min-height: 46px;
+        padding: 0 54px;
+    }
+
+    .top-nav h2 {
+        font-size: clamp(22px, 7vw, 32px);
+    }
+
+    .top-nav .btn {
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        min-height: 44px;
+        padding: 0;
+    }
+
+    .list-toggle {
+        right: 0;
+        min-width: 44px;
+    }
+
+    .list-toggle .toggle-label {
+        display: none;
+    }
+
+    .hamburger-icon {
+        margin-right: 0;
+    }
+
+    .practice-layout,
+    .practice-layout.list-open {
+        gap: 10px;
+    }
+
+    .word-list {
+        max-height: 188px;
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    #exampleList {
+        gap: 7px;
+        max-height: 128px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .word-item {
+        min-height: 40px;
+        padding: 8px 7px;
+        border-radius: 12px;
+        font-size: 13px;
+    }
+
+    .practice-panel {
+        gap: 12px;
+        padding: 14px 10px;
+        border-radius: 18px;
+    }
+
+    .practice-word-card {
+        min-height: 112px;
+        padding: 18px 12px;
+        border-radius: 19px;
+    }
+
+    .visual-area,
+    .sound-stage {
+        min-height: 206px;
+        gap: 8px;
+        padding: 36px 6px 18px;
+        border-radius: 18px;
+    }
+
+    .practice-action-row {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .screen {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 18px 10px 16px;
+        border-radius: 20px;
+    }
+
+    .lesson-header {
+        padding: 0 38px;
+    }
+
+    .top-nav {
+        padding: 0 50px;
+    }
+
+    .visual-area,
+    .sound-stage {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
 @media print {
     body * {
         visibility: hidden !important;

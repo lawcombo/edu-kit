@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260602-assets");
+@import url("h-deletion.css?v=20260602-mobile-spacing");
 
 .final-choice-grid {
     display: grid;
@@ -185,5 +185,32 @@
 @media (max-width: 390px) {
     .final-choice-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .final-choice-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .final-choice-card {
+        min-height: 112px;
+        gap: 7px;
+        padding: 16px 12px;
+        border-radius: 18px;
+    }
+
+    .final-choice-letter {
+        font-size: 30px;
+    }
+
+    .final-choice-title {
+        font-size: 20px;
+    }
+
+    .final-choice-desc {
+        font-size: 13px;
     }
 }
