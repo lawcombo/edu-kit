@@ -1531,6 +1531,10 @@ let currentIndex = 0;
             window.location.href = "nasalization.html";
         });
 
+        $("#btnAspirationType").on("click", function() {
+            window.location.href = "aspiration.html";
+        });
+
         $("#btnDoubleFinalType").on("click", function() {
             window.location.href = "double-final.html";
         });
