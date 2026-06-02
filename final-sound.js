@@ -1,102 +1,80 @@
 const finalSoundGroups = [
     {
-        key: "g",
-        final: "ㄱ",
-        title: "ㄱ 소리",
-        desc: "ㄱ, ㄲ, ㅋ 받침",
+        key: "basic",
+        final: "ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅇ",
+        title: "기본 끝소리",
+        desc: "최종발음 기준 받침",
+        heading: "기본 끝소리 연습하기",
+        listTitle: "기본 끝소리 연습 목록",
         examples: [
-            { written: "밖", writtenSound: "밖", sound: "박" },
-            { written: "부엌", writtenSound: "부엌", sound: "부억" },
-            { written: "깎", writtenSound: "깎", sound: "깍" },
-            { written: "낚", writtenSound: "낚", sound: "낙" },
-            { written: "볶", writtenSound: "볶", sound: "복" },
-            { written: "녹", writtenSound: "녹", sound: "녹" }
-        ]
-    },
-    {
-        key: "n",
-        final: "ㄴ",
-        title: "ㄴ 소리",
-        desc: "ㄴ 받침",
-        examples: [
+            { written: "책", writtenSound: "책", sound: "책" },
+            { written: "목", writtenSound: "목", sound: "목" },
             { written: "산", writtenSound: "산", sound: "산" },
-            { written: "눈", writtenSound: "눈", sound: "눈" },
             { written: "문", writtenSound: "문", sound: "문" },
-            { written: "손", writtenSound: "손", sound: "손" },
-            { written: "돈", writtenSound: "돈", sound: "돈" },
-            { written: "반", writtenSound: "반", sound: "반" }
-        ]
-    },
-    {
-        key: "d",
-        final: "ㄷ",
-        title: "ㄷ 소리",
-        desc: "ㄷ, ㅌ, ㅅ, ㅆ, ㅈ, ㅊ, ㅎ 받침",
-        examples: [
-            { written: "꽃", writtenSound: "꽃", sound: "꼳" },
-            { written: "낮", writtenSound: "낮", sound: "낟" },
-            { written: "옷", writtenSound: "옷", sound: "옫" },
-            { written: "있", writtenSound: "있", sound: "읻" },
-            { written: "밭", writtenSound: "밭", sound: "받" },
-            { written: "빛", writtenSound: "빛", sound: "빋" },
-            { written: "히읗", writtenSound: "히읗", sound: "히읃" },
-            { written: "닫", writtenSound: "닫", sound: "닫" }
-        ]
-    },
-    {
-        key: "r",
-        final: "ㄹ",
-        title: "ㄹ 소리",
-        desc: "ㄹ 받침",
-        examples: [
-            { written: "달", writtenSound: "달", sound: "달" },
+            { written: "닫", writtenSound: "닫", sound: "닫" },
             { written: "길", writtenSound: "길", sound: "길" },
-            { written: "물", writtenSound: "물", sound: "물" },
-            { written: "별", writtenSound: "별", sound: "별" },
-            { written: "발", writtenSound: "발", sound: "발" },
-            { written: "솔", writtenSound: "솔", sound: "솔" }
-        ]
-    },
-    {
-        key: "m",
-        final: "ㅁ",
-        title: "ㅁ 소리",
-        desc: "ㅁ 받침",
-        examples: [
+            { written: "달", writtenSound: "달", sound: "달" },
             { written: "밤", writtenSound: "밤", sound: "밤" },
-            { written: "곰", writtenSound: "곰", sound: "곰" },
-            { written: "섬", writtenSound: "섬", sound: "섬" },
-            { written: "잠", writtenSound: "잠", sound: "잠" },
-            { written: "봄", writtenSound: "봄", sound: "봄" },
-            { written: "몸", writtenSound: "몸", sound: "몸" }
+            { written: "맘", writtenSound: "맘", sound: "맘" },
+            { written: "밥", writtenSound: "밥", sound: "밥" },
+            { written: "입", writtenSound: "입", sound: "입" },
+            { written: "강", writtenSound: "강", sound: "강" },
+            { written: "공", writtenSound: "공", sound: "공" }
         ]
     },
     {
-        key: "b",
-        final: "ㅂ",
-        title: "ㅂ 소리",
-        desc: "ㅂ, ㅍ 받침",
+        key: "to-d",
+        final: "ㅅ ㅈ ㅊ ㅌ ㅎ",
+        title: "ㄷ으로 바뀌는 받침",
+        desc: "끝에서는 ㄷ 소리",
+        heading: "ㄷ 소리로 바뀌는 받침 연습하기",
+        listTitle: "ㄷ 소리 변화 연습 목록",
+        examples: [
+            { written: "옷", writtenSound: "옷", sound: "옫" },
+            { written: "낫", writtenSound: "낫", sound: "낟" },
+            { written: "빗", writtenSound: "빗", sound: "빋" },
+            { written: "낮", writtenSound: "낮", sound: "낟" },
+            { written: "젖", writtenSound: "젖", sound: "젇" },
+            { written: "빛", writtenSound: "빛", sound: "빋" },
+            { written: "꽃", writtenSound: "꽃", sound: "꼳" },
+            { written: "끝", writtenSound: "끝", sound: "끋" },
+            { written: "밭", writtenSound: "밭", sound: "받" },
+            { written: "붙", writtenSound: "붙", sound: "붇" },
+            { written: "좋", writtenSound: "좋", sound: "졷" },
+            { written: "놓", writtenSound: "놓", sound: "녿" },
+            { written: "히읗", writtenSound: "히읗", sound: "히읃" }
+        ]
+    },
+    {
+        key: "to-g",
+        final: "ㅋ ㄲ",
+        title: "ㄱ으로 바뀌는 받침",
+        desc: "끝에서는 ㄱ 소리",
+        heading: "ㄱ 소리로 바뀌는 받침 연습하기",
+        listTitle: "ㄱ 소리 변화 연습 목록",
+        examples: [
+            { written: "부엌", writtenSound: "부엌", sound: "부억" },
+            { written: "키읔", writtenSound: "키읔", sound: "키윽" },
+            { written: "밖", writtenSound: "밖", sound: "박" },
+            { written: "깎", writtenSound: "깎", sound: "깍" },
+            { written: "닦", writtenSound: "닦", sound: "닥" },
+            { written: "볶", writtenSound: "볶", sound: "복" }
+        ]
+    },
+    {
+        key: "to-b",
+        final: "ㅍ",
+        title: "ㅂ으로 바뀌는 받침",
+        desc: "끝에서는 ㅂ 소리",
+        heading: "ㅂ 소리로 바뀌는 받침 연습하기",
+        listTitle: "ㅂ 소리 변화 연습 목록",
         examples: [
             { written: "앞", writtenSound: "앞", sound: "압" },
             { written: "잎", writtenSound: "잎", sound: "입" },
-            { written: "덮", writtenSound: "덮", sound: "덥" },
+            { written: "숲", writtenSound: "숲", sound: "숩" },
             { written: "높", writtenSound: "높", sound: "놉" },
-            { written: "밥", writtenSound: "밥", sound: "밥" },
-            { written: "입", writtenSound: "입", sound: "입" }
-        ]
-    },
-    {
-        key: "ng",
-        final: "ㅇ",
-        title: "ㅇ 소리",
-        desc: "ㅇ 받침",
-        examples: [
-            { written: "강", writtenSound: "강", sound: "강" },
-            { written: "방", writtenSound: "방", sound: "방" },
-            { written: "공", writtenSound: "공", sound: "공" },
-            { written: "종", writtenSound: "종", sound: "종" },
-            { written: "왕", writtenSound: "왕", sound: "왕" },
-            { written: "상", writtenSound: "상", sound: "상" }
+            { written: "덮", writtenSound: "덮", sound: "덥" },
+            { written: "짚", writtenSound: "짚", sound: "집" }
         ]
     }
 ];
@@ -179,8 +157,8 @@ function setGroup(index) {
     currentExampleIndex = 0;
 
     const group = getCurrentGroup();
-    practiceHeading.textContent = `${group.final} 받침 연습하기`;
-    wordListTitle.textContent = `${group.final} 받침 연습 목록`;
+    practiceHeading.textContent = group.heading;
+    wordListTitle.textContent = group.listTitle;
     $("#finalSoundPracticeLayout").classList.remove("list-open");
     $("#btnToggleFinalSoundList").setAttribute("aria-expanded", "false");
     $("#btnToggleFinalSoundList .toggle-label").textContent = "연습목록";

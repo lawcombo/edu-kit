@@ -2,7 +2,7 @@
 
 .final-choice-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
     margin-top: 26px;
 }
@@ -24,9 +24,11 @@
 
 .final-choice-letter {
     color: var(--primary);
-    font-size: 52px;
+    font-size: 44px;
     font-weight: 950;
     line-height: 1;
+    text-align: center;
+    word-break: keep-all;
 }
 
 .final-choice-title {
@@ -75,7 +77,6 @@
 
 @media (max-width: 860px) {
     .final-choice-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
@@ -85,7 +86,7 @@
     }
 
     .final-choice-letter {
-        font-size: 42px;
+        font-size: 34px;
     }
 
     .changed-syllable {
