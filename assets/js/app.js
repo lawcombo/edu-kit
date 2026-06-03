@@ -1,4 +1,7 @@
 let currentIndex = 0;
+    const AUTH_STORAGE_KEY = "eduKitAuthExpiresAt";
+    const AUTH_TTL_MS = 60 * 60 * 1000; // 인증 유지 시간: 1시간. 필요하면 이 값만 바꾸면 됩니다.
+
     let isAnimating = false;
     let hasResult = false;
     let wordPracticeMode = "all";
@@ -36,6 +39,62 @@ let currentIndex = 0;
             syncGrammarListHeight();
             syncSentenceListHeight();
         }, 50);
+    }
+
+    function getAuthExpiresAt() {
+        try {
+            const storedValue = localStorage.getItem(AUTH_STORAGE_KEY);
+            const expiresAt = Number(storedValue);
+            return Number.isFinite(expiresAt) ? expiresAt : 0;
+        } catch (error) {
+            return 0;
+        }
+    }
+
+    function clearAuthState() {
+        try {
+            localStorage.removeItem(AUTH_STORAGE_KEY);
+        } catch (error) {}
+    }
+
+    function hasValidAuthState() {
+        const expiresAt = getAuthExpiresAt();
+
+        if (!expiresAt || Date.now() >= expiresAt) {
+            clearAuthState();
+            return false;
+        }
+
+        return true;
+    }
+
+    function saveAuthState() {
+        try {
+            localStorage.setItem(AUTH_STORAGE_KEY, String(Date.now() + AUTH_TTL_MS));
+        } catch (error) {}
+    }
+
+    function showInitialPage() {
+        const shouldReturnToLearningType = sessionStorage.getItem("eduKitRefreshToLearningType") === "1" || isRefreshNavigation();
+        const shouldReturnToPhonology = sessionStorage.getItem("eduKitReturnToPhonology") === "1";
+        const isAuthenticated = hasValidAuthState();
+
+        sessionStorage.removeItem("eduKitRefreshToLearningType");
+        sessionStorage.removeItem("eduKitReturnToPhonology");
+
+        if (!isAuthenticated) {
+            showPage("pageIntro");
+            return;
+        }
+
+        if (shouldReturnToPhonology) {
+            showPage("pagePhonologyType");
+            return;
+        }
+
+        if (shouldReturnToLearningType || isAuthenticated) {
+            showPage("pageLearningType");
+        }
     }
 
     function isRefreshNavigation() {
@@ -1467,14 +1526,7 @@ let currentIndex = 0;
             };
         }
 
-        if (sessionStorage.getItem("eduKitRefreshToLearningType") === "1" || isRefreshNavigation()) {
-            sessionStorage.removeItem("eduKitRefreshToLearningType");
-            sessionStorage.removeItem("eduKitReturnToPhonology");
-            showPage("pageLearningType");
-        } else if (sessionStorage.getItem("eduKitReturnToPhonology") === "1") {
-            sessionStorage.removeItem("eduKitReturnToPhonology");
-            showPage("pagePhonologyType");
-        }
+        showInitialPage();
 
         $(window).on("resize orientationchange", function() {
             applyTargetPosition();
@@ -1493,6 +1545,7 @@ let currentIndex = 0;
             const password = $("#passwordInput").val();
 
             if (password === "1111") {
+                saveAuthState();
                 $("#loginError").hide();
                 showPage("pageLearningType");
             } else {
