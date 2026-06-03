@@ -1,5 +1,9 @@
 @import url("h-deletion.css?v=20260602-mobile-spacing");
 
+:root {
+    --font-final-sound-glyph: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans CJK KR", "Noto Sans KR", "Droid Sans Fallback", "SamsungOneKorean", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
 .final-choice-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -29,6 +33,7 @@
 
 .intro-demo .final-demo-result {
     color: var(--danger);
+    font-family: var(--font-final-sound-glyph);
 }
 
 .intro-demo .demo-plus {
@@ -118,6 +123,11 @@
     transform: translateY(8px) scale(0.96);
     z-index: 1;
     transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+#finalSoundPracticeLayout .changed-syllable,
+#finalSoundPracticeLayout .syllable-wrap:last-child .syllable-text {
+    font-family: var(--font-final-sound-glyph);
 }
 
 .changed-syllable.revealed {
