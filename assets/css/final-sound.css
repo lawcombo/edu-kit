@@ -1,5 +1,9 @@
 @import url("h-deletion.css?v=20260602-mobile-spacing");
 
+:root {
+    --font-final-practice: "Malgun Gothic", "맑은 고딕", "Noto Sans KR", "Noto Sans CJK KR", "Source Han Sans KR", "Apple SD Gothic Neo", "SamsungOneKorean", "NanumSquareRound", Arial, sans-serif;
+}
+
 .final-choice-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -23,11 +27,38 @@
     min-height: 104px;
     border: 2px solid rgba(251, 146, 60, 0.24);
     border-radius: 24px;
+    flex-direction: column;
     font-size: 60px;
+    font-family: var(--font-final-practice);
+    gap: 2px;
+    line-height: 0.95;
 }
 
 .intro-demo .final-demo-result {
     color: var(--danger);
+}
+
+.sound-main {
+    display: block;
+    font-family: var(--font-final-practice);
+    line-height: 0.95;
+}
+
+.sound-hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 950;
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .intro-demo .demo-plus {
@@ -107,7 +138,7 @@
     right: 0;
     top: 47px;
     color: var(--danger);
-    font-family: var(--font-practice);
+    font-family: var(--font-final-practice);
     font-size: 82px;
     font-weight: 950;
     line-height: 1;
@@ -117,6 +148,25 @@
     transform: translateY(8px) scale(0.96);
     z-index: 1;
     transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.changed-syllable.with-hint {
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    letter-spacing: 0;
+}
+
+.changed-syllable.with-hint .sound-main {
+    font-size: inherit;
+    letter-spacing: -0.04em;
+}
+
+.changed-syllable.with-hint .sound-hint {
+    font-size: 15px;
 }
 
 .changed-syllable.revealed {
@@ -163,6 +213,12 @@
         font-size: 48px;
     }
 
+    .intro-demo .sound-hint {
+        min-height: 18px;
+        padding: 2px 7px;
+        font-size: 12px;
+    }
+
     .intro-demo .demo-plus {
         width: 42px;
         height: 42px;
@@ -178,6 +234,15 @@
         top: 42px;
         font-size: 54px;
         letter-spacing: -0.05em;
+    }
+
+    .changed-syllable.with-hint {
+        top: 30px;
+        gap: 5px;
+    }
+
+    .changed-syllable.with-hint .sound-hint {
+        font-size: 13px;
     }
 
     .changed-syllable.long-part {
@@ -206,12 +271,22 @@
         white-space: nowrap;
     }
 
+    #finalSoundPracticeLayout .changed-syllable.with-hint {
+        top: 28px;
+        font-size: clamp(40px, 12vw, 52px);
+    }
+
     #finalSoundPracticeLayout .syllable-text.long-part,
     #finalSoundPracticeLayout .changed-syllable.long-part {
         top: 46px;
         font-size: clamp(25px, 7.5vw, 34px);
         letter-spacing: -0.02em;
         white-space: nowrap;
+    }
+
+    #finalSoundPracticeLayout .changed-syllable.long-part.with-hint {
+        top: 34px;
+        font-size: clamp(25px, 7.4vw, 32px);
     }
 }
 
@@ -231,10 +306,20 @@
         font-size: clamp(38px, 12vw, 50px);
     }
 
+    #finalSoundPracticeLayout .changed-syllable.with-hint {
+        top: 25px;
+        font-size: clamp(36px, 11vw, 46px);
+    }
+
     #finalSoundPracticeLayout .syllable-text.long-part,
     #finalSoundPracticeLayout .changed-syllable.long-part {
         top: 44px;
         font-size: clamp(22px, 7vw, 29px);
+    }
+
+    #finalSoundPracticeLayout .changed-syllable.long-part.with-hint {
+        top: 33px;
+        font-size: clamp(22px, 6.6vw, 27px);
     }
 }
 
