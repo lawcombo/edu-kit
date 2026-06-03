@@ -22,7 +22,6 @@ const finalSoundGroups = [
         desc: "최종발음 기준 받침",
         heading: "기본 끝소리 연습하기",
         listTitle: "기본 끝소리 연습 목록",
-        soundHint: "",
         examples: [
             { written: "책", writtenSound: "책", sound: "책" },
             { written: "목", writtenSound: "목", sound: "목" },
@@ -46,7 +45,6 @@ const finalSoundGroups = [
         desc: "끝에서는 ㄷ 소리",
         heading: "ㄷ 소리로 바뀌는 받침 연습하기",
         listTitle: "ㄷ 소리 변화 연습 목록",
-        soundHint: "ㄷ 소리",
         examples: [
             { written: "옷", writtenSound: "옷", sound: "옫" },
             { written: "낫", writtenSound: "낫", sound: "낟" },
@@ -70,7 +68,6 @@ const finalSoundGroups = [
         desc: "끝에서는 ㄱ 소리",
         heading: "ㄱ 소리로 바뀌는 받침 연습하기",
         listTitle: "ㄱ 소리 변화 연습 목록",
-        soundHint: "ㄱ 소리",
         examples: [
             { written: "부엌", writtenSound: "부엌", sound: "부억" },
             { written: "키읔", writtenSound: "키읔", sound: "키윽" },
@@ -87,7 +84,6 @@ const finalSoundGroups = [
         desc: "끝에서는 ㅂ 소리",
         heading: "ㅂ 소리로 바뀌는 받침 연습하기",
         listTitle: "ㅂ 소리 변화 연습 목록",
-        soundHint: "ㅂ 소리",
         examples: [
             { written: "앞", writtenSound: "앞", sound: "압" },
             { written: "잎", writtenSound: "잎", sound: "입" },
@@ -130,11 +126,6 @@ function setActiveScreen(screenName) {
 
 function setLongTextClass(element, text) {
     element.classList.toggle("long-part", text.length > 1);
-}
-
-function renderSoundText(text, hint) {
-    if (!hint) return text;
-    return `<span class="sound-main">${text}</span><span class="sound-hint">${hint}</span>`;
 }
 
 function resetAnimation() {
@@ -200,12 +191,10 @@ function setExample(index) {
     writtenWord.textContent = example.written;
     writtenSound.textContent = example.writtenSound;
     soundBefore.textContent = "?";
-    soundAfter.innerHTML = renderSoundText(example.sound, group.soundHint);
-    soundAfter.setAttribute("aria-label", example.sound);
+    soundAfter.textContent = example.sound;
 
     setLongTextClass(writtenSound, example.writtenSound);
     setLongTextClass(soundAfter, example.sound);
-    soundAfter.classList.toggle("with-hint", Boolean(group.soundHint));
     resetAnimation();
     updateActiveExample();
 }
