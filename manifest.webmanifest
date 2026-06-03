@@ -1,0 +1,35 @@
+{
+  "id": "/edu-kit/",
+  "name": "연음화 치료교구",
+  "short_name": "치료교구",
+  "description": "음운변동과 읽기 연습을 위한 치료 교육 교구",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#f8fbff",
+  "theme_color": "#2563eb",
+  "categories": ["education"],
+  "lang": "ko-KR",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
