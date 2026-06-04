@@ -200,6 +200,29 @@
 
         #pageInfo .main-title {
             padding: 0 58px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: var(--ink);
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.12;
+        }
+
+        #pageInfo .main-title::before {
+            content: "";
+            position: absolute;
+            left: 40px;
+            top: 7px;
+            width: 6px;
+            height: calc(100% - 10px);
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+        }
+
+        #pageInfo .main-title::after {
+            display: none;
         }
 
         .btn.secondary {
@@ -1053,6 +1076,11 @@
 
             #pageInfo .main-title {
                 padding: 0 46px;
+                font-size: 18px;
+            }
+
+            #pageInfo .main-title::before {
+                left: 28px;
             }
 
             .main-title {
@@ -1506,6 +1534,11 @@
 
             #pageInfo .main-title {
                 padding: 0 42px;
+                font-size: 17px;
+            }
+
+            #pageInfo .main-title::before {
+                left: 24px;
             }
 
             .top-nav {
