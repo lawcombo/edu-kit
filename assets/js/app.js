@@ -1588,6 +1588,10 @@ let currentIndex = 0;
             window.location.href = "aspiration.html";
         });
 
+        $("#btnPalatalizationType").on("click", function() {
+            window.location.href = "palatalization.html";
+        });
+
         $("#btnDoubleFinalType").on("click", function() {
             window.location.href = "double-final.html";
         });

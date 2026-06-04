@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260603-auth";
+const CACHE_NAME = "edu-kit-pwa-20260604-palatalization";
 
 const LOCAL_ASSETS = [
     "./",
@@ -7,6 +7,7 @@ const LOCAL_ASSETS = [
     "./tensing.html",
     "./nasalization.html",
     "./aspiration.html",
+    "./palatalization.html",
     "./double-final.html",
     "./final-sound.html",
     "./manifest.webmanifest",
@@ -15,6 +16,7 @@ const LOCAL_ASSETS = [
     "./assets/css/tensing.css",
     "./assets/css/nasalization.css",
     "./assets/css/aspiration.css",
+    "./assets/css/palatalization.css",
     "./assets/css/double-final.css",
     "./assets/css/final-sound.css",
     "./assets/js/app.js",
@@ -23,6 +25,7 @@ const LOCAL_ASSETS = [
     "./assets/js/tensing.js",
     "./assets/js/nasalization.js",
     "./assets/js/aspiration.js",
+    "./assets/js/palatalization.js",
     "./assets/js/double-final.js",
     "./assets/js/final-sound.js",
     "./assets/js/pwa.js",
