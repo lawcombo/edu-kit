@@ -1,28 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
 
-@font-face {
-    font-family: "NanumSquareRound";
-    src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "NanumSquareRound";
-    src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "NanumSquareRound";
-    src: url("https://cdn.jsdelivr.net/gh/sweetherofonts/fontshero_pack3/nanumsquareround/nanumsquareround-ExtraBold.woff2") format("woff2");
-    font-weight: 800 950;
-    font-style: normal;
-    font-display: swap;
-}
 
 :root {
     --primary: #2563eb;
@@ -38,9 +15,9 @@
     --shadow-md: 0 18px 45px rgba(15, 23, 42, 0.10);
     --shadow-lg: 0 28px 80px rgba(15, 23, 42, 0.14);
     --radius-lg: 32px;
-    --font-heading: "Jua", "NanumSquareRound", "Malgun Gothic", "맑은 고딕", sans-serif;
-    --font-body: "NanumSquareRound", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
-    --font-practice: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "NanumSquareRound", Arial, sans-serif;
+    --font-heading: "Nanum Gothic", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
+    --font-body: "Nanum Gothic", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
+    --font-practice: "Nanum Gothic", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
 }
 
 * {
@@ -58,7 +35,7 @@ body {
     color: var(--ink);
     background: linear-gradient(135deg, #f8fbff 0%, #f6f7ff 42%, #fff8f1 100%);
     overflow-x: hidden;
-    letter-spacing: -0.025em;
+    letter-spacing: 0;
 }
 
 body::before {
@@ -339,7 +316,7 @@ button {
     font-family: var(--font-practice);
     font-size: 56px;
     font-weight: 950;
-    letter-spacing: -0.04em;
+    letter-spacing: 0;
     box-shadow: var(--shadow-sm);
 }
 
@@ -431,7 +408,7 @@ button {
     color: #ffffff;
     font-size: 18px;
     font-weight: 950;
-    letter-spacing: -0.035em;
+    letter-spacing: 0;
     cursor: pointer;
     box-shadow: 0 10px 24px rgba(37, 99, 235, 0.20);
 }
@@ -504,7 +481,7 @@ button {
     color: var(--ink);
     font-size: 22px;
     font-weight: 950;
-    letter-spacing: -0.035em;
+    letter-spacing: 0;
 }
 
 .word-list h3::before {
@@ -579,7 +556,7 @@ button {
     font-size: clamp(72px, 7.5vw, 100px);
     font-weight: 950;
     line-height: 1.05;
-    letter-spacing: -0.075em;
+    letter-spacing: 0;
     text-align: center;
     text-shadow: 0 5px 14px rgba(15, 23, 42, 0.08);
 }
@@ -608,7 +585,7 @@ button {
     font-size: clamp(68px, 8vw, 98px);
     font-weight: 950;
     line-height: 1;
-    letter-spacing: -0.05em;
+    letter-spacing: 0;
 }
 
 .visual-area {
@@ -640,7 +617,7 @@ button {
     color: var(--muted);
     font-size: 17px;
     font-weight: 950;
-    letter-spacing: -0.025em;
+    letter-spacing: 0;
 }
 
 .syllable-card {
@@ -671,7 +648,7 @@ button {
     font-weight: 950;
     line-height: 1;
     text-align: center;
-    letter-spacing: -0.08em;
+    letter-spacing: 0;
     z-index: 2;
     transition: opacity 0.22s ease, transform 0.22s ease;
 }
@@ -696,7 +673,7 @@ button {
 .syllable-text.long-part {
     top: 58px;
     font-size: 45px;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     white-space: nowrap;
 }
 
@@ -757,7 +734,7 @@ button {
     font-weight: 950;
     line-height: 1;
     text-align: center;
-    letter-spacing: -0.05em;
+    letter-spacing: 0;
     transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
@@ -780,7 +757,7 @@ button {
 .syllable-main.long-part {
     top: 66px;
     font-size: 45px;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     white-space: nowrap;
 }
 
@@ -889,7 +866,7 @@ body.capture-guard-active main {
     margin: 0 0 12px;
     font-size: clamp(27px, 5vw, 40px);
     font-weight: 950;
-    letter-spacing: -0.045em;
+    letter-spacing: 0;
 }
 
 .capture-guard-text {
@@ -897,7 +874,7 @@ body.capture-guard-active main {
     font-size: 17px;
     font-weight: 850;
     line-height: 1.65;
-    letter-spacing: -0.025em;
+    letter-spacing: 0;
     opacity: 0.95;
 }
 

@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260602-mobile-spacing");
+@import url("h-deletion.css?v=20260604-nanum-gothic");
 
 .changed-syllable {
     position: absolute;
@@ -11,7 +11,7 @@
     font-weight: 950;
     line-height: 1;
     text-align: center;
-    letter-spacing: -0.08em;
+    letter-spacing: 0;
     opacity: 0;
     transform: translateY(8px) scale(0.96);
     z-index: 1;
@@ -26,7 +26,7 @@
 .changed-syllable.long-part {
     top: 58px;
     font-size: 45px;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     white-space: nowrap;
 }
 

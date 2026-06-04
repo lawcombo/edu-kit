@@ -1,7 +1,7 @@
-@import url("h-deletion.css?v=20260602-mobile-spacing");
+@import url("h-deletion.css?v=20260604-nanum-gothic");
 
 :root {
-    --font-final-sound-glyph: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans CJK KR", "Noto Sans KR", "Droid Sans Fallback", "SamsungOneKorean", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
+    --font-final-sound-glyph: "Nanum Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans CJK KR", "Noto Sans KR", "Droid Sans Fallback", "SamsungOneKorean", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 .final-choice-grid {
@@ -118,7 +118,7 @@
     font-weight: 950;
     line-height: 1;
     text-align: center;
-    letter-spacing: -0.08em;
+    letter-spacing: 0;
     opacity: 0;
     transform: translateY(8px) scale(0.96);
     z-index: 1;
@@ -138,7 +138,7 @@
 .changed-syllable.long-part {
     top: 58px;
     font-size: 45px;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     white-space: nowrap;
 }
 
@@ -188,7 +188,7 @@
     .changed-syllable {
         top: 42px;
         font-size: 54px;
-        letter-spacing: -0.05em;
+        letter-spacing: 0;
     }
 
     .changed-syllable.long-part {
@@ -213,7 +213,7 @@
     #finalSoundPracticeLayout .changed-syllable {
         top: 38px;
         font-size: clamp(42px, 13vw, 56px);
-        letter-spacing: -0.04em;
+        letter-spacing: 0;
         white-space: nowrap;
     }
 
@@ -221,7 +221,7 @@
     #finalSoundPracticeLayout .changed-syllable.long-part {
         top: 46px;
         font-size: clamp(25px, 7.5vw, 34px);
-        letter-spacing: -0.02em;
+        letter-spacing: 0;
         white-space: nowrap;
     }
 
