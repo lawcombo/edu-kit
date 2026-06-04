@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260604-nanum-gothic";
+const CACHE_NAME = "edu-kit-pwa-20260604-no-google-font";
 
 const LOCAL_ASSETS = [
     "./",

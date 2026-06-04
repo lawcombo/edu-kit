@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260604-nanum-gothic");
+@import url("h-deletion.css?v=20260604-no-google-font");
 
 .sound-rule {
     width: min(100%, 520px);
@@ -16,7 +16,7 @@
     color: var(--ink);
     font-family: var(--font-practice);
     font-size: clamp(25px, 4vw, 38px);
-    font-weight: 950;
+    font-weight: 800;
     line-height: 1.1;
     text-align: center;
     word-break: keep-all;
@@ -50,7 +50,7 @@
     color: var(--danger);
     font-family: var(--font-practice);
     font-size: 70px;
-    font-weight: 950;
+    font-weight: 800;
     line-height: 1;
     text-align: center;
     letter-spacing: 0;

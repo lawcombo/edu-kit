@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260604-nanum-gothic");
+@import url("h-deletion.css?v=20260604-no-google-font");
 
 :root {
     --font-final-sound-glyph: "Nanum Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans CJK KR", "Noto Sans KR", "Droid Sans Fallback", "SamsungOneKorean", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
@@ -59,7 +59,7 @@
     background: rgba(239, 68, 68, 0.1);
     color: var(--danger);
     font-size: 19px;
-    font-weight: 950;
+    font-weight: 800;
     line-height: 1.2;
     word-break: keep-all;
 }
@@ -82,7 +82,7 @@
 .final-choice-letter {
     color: var(--primary);
     font-size: 44px;
-    font-weight: 950;
+    font-weight: 800;
     line-height: 1;
     text-align: center;
     max-width: 100%;
@@ -115,7 +115,7 @@
     color: var(--danger);
     font-family: var(--font-practice);
     font-size: 82px;
-    font-weight: 950;
+    font-weight: 800;
     line-height: 1;
     text-align: center;
     letter-spacing: 0;
