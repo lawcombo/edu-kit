@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260604-compact-headers";
+const CACHE_NAME = "edu-kit-pwa-20260604-centered-module-headers";
 
 const LOCAL_ASSETS = [
     "./",
