@@ -1,8 +1,8 @@
 {
   "id": "/edu-kit/",
-  "name": "연음화 치료교구",
-  "short_name": "치료교구",
-  "description": "음운변동과 읽기 연습을 위한 치료 교육 교구",
+  "name": "소리톡톡",
+  "short_name": "소리톡톡",
+  "description": "말소리와 음운변동을 연습하는 치료 학습 교구",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
