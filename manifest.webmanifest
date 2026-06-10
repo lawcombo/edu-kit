@@ -1,7 +1,7 @@
 {
   "id": "/edu-kit/",
-  "name": "소리톡톡",
-  "short_name": "소리톡톡",
+  "name": "읽기톡톡",
+  "short_name": "읽기톡톡",
   "description": "말소리와 음운변동을 연습하는 치료 학습 교구",
   "start_url": "./index.html",
   "scope": "./",

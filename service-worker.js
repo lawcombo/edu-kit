@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260605-matching-info-headers";
+const CACHE_NAME = "edu-kit-pwa-20260611-rename-reading-toktok-v2";
 
 const LOCAL_ASSETS = [
     "./",
@@ -54,6 +54,25 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
     if (event.request.method !== "GET") return;
+
+    const isNavigation = event.request.mode === "navigate";
+    const acceptsHtml = event.request.headers.get("accept")?.includes("text/html");
+
+    if (isNavigation || acceptsHtml) {
+        event.respondWith(
+            fetch(event.request)
+                .then((networkResponse) => {
+                    const responseClone = networkResponse.clone();
+                    caches.open(CACHE_NAME)
+                        .then((cache) => cache.put(event.request, responseClone))
+                        .catch(() => {});
+                    return networkResponse;
+                })
+                .catch(() => caches.match(event.request)
+                    .then((cachedResponse) => cachedResponse || caches.match("./index.html")))
+        );
+        return;
+    }
 
     event.respondWith(
         caches.match(event.request)
