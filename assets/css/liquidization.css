@@ -1,4 +1,16 @@
-@import url("h-deletion.css?v=20260611-compact-intros");
+@import url("h-deletion.css?v=20260612-liquid-intro-inline");
+
+.liquid-intro-demo {
+    min-height: 170px;
+}
+
+.liquid-demo-row {
+    flex-wrap: nowrap;
+}
+
+.liquid-demo-row .demo-arrow {
+    margin: 0;
+}
 
 .sound-rule {
     width: min(100%, 520px);
