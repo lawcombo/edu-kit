@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260611-rename-reading-toktok-v2";
+const CACHE_NAME = "edu-kit-pwa-20260611-liquidization";
 
 const LOCAL_ASSETS = [
     "./",
@@ -8,6 +8,7 @@ const LOCAL_ASSETS = [
     "./nasalization.html",
     "./aspiration.html",
     "./palatalization.html",
+    "./liquidization.html",
     "./double-final.html",
     "./final-sound.html",
     "./manifest.webmanifest",
@@ -17,6 +18,7 @@ const LOCAL_ASSETS = [
     "./assets/css/nasalization.css",
     "./assets/css/aspiration.css",
     "./assets/css/palatalization.css",
+    "./assets/css/liquidization.css",
     "./assets/css/double-final.css",
     "./assets/css/final-sound.css",
     "./assets/js/app.js",
@@ -26,6 +28,7 @@ const LOCAL_ASSETS = [
     "./assets/js/nasalization.js",
     "./assets/js/aspiration.js",
     "./assets/js/palatalization.js",
+    "./assets/js/liquidization.js",
     "./assets/js/double-final.js",
     "./assets/js/final-sound.js",
     "./assets/js/pwa.js",

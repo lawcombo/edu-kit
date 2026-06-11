@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="읽기톡톡">
+    <title>유음화 치료교구</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="stylesheet" href="assets/css/liquidization.css?v=20260611-liquidization">
+</head>
+<body>
+    <main>
+        <section class="screen active" id="infoScreen">
+            <div class="container intro-container">
+                <button class="back-btn" id="btnBackHome" type="button" aria-label="뒤로가기">&larr;</button>
+
+                <header class="lesson-header">
+                    <h1>유음화란?</h1>
+                </header>
+
+                <div class="intro-layout">
+                    <div class="intro-copy">
+                        <p class="eyebrow">ㄴ + ㄹ</p>
+                        <h2>ㄴ 소리가 ㄹ을 만나면<br>ㄹ 소리로 바뀌어요</h2>
+                    </div>
+
+                    <div class="intro-demo" aria-label="유음화 예시">
+                        <div class="demo-row">
+                            <span class="demo-word">신라</span>
+                        </div>
+                        <div class="demo-arrow">→</div>
+                        <div class="demo-result">실라</div>
+                    </div>
+                </div>
+
+                <div class="info-steps">
+                    <div class="step-card">
+                        <span>1</span>
+                        <strong>만나는 소리 보기</strong>
+                        <p>앞말의 ㄴ 소리와 뒤의 ㄹ 소리가 만나는지 확인합니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span>2</span>
+                        <strong>ㄹ 소리로 바꾸기</strong>
+                        <p>ㄴ이 ㄹ처럼 바뀌어 들리는 부분을 봅니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span>3</span>
+                        <strong>따라 말하기</strong>
+                        <p>바뀐 소리를 천천히 보고 또박또박 따라 말합니다.</p>
+                    </div>
+                </div>
+
+                <button class="primary-btn wide" id="btnStartPractice" type="button">연습 시작</button>
+            </div>
+        </section>
+
+        <section class="screen" id="practiceScreen">
+            <div class="container practice-container">
+                <div class="top-nav">
+                    <button class="btn back-icon-btn" id="btnBackInfo" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
+                    <h2>유음화 연습하기</h2>
+                    <button class="btn list-toggle" id="btnToggleLiquidizationList" type="button" aria-expanded="false">
+                        <span class="hamburger-icon">☰</span><span class="toggle-label">연습목록</span>
+                    </button>
+                </div>
+
+                <div class="practice-layout" id="liquidizationPracticeLayout">
+                    <aside class="word-list" aria-label="연습 목록">
+                        <h3>연습 목록</h3>
+                        <div id="exampleList"></div>
+                    </aside>
+
+                    <section class="practice-panel">
+                        <div class="practice-word-card">
+                            <div class="practice-title" id="writtenWord">신라</div>
+                        </div>
+
+                        <div class="sound-rule" aria-label="소리 변화 규칙">
+                            <span id="ruleBefore">ㄴ + ㄹ</span>
+                            <span class="rule-arrow">→</span>
+                            <span id="ruleAfter">ㄹ + ㄹ</span>
+                        </div>
+
+                        <div class="visual-area">
+                            <div class="syllable-wrap">
+                                <div class="syllable-label">앞말</div>
+                                <div class="syllable-card">
+                                    <div class="syllable-text" id="leftSyllable">신</div>
+                                </div>
+                            </div>
+
+                            <div class="arrow">→</div>
+
+                            <div class="syllable-wrap">
+                                <div class="syllable-label">소리</div>
+                                <div class="syllable-card">
+                                    <div class="syllable-text" id="rightSyllable">라</div>
+                                    <div class="changed-syllable" id="rightChanged">라</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-row practice-action-row">
+                            <button class="btn action-main icon-play" id="btnPlay" type="button" aria-label="실행" title="실행"><span aria-hidden="true" class="icon-label">&#9654;</span></button>
+                            <button class="btn secondary icon-next" id="btnNext" type="button" aria-label="다음" title="다음"><span aria-hidden="true" class="icon-label">&#8594;</span></button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/liquidization.js?v=20260611-liquidization"></script>
+    <script src="assets/js/pwa.js?v=20260603-pwa"></script>
+</body>
+</html>

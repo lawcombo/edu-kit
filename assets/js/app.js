@@ -1592,6 +1592,10 @@ let currentIndex = 0;
             window.location.href = "palatalization.html";
         });
 
+        $("#btnLiquidizationType").on("click", function() {
+            window.location.href = "liquidization.html";
+        });
+
         $("#btnDoubleFinalType").on("click", function() {
             window.location.href = "double-final.html";
         });
