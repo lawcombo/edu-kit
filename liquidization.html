@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="assets/icons/icon-192.png">
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-    <link rel="stylesheet" href="assets/css/liquidization.css?v=20260611-liquidization">
+    <link rel="stylesheet" href="assets/css/liquidization.css?v=20260611-liquidization-result">
 </head>
 <body>
     <main>
@@ -87,23 +87,9 @@
                             <span id="ruleAfter">ㄹ + ㄹ</span>
                         </div>
 
-                        <div class="visual-area">
-                            <div class="syllable-wrap">
-                                <div class="syllable-label">앞말</div>
-                                <div class="syllable-card">
-                                    <div class="syllable-text" id="leftSyllable">신</div>
-                                </div>
-                            </div>
-
-                            <div class="arrow">→</div>
-
-                            <div class="syllable-wrap">
-                                <div class="syllable-label">소리</div>
-                                <div class="syllable-card">
-                                    <div class="syllable-text" id="rightSyllable">라</div>
-                                    <div class="changed-syllable" id="rightChanged">라</div>
-                                </div>
-                            </div>
+                        <div class="liquid-result-card" aria-label="유음화 소리 결과">
+                            <div class="liquid-result-label">소리로 말하면</div>
+                            <div class="liquid-result-word" id="resultWord" aria-live="polite"></div>
                         </div>
 
                         <div class="control-row practice-action-row">
@@ -116,7 +102,7 @@
         </section>
     </main>
 
-    <script src="assets/js/liquidization.js?v=20260611-liquidization"></script>
+    <script src="assets/js/liquidization.js?v=20260611-liquidization-result"></script>
     <script src="assets/js/pwa.js?v=20260603-pwa"></script>
 </body>
 </html>

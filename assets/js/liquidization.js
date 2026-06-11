@@ -15,18 +15,18 @@ function redirectRefreshToLearningType() {
 redirectRefreshToLearningType();
 
 const liquidizationExamples = [
-    { written: "신라", left: "신", right: "라", changed: "실라", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "난로", left: "난", right: "로", changed: "날로", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "천리", left: "천", right: "리", changed: "철리", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "분리", left: "분", right: "리", changed: "불리", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "논리", left: "논", right: "리", changed: "놀리", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "권력", left: "권", right: "력", changed: "궐력", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "연락", left: "연", right: "락", changed: "열락", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "전라도", left: "전", right: "라", changed: "절라도", ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "물난리", left: "물", right: "난리", changed: "물랄리", ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "칼날", left: "칼", right: "날", changed: "칼랄", ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "달나라", left: "달", right: "나라", changed: "달라라", ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "실내", left: "실", right: "내", changed: "실래", ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" }
+    { written: "신라", changed: "실라", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "난로", changed: "날로", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "천리", changed: "철리", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "분리", changed: "불리", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "논리", changed: "놀리", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "권력", changed: "궐력", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "연락", changed: "열락", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "전라도", changed: "절라도", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "물난리", changed: "물랄리", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "칼날", changed: "칼랄", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "달나라", changed: "달라라", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
+    { written: "실내", changed: "실래", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" }
 ];
 
 const $ = (selector) => document.querySelector(selector);
@@ -35,9 +35,7 @@ const infoScreen = $("#infoScreen");
 const practiceScreen = $("#practiceScreen");
 const exampleList = $("#exampleList");
 const writtenWord = $("#writtenWord");
-const leftSyllable = $("#leftSyllable");
-const rightSyllable = $("#rightSyllable");
-const rightChanged = $("#rightChanged");
+const resultWord = $("#resultWord");
 const ruleBefore = $("#ruleBefore");
 const ruleAfter = $("#ruleAfter");
 
@@ -54,14 +52,10 @@ function setActiveScreen(screenName) {
     practiceScreen.classList.toggle("active", screenName === "practice");
 }
 
-function setLongTextClass(element, text) {
-    element.classList.toggle("long-part", text.length > 1);
-}
-
 function resetAnimation() {
     clearAnimationTimers();
-    rightSyllable.classList.remove("hidden");
-    rightChanged.classList.remove("revealed");
+    resultWord.classList.remove("revealed");
+    resultWord.innerHTML = "";
 }
 
 function renderExampleList() {
@@ -87,14 +81,9 @@ function setExample(index) {
     const example = liquidizationExamples[currentIndex];
 
     writtenWord.textContent = example.written;
-    leftSyllable.textContent = example.left;
-    rightSyllable.textContent = example.right;
-    rightChanged.textContent = example.changed;
     ruleBefore.textContent = example.ruleBefore;
     ruleAfter.textContent = example.ruleAfter;
 
-    setLongTextClass(rightSyllable, example.right);
-    setLongTextClass(rightChanged, example.changed);
     resetAnimation();
     updateActiveExample();
 }
@@ -103,12 +92,14 @@ function playExample() {
     resetAnimation();
 
     animationTimers.push(setTimeout(() => {
-        rightSyllable.classList.add("hidden");
-    }, 140));
-
-    animationTimers.push(setTimeout(() => {
-        rightChanged.classList.add("revealed");
-    }, 360));
+        const example = liquidizationExamples[currentIndex];
+        const changedIndexes = new Set(example.changedIndexes || []);
+        resultWord.innerHTML = Array.from(example.changed).map((char, index) => {
+            const className = changedIndexes.has(index) ? " class=\"changed-letter\"" : "";
+            return `<span${className}>${char}</span>`;
+        }).join("");
+        resultWord.classList.add("revealed");
+    }, 180));
 }
 
 function goNextExample() {
