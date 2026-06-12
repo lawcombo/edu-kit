@@ -310,11 +310,13 @@ button {
 
 .demo-word,
 .demo-result {
-    min-width: 78px;
+    width: 132px;
+    min-width: 132px;
     min-height: 64px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
     border-radius: 18px;
     background: #ffffff;
     color: var(--ink);
@@ -337,7 +339,6 @@ button {
 }
 
 .demo-result {
-    min-width: 132px;
     color: var(--danger);
 }
 
@@ -1147,14 +1148,15 @@ body.capture-guard-active main {
 
     .demo-word,
     .demo-result {
-        min-width: 62px;
+        width: 106px;
+        min-width: 106px;
         min-height: 52px;
         border-radius: 15px;
         font-size: 27px;
     }
 
     .demo-result {
-        min-width: 106px;
+        color: var(--danger);
     }
 
     .intro-demo {
