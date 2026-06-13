@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260614-pwa-update-notice";
+const CACHE_NAME = "edu-kit-pwa-20260614-rainy-class-flow";
 
 const LOCAL_ASSETS = [
     "./",
