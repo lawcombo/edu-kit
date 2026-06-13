@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260613-category-labels";
+const CACHE_NAME = "edu-kit-pwa-20260613-hide-final-category";
 
 const LOCAL_ASSETS = [
     "./",
