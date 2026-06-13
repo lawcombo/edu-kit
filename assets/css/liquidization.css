@@ -1,7 +1,7 @@
-@import url("h-deletion.css?v=20260614-intro-rows");
+@import url("h-deletion.css?v=20260614-intro-examples");
 
 .liquid-intro-demo {
-    min-height: 170px;
+    min-height: clamp(150px, 22svh, 230px);
 }
 
 .liquid-demo-row {

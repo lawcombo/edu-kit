@@ -299,23 +299,27 @@ button {
 }
 
 .intro-demo {
-    width: min(100%, 760px);
+    width: 100%;
     min-height: clamp(150px, 22svh, 230px);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 12px;
     padding: 22px;
+    border: 2px solid rgba(239, 68, 68, 0.52);
     border-radius: 28px;
-    background: #fffaf5;
+    background: linear-gradient(180deg, #fffafa 0%, #fff7ed 100%);
 }
 
 .demo-row {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 13px;
+    width: 100%;
 }
 
 .demo-word,
