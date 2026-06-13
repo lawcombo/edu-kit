@@ -321,24 +321,25 @@ button {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 13px;
+    gap: 16px;
     width: 100%;
 }
 
 .demo-word,
 .demo-result {
-    width: 132px;
-    min-width: 132px;
-    min-height: 64px;
+    width: 158px;
+    min-width: 158px;
+    min-height: 78px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border-radius: 18px;
+    padding: 4px 12px;
+    border-radius: 22px;
     background: #ffffff;
     color: var(--ink);
     font-family: var(--font-practice);
-    font-size: 34px;
+    font-size: clamp(38px, 3.8vw, 48px);
     font-weight: 800;
     letter-spacing: 0;
     box-shadow: var(--shadow-sm);
@@ -347,7 +348,7 @@ button {
 .demo-plus,
 .demo-arrow {
     color: var(--accent);
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 800;
 }
 
@@ -1169,11 +1170,11 @@ body.capture-guard-active main {
 
     .demo-word,
     .demo-result {
-        width: 106px;
-        min-width: 106px;
-        min-height: 52px;
-        border-radius: 15px;
-        font-size: 27px;
+        width: 122px;
+        min-width: 122px;
+        min-height: 60px;
+        border-radius: 17px;
+        font-size: 31px;
     }
 
     .demo-result {

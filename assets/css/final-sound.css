@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260614-intro-demo-fill");
+@import url("h-deletion.css?v=20260614-large-demo-text");
 
 :root {
     --font-final-sound-glyph: "Nanum Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans CJK KR", "Noto Sans KR", "Droid Sans Fallback", "SamsungOneKorean", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
@@ -22,12 +22,12 @@
 }
 
 .intro-demo .demo-word {
-    width: 132px;
-    min-width: 132px;
-    min-height: 66px;
+    width: 158px;
+    min-width: 158px;
+    min-height: 78px;
     border: 2px solid rgba(251, 146, 60, 0.24);
-    border-radius: 18px;
-    font-size: 34px;
+    border-radius: 22px;
+    font-size: clamp(38px, 3.8vw, 48px);
     font-family: var(--font-practice);
 }
 
@@ -167,11 +167,11 @@
     }
 
     .intro-demo .demo-word {
-        width: 106px;
-        min-width: 106px;
-        min-height: 52px;
-        border-radius: 15px;
-        font-size: 27px;
+        width: 122px;
+        min-width: 122px;
+        min-height: 60px;
+        border-radius: 17px;
+        font-size: 31px;
     }
 
     .intro-demo .demo-plus {
@@ -285,10 +285,10 @@
     }
 
     .intro-demo .demo-word {
-        width: 96px;
-        min-width: 96px;
-        min-height: 48px;
-        font-size: 25px;
+        width: 108px;
+        min-width: 108px;
+        min-height: 54px;
+        font-size: 28px;
     }
 
     .final-demo-note {
