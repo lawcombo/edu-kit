@@ -2267,13 +2267,13 @@
             color: var(--ink);
             font-size: 24px;
             font-weight: 800;
-            line-height: 2;
+            line-height: 1.75;
             letter-spacing: 0;
             word-break: keep-all;
         }
 
         .long-text-paragraph {
-            margin: 0 0 20px;
+            margin: 0;
         }
 
         .long-text-paragraph:last-child {
@@ -2282,7 +2282,9 @@
 
         .long-text-sentence {
             display: block;
-            margin-bottom: 9px;
+            min-height: 42px;
+            margin-bottom: 10px;
+            line-height: 1.75;
             word-break: keep-all;
         }
 
@@ -2294,11 +2296,12 @@
             display: inline;
             border: 0;
             border-radius: 8px;
-            padding: 2px 3px;
+            padding: 0 3px;
             color: inherit;
             background: transparent;
             font: inherit;
-            line-height: inherit;
+            line-height: 1.75;
+            vertical-align: baseline;
             cursor: pointer;
             transition: background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
         }
