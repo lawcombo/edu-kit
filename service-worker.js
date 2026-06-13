@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260612-final-sound-note";
+const CACHE_NAME = "edu-kit-pwa-20260613-category-labels";
 
 const LOCAL_ASSETS = [
     "./",

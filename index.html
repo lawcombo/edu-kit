@@ -177,6 +177,20 @@
                 </div>
             </div>
 
+            <div class="category-card" id="btnParticleCategory">
+                <div>
+                    <div class="category-title">조사</div>
+                    <div class="category-desc">이/을/은/에/으로 조사 집중 연습</div>
+                </div>
+            </div>
+
+            <div class="category-card" id="btnEndingCategory">
+                <div>
+                    <div class="category-title">어미</div>
+                    <div class="category-desc">아요/어요/으면/으니까/으려고 어미 집중 연습</div>
+                </div>
+            </div>
+
             <div class="category-card" id="btnGrammarCategory">
                 <div>
                     <div class="category-title">문법형태소</div>
@@ -193,30 +207,15 @@
 
             <div class="category-card" id="btnLongTextCategory">
                 <div>
-                    <div class="category-title">장문</div>
-                    <div class="category-desc">긴 글을 읽으며 도달 시간 확인</div>
+                    <div class="category-title">문단글</div>
+                    <div class="category-desc">문단글을 읽으며 도달 시간 확인</div>
                 </div>
             </div>
-
 
             <div class="category-card" id="btnFinalCategory">
                 <div>
                     <div class="category-title">받침별 연습</div>
                     <div class="category-desc">어려운 받침만 골라 집중 연습</div>
-                </div>
-            </div>
-
-            <div class="category-card" id="btnParticleCategory">
-                <div>
-                    <div class="category-title">조사별 연습</div>
-                    <div class="category-desc">이/을/은/에/으로 조사 집중 연습</div>
-                </div>
-            </div>
-
-            <div class="category-card" id="btnEndingCategory">
-                <div>
-                    <div class="category-title">어미별 연습</div>
-                    <div class="category-desc">아요/어요/으면/으니까/으려고 어미 집중 연습</div>
                 </div>
             </div>
         </div>
@@ -241,7 +240,7 @@
 <section id="pageParticleCategory" class="page">
     <div class="container">
         <div class="top-nav">
-            <h2>조사별 연습 선택</h2>
+            <h2>조사 선택</h2>
             <div class="top-actions">
                 <button class="btn back-icon-btn" id="btnBackCategoryFromParticle" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
             </div>
@@ -256,7 +255,7 @@
 <section id="pageEndingCategory" class="page">
     <div class="container">
         <div class="top-nav">
-            <h2>어미별 연습 선택</h2>
+            <h2>어미 선택</h2>
             <div class="top-actions">
                 <button class="btn back-icon-btn" id="btnBackCategoryFromEnding" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
             </div>
@@ -437,18 +436,18 @@
 <section id="pageLongTextList" class="page">
     <div class="container">
         <div class="top-nav">
-            <h2>장문 연습 선택</h2>
+            <h2>문단글 연습 선택</h2>
             <div class="top-actions">
                 <button class="btn back-icon-btn" id="btnBackCategoryFromLongTextList" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
             </div>
         </div>
 
-        <div class="sub-title">읽기 흐름을 확인할 장문 주제를 선택하세요.</div>
+        <div class="sub-title">읽기 흐름을 확인할 문단글 주제를 선택하세요.</div>
         <div class="long-text-grid" id="longTextList"></div>
 
         <div class="final-page-guide">
             <strong>활용 흐름</strong><br>
-            장문 선택 → 시작 → 읽다가 목표 위치 터치 → 처음부터 터치한 위치까지 걸린 시간 확인 → 다시 터치해 이어 읽기 순서로 진행합니다.
+            문단글 선택 → 시작 → 읽다가 목표 위치 터치 → 처음부터 터치한 위치까지 걸린 시간 확인 → 다시 터치해 이어 읽기 순서로 진행합니다.
         </div>
     </div>
 </section>
@@ -456,7 +455,7 @@
 <section id="pageLongTextPractice" class="page">
     <div class="container">
         <div class="top-nav">
-            <h2 id="longTextPracticeHeading">장문 읽기 연습</h2>
+            <h2 id="longTextPracticeHeading">문단글 읽기 연습</h2>
             <div class="top-actions">
                 <button class="btn back-icon-btn" id="btnBackCategoryFromLongTextPractice" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
             </div>
@@ -479,10 +478,10 @@
 
         <div class="long-text-stage">
             <div class="sentence-badge-row">
-                <div class="sentence-badge" id="longTextLevelBadge">장문 단계</div>
+                <div class="sentence-badge" id="longTextLevelBadge">문단글 단계</div>
                 <div class="sentence-badge" id="longTextLengthBadge">0문단</div>
             </div>
-            <div class="long-text-title" id="longTextTitle">장문 제목</div>
+            <div class="long-text-title" id="longTextTitle">문단글 제목</div>
             <div class="long-text-body" id="longTextBody"></div>
         </div>
 
@@ -494,7 +493,7 @@
     </div>
 </section>
 
-<script src="assets/js/data.js?v=20260602-assets"></script>
+<script src="assets/js/data.js?v=20260613-category-labels"></script>
 <script src="assets/js/app.js?v=20260611-liquidization"></script>
 <script src="assets/js/pwa.js?v=20260603-pwa"></script>
 
