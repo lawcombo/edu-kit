@@ -252,6 +252,8 @@ button {
 .intro-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    flex: 1;
     gap: 18px;
     align-items: stretch;
     width: 100%;
@@ -300,7 +302,8 @@ button {
 
 .intro-demo {
     width: 100%;
-    min-height: clamp(150px, 22svh, 230px);
+    min-height: clamp(260px, 38svh, 480px);
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -361,8 +364,8 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
     width: 100%;
-    margin-top: auto;
-    padding-top: 20px;
+    margin-top: 16px;
+    padding-top: 0;
 }
 
 .step-card {
