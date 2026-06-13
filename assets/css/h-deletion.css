@@ -96,6 +96,11 @@ button {
     max-width: min(1560px, calc(100vw - 32px));
 }
 
+.intro-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .top-nav {
     position: relative;
     display: flex;
@@ -246,9 +251,10 @@ button {
 
 .intro-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 390px;
-    gap: 20px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
     align-items: stretch;
+    width: 100%;
 }
 
 .intro-copy,
@@ -266,11 +272,12 @@ button {
 }
 
 .intro-copy {
-    min-height: 240px;
+    width: 100%;
+    min-height: clamp(118px, 16svh, 170px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 24px;
+    padding: clamp(20px, 2.5vw, 30px);
     border-radius: 28px;
 }
 
@@ -292,7 +299,9 @@ button {
 }
 
 .intro-demo {
-    min-height: 240px;
+    width: min(100%, 760px);
+    min-height: clamp(150px, 22svh, 230px);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,7 +356,9 @@ button {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
-    margin-top: 18px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .step-card {
