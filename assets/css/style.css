@@ -62,7 +62,7 @@
             display: none;
             min-height: 100vh;
             min-height: 100svh;
-            padding: 42px 20px;
+            padding: 16px;
         }
 
         .page.active {
@@ -74,8 +74,9 @@
         .container {
             position: relative;
             width: 100%;
-            max-width: 1120px;
-            padding: 44px;
+            max-width: min(1560px, calc(100vw - 32px));
+            min-height: calc(100svh - 32px);
+            padding: clamp(28px, 3vw, 48px);
             text-align: center;
             background: rgba(255, 255, 255, 0.88);
             border: 1px solid rgba(255, 255, 255, 0.78);
@@ -1077,11 +1078,12 @@
 
         @media (max-width: 1024px) {
             .page {
-                padding: 26px 14px;
+                padding: 14px;
             }
 
             .container {
-                max-width: 960px;
+                max-width: none;
+                min-height: calc(100svh - 28px);
                 padding: 32px;
             }
 
@@ -1116,6 +1118,7 @@
             .container {
                 width: 100%;
                 max-width: none;
+                min-height: auto;
                 padding: 24px 16px;
                 border-radius: 26px;
                 box-shadow: 0 14px 34px rgba(15, 23, 42, 0.09);
