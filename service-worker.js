@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260614-hide-long-text-labels";
+const CACHE_NAME = "edu-kit-pwa-20260614-rainy-class-intro-flow";
 
 const LOCAL_ASSETS = [
     "./",
