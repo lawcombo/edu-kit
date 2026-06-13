@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260614-long-text-even-lines";
+const CACHE_NAME = "edu-kit-pwa-20260614-pwa-update-notice";
 
 const LOCAL_ASSETS = [
     "./",
@@ -41,7 +41,6 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => Promise.allSettled(LOCAL_ASSETS.map((asset) => cache.add(asset))))
-            .then(() => self.skipWaiting())
     );
 });
 
@@ -53,6 +52,12 @@ self.addEventListener("activate", (event) => {
                 .map((key) => caches.delete(key))))
             .then(() => self.clients.claim())
     );
+});
+
+self.addEventListener("message", (event) => {
+    if (event.data?.type === "SKIP_WAITING") {
+        self.skipWaiting();
+    }
 });
 
 self.addEventListener("fetch", (event) => {
