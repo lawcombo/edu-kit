@@ -2282,8 +2282,8 @@
 
         .long-text-sentence {
             display: block;
-            min-height: 42px;
-            margin-bottom: 10px;
+            min-height: 1.75em;
+            margin: 0;
             line-height: 1.75;
             word-break: keep-all;
         }
@@ -2300,7 +2300,7 @@
             color: inherit;
             background: transparent;
             font: inherit;
-            line-height: 1.75;
+            line-height: inherit;
             vertical-align: baseline;
             cursor: pointer;
             transition: background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
