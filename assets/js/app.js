@@ -1322,10 +1322,23 @@ let currentIndex = 0;
         }).join("");
     }
 
+    function splitLongTextSentences(paragraph) {
+        const matches = paragraph.match(/[^.!?。！？]+[.!?。！？]+|[^.!?。！？]+$/g);
+        return (matches || [paragraph])
+            .map(function(sentence) {
+                return sentence.trim();
+            })
+            .filter(Boolean);
+    }
+
     function renderLongTextBody(item) {
         const tokenState = { index: 0 };
         const html = item.paragraphs.map(function(paragraph) {
-            return `<p class="long-text-paragraph">${buildLongTextParagraphHtml(paragraph, tokenState)}</p>`;
+            const sentenceHtml = splitLongTextSentences(paragraph).map(function(sentence) {
+                return `<div class="long-text-sentence">${buildLongTextParagraphHtml(sentence, tokenState)}</div>`;
+            }).join("");
+
+            return `<div class="long-text-paragraph">${sentenceHtml}</div>`;
         }).join("");
 
         $("#longTextBody").html(html);

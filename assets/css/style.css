@@ -2280,6 +2280,16 @@
             margin-bottom: 0;
         }
 
+        .long-text-sentence {
+            display: block;
+            margin-bottom: 9px;
+            word-break: keep-all;
+        }
+
+        .long-text-sentence:last-child {
+            margin-bottom: 0;
+        }
+
         .long-text-token {
             display: inline;
             border: 0;
