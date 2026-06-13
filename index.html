@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=20260611-compact-intros">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260613-phonology-order">
 </head>
 
 <body>
@@ -71,22 +71,16 @@
         <div class="sub-title">학습할 음운변동 유형을 선택하세요.</div>
 
         <div class="category-grid phonology-type-grid">
-            <div class="category-card phonology-type-card" id="btnFinalSoundType">
-                <div>
-                    <div class="category-title">끝소리 규칙</div>
-                    <div class="category-desc">받침이 7가지 소리로 정리되는 규칙</div>
-                </div>
-            </div>
-            <div class="category-card phonology-type-card" id="btnDoubleFinalType">
-                <div>
-                    <div class="category-title">겹받침 규칙</div>
-                    <div class="category-desc">겹받침 중 하나가 남고 뒤 소리가 바뀌는 현상</div>
-                </div>
-            </div>
             <div class="category-card phonology-type-card" id="btnLiaisonType">
                 <div>
                     <div class="category-title">연음화</div>
                     <div class="category-desc">받침이 뒤 모음으로 이어지는 현상</div>
+                </div>
+            </div>
+            <div class="category-card phonology-type-card" id="btnAspirationType">
+                <div>
+                    <div class="category-title">격음화</div>
+                    <div class="category-desc">ㅎ을 만나 거센소리로 바뀌는 현상</div>
                 </div>
             </div>
             <div class="category-card phonology-type-card" id="btnHDeletionType">
@@ -97,7 +91,7 @@
             </div>
             <div class="category-card phonology-type-card" id="btnTensingType">
                 <div>
-                    <div class="category-title">된소리화</div>
+                    <div class="category-title">경음화</div>
                     <div class="category-desc">예사소리가 된소리로 바뀌는 현상</div>
                 </div>
             </div>
@@ -107,16 +101,22 @@
                     <div class="category-desc">받침이 ㄴ, ㅁ 앞에서 콧소리로 바뀌는 현상</div>
                 </div>
             </div>
-            <div class="category-card phonology-type-card" id="btnAspirationType">
-                <div>
-                    <div class="category-title">기식음화</div>
-                    <div class="category-desc">ㅎ을 만나 거센소리로 바뀌는 현상</div>
-                </div>
-            </div>
             <div class="category-card phonology-type-card" id="btnPalatalizationType">
                 <div>
                     <div class="category-title">구개음화</div>
                     <div class="category-desc">ㄷ, ㅌ 소리가 이/히를 만나 ㅈ, ㅊ처럼 바뀌는 현상</div>
+                </div>
+            </div>
+            <div class="category-card phonology-type-card" id="btnFinalSoundType">
+                <div>
+                    <div class="category-title">끝소리 규칙</div>
+                    <div class="category-desc">받침이 7가지 소리로 정리되는 규칙</div>
+                </div>
+            </div>
+            <div class="category-card phonology-type-card" id="btnDoubleFinalType">
+                <div>
+                    <div class="category-title">겹받침 규칙</div>
+                    <div class="category-desc">겹받침 중 하나가 남고 뒤 소리가 바뀌는 현상</div>
                 </div>
             </div>
             <div class="category-card phonology-type-card" id="btnLiquidizationType">
@@ -212,7 +212,7 @@
                 </div>
             </div>
 
-            <div class="category-card" id="btnFinalCategory" hidden>
+            <div class="category-card is-hidden" id="btnFinalCategory" hidden aria-hidden="true">
                 <div>
                     <div class="category-title">받침별 연습</div>
                     <div class="category-desc">어려운 받침만 골라 집중 연습</div>
@@ -493,7 +493,7 @@
     </div>
 </section>
 
-<script src="assets/js/data.js?v=20260613-hide-final-category"></script>
+<script src="assets/js/data.js?v=20260613-phonology-order"></script>
 <script src="assets/js/app.js?v=20260611-liquidization"></script>
 <script src="assets/js/pwa.js?v=20260603-pwa"></script>
 

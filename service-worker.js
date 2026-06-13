@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260613-hide-final-category";
+const CACHE_NAME = "edu-kit-pwa-20260613-phonology-order";
 
 const LOCAL_ASSETS = [
     "./",

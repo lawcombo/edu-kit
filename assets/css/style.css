@@ -412,6 +412,10 @@
             opacity: 0;
         }
 
+        .category-card.is-hidden {
+            display: none !important;
+        }
+
         .category-icon {
             width: 76px;
             height: 76px;
