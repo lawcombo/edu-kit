@@ -1292,18 +1292,10 @@ let currentIndex = 0;
         $list.empty();
 
         longTextData.forEach(function(item, index) {
-            const paragraphCount = item.paragraphs.length;
-            const wordCount = item.paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
-
             $list.append(`
                 <button class="long-text-card" type="button" data-long-text-index="${index}">
                     <div class="long-text-card-title">${item.title}</div>
                     <div class="long-text-card-desc">${item.guide}</div>
-                    <div class="long-text-card-meta">
-                        <span class="final-chip">${item.level}</span>
-                        <span class="final-chip">${paragraphCount}문단</span>
-                        <span class="final-chip">약 ${wordCount}어절</span>
-                    </div>
                 </button>
             `);
         });
@@ -1408,8 +1400,6 @@ let currentIndex = 0;
         $("#longTextPracticeHeading").text(item.title + " 읽기 연습");
         $("#longTextTitle").text(item.title);
         $("#longTextGuide").text(item.guide);
-        $("#longTextLevelBadge").text(item.level);
-        $("#longTextLengthBadge").text(item.paragraphs.length + "문단");
         $("#longTextCheckpoint").text("-");
         $("#btnLongTextStart").text("시작");
         setLongTextStatus("대기");

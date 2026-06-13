@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260614-fuller-layout";
+const CACHE_NAME = "edu-kit-pwa-20260614-hide-long-text-labels";
 
 const LOCAL_ASSETS = [
     "./",
