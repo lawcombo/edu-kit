@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260614-single-demo";
+const CACHE_NAME = "edu-kit-pwa-20260614-demo-result-width";
 
 const LOCAL_ASSETS = [
     "./",

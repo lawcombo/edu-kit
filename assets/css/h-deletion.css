@@ -357,7 +357,10 @@ button {
 }
 
 .demo-result {
+    width: 190px;
+    min-width: 190px;
     color: var(--danger);
+    white-space: nowrap;
 }
 
 .info-steps {
@@ -1178,6 +1181,8 @@ body.capture-guard-active main {
     }
 
     .demo-result {
+        width: 148px;
+        min-width: 148px;
         color: var(--danger);
     }
 
