@@ -1703,6 +1703,139 @@ body.capture-guard-active main {
     }
 }
 
+.top-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 14px;
+    min-height: 56px;
+    margin-bottom: clamp(16px, 2.3vh, 24px);
+    padding: 0;
+}
+
+.top-nav h2,
+.lesson-header h1 {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0 64px;
+    color: var(--ink);
+    font-family: var(--font-heading);
+    font-size: clamp(17px, 2vw, 21px);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.top-nav h2 {
+    grid-column: 2;
+}
+
+.top-nav h2::before,
+.lesson-header h1::before {
+    content: "";
+    position: static;
+    flex: 0 0 auto;
+    width: 8px;
+    height: 28px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+}
+
+.lesson-header {
+    max-width: none;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto clamp(16px, 2.3vh, 24px);
+    padding: 0;
+}
+
+.back-btn,
+.top-nav .back-icon-btn {
+    width: 52px;
+    min-width: 52px;
+    height: 52px;
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #dbeafe;
+    border-radius: 17px;
+    color: var(--primary-dark);
+    background: linear-gradient(180deg, #ffffff, var(--primary-soft));
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.14);
+}
+
+.back-btn {
+    left: 28px;
+    top: 28px;
+    font-size: 28px;
+}
+
+.top-nav .back-icon-btn {
+    left: 0;
+}
+
+.top-nav .back-icon-btn span {
+    font-size: 27px;
+}
+
+.back-btn:hover,
+.top-nav .back-icon-btn:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary), #3b82f6);
+}
+
+.list-toggle {
+    right: 0;
+}
+
+@media (max-width: 860px) {
+    .top-nav,
+    .lesson-header {
+        min-height: 58px;
+    }
+
+    .top-nav h2,
+    .lesson-header h1 {
+        min-height: 40px;
+        padding: 0 52px;
+        font-size: clamp(16px, 4.7vw, 18px);
+    }
+
+    .top-nav h2::before,
+    .lesson-header h1::before {
+        width: 7px;
+        height: 24px;
+    }
+
+    .back-btn,
+    .top-nav .back-icon-btn {
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        min-height: 44px;
+        border-radius: 14px;
+    }
+
+    .back-btn {
+        left: 14px;
+        top: 14px;
+        font-size: 24px;
+    }
+
+    .top-nav .back-icon-btn span {
+        font-size: 24px;
+    }
+}
+
 @media print {
     body * {
         visibility: hidden !important;

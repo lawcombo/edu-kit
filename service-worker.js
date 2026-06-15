@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260615-phonology-grid-height";
+const CACHE_NAME = "edu-kit-pwa-20260615-unified-headers";
 
 const LOCAL_ASSETS = [
     "./",
