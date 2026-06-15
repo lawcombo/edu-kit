@@ -2,9 +2,9 @@
 
 .sound-rule {
     width: min(100%, 520px);
-    min-height: 78px;
-    margin: 18px auto 20px;
-    padding: 12px 18px;
+    min-height: 58px;
+    margin: 0 auto;
+    padding: 8px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +20,21 @@
     line-height: 1.1;
     text-align: center;
     word-break: keep-all;
+}
+
+#palatalizationPracticeLayout .practice-panel {
+    gap: clamp(10px, 1.8vh, 16px);
+    padding: clamp(18px, min(2.2vw, 2.8vh), 26px);
+}
+
+#palatalizationPracticeLayout .practice-word-card {
+    min-height: clamp(132px, 18svh, 168px);
+}
+
+#palatalizationPracticeLayout .visual-area {
+    min-height: clamp(240px, 34svh, 300px);
+    padding-top: clamp(34px, 5vh, 44px);
+    padding-bottom: clamp(22px, 3.8vh, 32px);
 }
 
 .sound-rule span:first-child {
@@ -74,12 +89,28 @@
 
 @media (max-width: 860px) {
     .sound-rule {
-        min-height: 64px;
-        margin: 12px auto 14px;
-        padding: 10px 12px;
+        min-height: 48px;
+        margin: 0 auto;
+        padding: 7px 10px;
         gap: 10px;
         border-radius: 18px;
         font-size: clamp(22px, 6.5vw, 30px);
+    }
+
+    #palatalizationPracticeLayout .practice-panel {
+        gap: 10px;
+        padding: 14px 10px;
+    }
+
+    #palatalizationPracticeLayout .practice-word-card {
+        min-height: 108px;
+        padding: 16px 12px;
+    }
+
+    #palatalizationPracticeLayout .visual-area {
+        min-height: 192px;
+        padding-top: 32px;
+        padding-bottom: 16px;
     }
 
     .sound-rule .rule-arrow {
@@ -108,5 +139,11 @@
     .sound-rule .rule-arrow {
         width: 32px;
         height: 32px;
+    }
+
+    #palatalizationPracticeLayout .visual-area {
+        min-height: 182px;
+        padding-top: 30px;
+        padding-bottom: 14px;
     }
 }
