@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260615-pwa-floating-notice";
+const CACHE_NAME = "edu-kit-pwa-20260615-phonology-grid-height";
 
 const LOCAL_ASSETS = [
     "./",

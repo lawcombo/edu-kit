@@ -2972,6 +2972,123 @@
             }
         }
 
+        #pagePhonologyType.page {
+            height: 100svh;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        #pagePhonologyType.page.active {
+            align-items: stretch;
+        }
+
+        #pagePhonologyType .container {
+            height: 100%;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #pagePhonologyType .top-nav,
+        #pagePhonologyType .sub-title {
+            flex: 0 0 auto;
+        }
+
+        #pagePhonologyType .sub-title {
+            margin-bottom: 0;
+        }
+
+        #pagePhonologyType .phonology-type-grid {
+            flex: 1 1 auto;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: repeat(3, minmax(0, 1fr));
+            gap: clamp(8px, 1.5vh, 18px);
+            margin-top: clamp(12px, 2vh, 24px);
+        }
+
+        #pagePhonologyType .phonology-type-card {
+            min-height: 0;
+            height: 100%;
+            padding: clamp(10px, min(2vw, 2vh), 18px);
+            border-radius: clamp(18px, 2.8vw, 28px);
+        }
+
+        #pagePhonologyType .phonology-type-card .category-title {
+            font-size: clamp(18px, 2.1vw, 24px);
+            line-height: 1.16;
+        }
+
+        #pagePhonologyType .phonology-type-card .category-desc {
+            margin-top: 8px;
+            font-size: clamp(12px, 1.25vw, 15px);
+            line-height: 1.35;
+        }
+
+        @media (max-width: 820px) {
+            #pagePhonologyType .container {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            #pagePhonologyType .top-nav {
+                margin-bottom: 8px;
+            }
+
+            #pagePhonologyType .sub-title {
+                font-size: 13px;
+                line-height: 1.25;
+            }
+
+            #pagePhonologyType .phonology-type-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            #pagePhonologyType .phonology-type-card {
+                flex-direction: column;
+                justify-content: center;
+                gap: 0;
+                padding: 9px 6px;
+                text-align: center;
+            }
+
+            #pagePhonologyType .phonology-type-card .category-title {
+                font-size: clamp(14px, 4vw, 18px);
+            }
+
+            #pagePhonologyType .phonology-type-card .category-desc {
+                margin-top: 5px;
+                font-size: clamp(10px, 2.7vw, 12px);
+                line-height: 1.25;
+            }
+        }
+
+        @media (max-width: 820px) and (max-height: 700px) {
+            #pagePhonologyType .sub-title,
+            #pagePhonologyType .phonology-type-card .category-desc {
+                display: none;
+            }
+
+            #pagePhonologyType .phonology-type-grid {
+                margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            #pagePhonologyType .phonology-type-grid {
+                gap: 7px;
+            }
+
+            #pagePhonologyType .phonology-type-card {
+                padding: 8px 4px;
+                border-radius: 16px;
+            }
+        }
+
 
         @media print {
             body * {
