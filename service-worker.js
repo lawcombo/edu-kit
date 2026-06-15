@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260615-info-back-position";
+const CACHE_NAME = "edu-kit-pwa-20260615-info-header-align";
 
 const LOCAL_ASSETS = [
     "./",

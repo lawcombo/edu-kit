@@ -3141,8 +3141,8 @@
         }
 
         #pageInfo .back-btn {
-            left: 0;
-            top: 0;
+            left: clamp(22px, min(3vw, 4.2vh), 48px);
+            top: clamp(22px, min(3vw, 4.2vh), 48px);
             font-size: 28px;
         }
 
@@ -3195,8 +3195,8 @@
             }
 
             #pageInfo .back-btn {
-                left: 0;
-                top: 0;
+                left: 12px;
+                top: 12px;
                 font-size: 24px;
             }
 
