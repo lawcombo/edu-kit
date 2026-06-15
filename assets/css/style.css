@@ -455,7 +455,7 @@
         .pwa-update-notice {
             position: fixed;
             left: 50%;
-            bottom: 18px;
+            bottom: max(18px, env(safe-area-inset-bottom));
             z-index: 9999;
             width: min(calc(100% - 28px), 520px);
             padding: 14px;
