@@ -1340,6 +1340,251 @@ body.capture-guard-active main {
     }
 }
 
+@media (min-width: 861px) and (max-height: 760px) {
+    .intro-container {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .intro-container .lesson-header {
+        min-height: 46px;
+        margin-bottom: 10px;
+    }
+
+    .intro-container .lesson-header h1,
+    .intro-container .top-nav h2 {
+        font-size: 20px;
+    }
+
+    .intro-container .intro-layout {
+        gap: 10px;
+    }
+
+    .intro-container .intro-copy {
+        min-height: 84px;
+        padding: 14px 18px;
+        border-radius: 22px;
+    }
+
+    .intro-container .eyebrow {
+        margin-bottom: 7px;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .intro-container .intro-copy h2 {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .intro-container .intro-demo {
+        min-height: clamp(130px, 25svh, 210px);
+        padding: 14px;
+        gap: 8px;
+        border-radius: 22px;
+    }
+
+    .intro-container .demo-row {
+        gap: 10px;
+    }
+
+    .intro-container .demo-word,
+    .intro-container .demo-result {
+        width: 132px;
+        min-width: 132px;
+        min-height: 60px;
+        border-radius: 18px;
+        font-size: 34px;
+    }
+
+    .intro-container .demo-result {
+        width: 158px;
+        min-width: 158px;
+    }
+
+    .intro-container .demo-plus,
+    .intro-container .demo-arrow {
+        font-size: 27px;
+    }
+
+    .intro-container .info-steps {
+        gap: 9px;
+        margin-top: 9px;
+    }
+
+    .intro-container .step-card {
+        min-height: 84px;
+        padding: 11px;
+        border-radius: 18px;
+    }
+
+    .intro-container .step-card span {
+        width: 27px;
+        height: 27px;
+        margin-bottom: 5px;
+    }
+
+    .intro-container .step-card strong {
+        font-size: 17px;
+    }
+
+    .intro-container .step-card p {
+        margin-top: 3px;
+        font-size: 13px;
+        line-height: 1.25;
+    }
+
+    .intro-container .primary-btn {
+        height: 50px;
+        border-radius: 16px;
+        font-size: 18px;
+    }
+
+    .intro-container .primary-btn.wide {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 861px) and (max-height: 660px) {
+    .intro-container {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .intro-container .lesson-header {
+        min-height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .intro-container .intro-copy {
+        min-height: 70px;
+        padding: 10px 14px;
+    }
+
+    .intro-container .intro-demo {
+        min-height: clamp(108px, 21svh, 156px);
+    }
+
+    .intro-container .demo-word,
+    .intro-container .demo-result {
+        min-height: 52px;
+        font-size: 30px;
+    }
+
+    .intro-container .step-card {
+        min-height: 64px;
+        padding: 9px;
+    }
+
+    .intro-container .step-card p {
+        display: none;
+    }
+
+    .intro-container .primary-btn {
+        height: 46px;
+    }
+}
+
+@media (max-width: 860px) and (max-height: 760px) {
+    .screen {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .container.intro-container {
+        padding-top: 14px;
+        padding-bottom: 12px;
+    }
+
+    .intro-container .lesson-header {
+        min-height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .intro-container .lesson-header h1 {
+        font-size: 18px;
+    }
+
+    .intro-container .intro-layout {
+        gap: 8px;
+    }
+
+    .intro-container .intro-copy {
+        min-height: 76px;
+        padding: 10px;
+    }
+
+    .intro-container .eyebrow {
+        margin-bottom: 5px;
+        padding: 4px 9px;
+        font-size: 12px;
+    }
+
+    .intro-container .intro-copy h2 {
+        font-size: 17px;
+        line-height: 1.16;
+    }
+
+    .intro-container .intro-demo {
+        min-height: 126px;
+        padding: 10px 8px;
+    }
+
+    .intro-container .demo-row {
+        gap: 7px;
+    }
+
+    .intro-container .demo-word,
+    .intro-container .demo-result {
+        width: 104px;
+        min-width: 104px;
+        min-height: 50px;
+        font-size: 27px;
+    }
+
+    .intro-container .demo-result {
+        width: 122px;
+        min-width: 122px;
+    }
+
+    .intro-container .demo-plus,
+    .intro-container .demo-arrow {
+        font-size: 23px;
+    }
+
+    .intro-container .info-steps {
+        gap: 7px;
+        margin-top: 8px;
+    }
+
+    .intro-container .step-card {
+        padding: 9px;
+    }
+
+    .intro-container .step-card span {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 4px;
+    }
+
+    .intro-container .step-card strong {
+        font-size: 15px;
+    }
+
+    .intro-container .step-card p {
+        display: none;
+    }
+
+    .intro-container .primary-btn {
+        height: 46px;
+        font-size: 16px;
+    }
+
+    .intro-container .primary-btn.wide {
+        margin-top: 8px;
+    }
+}
+
 @media print {
     body * {
         visibility: hidden !important;
