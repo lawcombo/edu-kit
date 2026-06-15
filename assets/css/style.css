@@ -3146,6 +3146,17 @@
             font-size: 28px;
         }
 
+        .top-nav .back-icon-btn {
+            left: 0;
+            top: 0;
+            transform: none;
+        }
+
+        .container > .top-nav .back-icon-btn {
+            left: 0;
+            top: 0;
+        }
+
         .top-nav .back-icon-btn span {
             font-size: 27px;
         }
@@ -3187,6 +3198,13 @@
                 left: 14px;
                 top: 14px;
                 font-size: 24px;
+            }
+
+            .top-nav .back-icon-btn,
+            .container > .top-nav .back-icon-btn {
+                left: 0;
+                top: 0;
+                transform: none;
             }
 
             .top-nav .back-icon-btn span {
