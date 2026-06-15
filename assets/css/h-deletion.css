@@ -1773,9 +1773,9 @@ body.capture-guard-active main {
     box-shadow: 0 12px 24px rgba(37, 99, 235, 0.14);
 }
 
-.back-btn {
-    left: 28px;
-    top: 28px;
+#infoScreen .back-btn {
+    left: 0;
+    top: 0;
     font-size: 28px;
 }
 
@@ -1827,9 +1827,9 @@ body.capture-guard-active main {
         border-radius: 14px;
     }
 
-    .back-btn {
-        left: 14px;
-        top: 14px;
+    #infoScreen .back-btn {
+        left: 0;
+        top: 0;
         font-size: 24px;
     }
 
