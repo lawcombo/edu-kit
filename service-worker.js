@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260615-double-final-header";
+const CACHE_NAME = "edu-kit-pwa-20260616-tts-all";
 
 const LOCAL_ASSETS = [
     "./",
@@ -23,6 +23,7 @@ const LOCAL_ASSETS = [
     "./assets/css/final-sound.css",
     "./assets/js/app.js",
     "./assets/js/data.js",
+    "./assets/js/tts.js",
     "./assets/js/h-deletion.js",
     "./assets/js/tensing.js",
     "./assets/js/nasalization.js",

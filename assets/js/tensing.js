@@ -76,6 +76,7 @@ function setLongTextClass(element, text) {
 
 function resetAnimation() {
     clearAnimationTimers();
+    if (window.eduKitCancelSpeech) window.eduKitCancelSpeech();
     rightSyllable.classList.remove("hidden");
     rightChanged.classList.remove("revealed");
 }
@@ -115,13 +116,16 @@ function setExample(index) {
 
 function playExample() {
     resetAnimation();
+    if (window.eduKitPrimeSpeechSynthesis) window.eduKitPrimeSpeechSynthesis();
 
     animationTimers.push(setTimeout(() => {
         rightSyllable.classList.add("hidden");
     }, 140));
 
     animationTimers.push(setTimeout(() => {
+        const example = tensingExamples[currentIndex];
         rightChanged.classList.add("revealed");
+        if (window.eduKitSpeakText) window.eduKitSpeakText(example.left + example.changed);
     }, 360));
 }
 

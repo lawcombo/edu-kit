@@ -54,6 +54,7 @@ function setActiveScreen(screenName) {
 
 function resetAnimation() {
     clearAnimationTimers();
+    if (window.eduKitCancelSpeech) window.eduKitCancelSpeech();
     resultWord.classList.remove("revealed");
     resultWord.innerHTML = "";
 }
@@ -90,6 +91,7 @@ function setExample(index) {
 
 function playExample() {
     resetAnimation();
+    if (window.eduKitPrimeSpeechSynthesis) window.eduKitPrimeSpeechSynthesis();
 
     animationTimers.push(setTimeout(() => {
         const example = liquidizationExamples[currentIndex];
@@ -99,6 +101,7 @@ function playExample() {
             return `<span${className}>${char}</span>`;
         }).join("");
         resultWord.classList.add("revealed");
+        if (window.eduKitSpeakText) window.eduKitSpeakText(example.changed);
     }, 180));
 }
 
