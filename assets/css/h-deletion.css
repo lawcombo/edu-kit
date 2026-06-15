@@ -92,6 +92,32 @@ button {
     background: linear-gradient(90deg, var(--primary), #7c3aed, var(--accent));
 }
 
+@media (min-width: 861px) {
+    .screen {
+        padding: clamp(8px, 1.4vh, 16px) clamp(10px, 1.2vw, 16px);
+    }
+
+    .container {
+        max-width: min(1560px, calc(100vw - 20px));
+        min-height: calc(100svh - clamp(16px, 2.8vh, 32px));
+        padding: clamp(22px, min(3vw, 4.2vh), 48px);
+    }
+}
+
+@media (min-width: 861px) and (max-height: 760px) {
+    .top-nav {
+        margin-bottom: 18px;
+    }
+
+    .intro-container .lesson-intro {
+        gap: 18px;
+    }
+
+    .practice-layout {
+        gap: 18px;
+    }
+}
+
 .practice-container {
     max-width: min(1560px, calc(100vw - 32px));
 }

@@ -96,6 +96,41 @@
             background: linear-gradient(90deg, var(--primary), #7c3aed, var(--accent));
         }
 
+        @media (min-width: 821px) {
+            .page {
+                padding: clamp(8px, 1.4vh, 16px) clamp(10px, 1.2vw, 16px);
+            }
+
+            .container {
+                max-width: min(1560px, calc(100vw - 20px));
+                min-height: calc(100svh - clamp(16px, 2.8vh, 32px));
+                padding: clamp(22px, min(3vw, 4.2vh), 48px);
+            }
+        }
+
+        @media (min-width: 821px) and (max-height: 760px) {
+            .main-title {
+                margin-bottom: 10px;
+            }
+
+            .main-title::after {
+                margin-top: 12px;
+            }
+
+            .sub-title {
+                margin-bottom: 22px;
+                line-height: 1.55;
+            }
+
+            .top-nav {
+                margin-bottom: 18px;
+            }
+
+            .practice-layout {
+                gap: 18px;
+            }
+        }
+
         .main-title {
             margin: 0 0 14px;
             font-family: var(--font-heading);
