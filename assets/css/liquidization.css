@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260615-intro-no-scroll");
+@import url("h-deletion.css?v=20260615-dynamic-info-height");
 
 .liquid-intro-demo {
     min-height: clamp(260px, 38svh, 480px);

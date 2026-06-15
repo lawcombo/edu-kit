@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260615-intro-no-scroll";
+const CACHE_NAME = "edu-kit-pwa-20260615-dynamic-info-height";
 
 const LOCAL_ASSETS = [
     "./",
