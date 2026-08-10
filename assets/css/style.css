@@ -13,9 +13,9 @@
             --shadow-md: 0 18px 45px rgba(15, 23, 42, 0.10);
             --shadow-lg: 0 28px 80px rgba(15, 23, 42, 0.14);
             --radius-lg: 32px;
-            --font-heading: "Nanum Gothic", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
-            --font-body: "Nanum Gothic", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
-            --font-practice: "Nanum Gothic", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
+            --font-heading: "Nanum Gothic", "Malgun Gothic", "맑�? 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
+            --font-body: "Nanum Gothic", "Malgun Gothic", "맑�? 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
+            --font-practice: "Nanum Gothic", "Malgun Gothic", "맑�? 고딕", "Apple SD Gothic Neo", Arial, sans-serif;
         }
 
         * {
@@ -1414,7 +1414,7 @@
             }
 
             .word-list h3::after {
-                content: "위아래로 스크롤";
+                content: "?�아?�로 ?�크�?;
                 display: inline-flex;
                 align-items: center;
                 height: 24px;
@@ -1869,7 +1869,7 @@
         }
 
 
-        /* 받침별 연습 선택 화면 */
+        /* 받침�??�습 ?�택 ?�면 */
         .final-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2003,7 +2003,7 @@
         }
 
 
-        /* 문장 단계 학습 화면 */
+        /* 문장 ?�계 ?�습 ?�면 */
         #sentenceList::-webkit-scrollbar {
             width: 6px;
         }
@@ -2587,7 +2587,7 @@
 
 
 
-        /* 화면 캡처 억제용 공통 스타일 */
+        /* ?�면 캡처 ?�제??공통 ?��???*/
         html.capture-guard-active,
         body.capture-guard-active {
             overflow: hidden !important;
@@ -3285,47 +3285,47 @@
             margin-right: auto;
         }
 
-        #pageGrammarPractice:not(.is-particle-practice) #btnGrammarPrev {
+        #pageGrammarPractice:not(.is-selected-grammar-practice) #btnGrammarPrev {
             display: none;
         }
 
-        #pageGrammarPractice.is-particle-practice .practice-panel {
+        #pageGrammarPractice.is-selected-grammar-practice .practice-panel {
             gap: clamp(14px, 2.1vh, 22px);
             padding-bottom: clamp(20px, 2.8vh, 28px);
         }
 
-        #pageGrammarPractice.is-particle-practice .visual-area {
+        #pageGrammarPractice.is-selected-grammar-practice .visual-area {
             min-height: clamp(320px, 42svh, 440px);
             align-items: stretch;
             padding: clamp(48px, 6svh, 64px) clamp(24px, 3vw, 38px) clamp(20px, 3svh, 30px);
             overflow: hidden;
         }
 
-        #pageGrammarPractice.is-particle-practice .syllable-wrap {
+        #pageGrammarPractice.is-selected-grammar-practice .syllable-wrap {
             display: flex;
             align-items: stretch;
         }
 
-        #pageGrammarPractice.is-particle-practice .syllable-card {
+        #pageGrammarPractice.is-selected-grammar-practice .syllable-card {
             width: clamp(220px, 18vw, 280px);
             height: auto;
             min-height: clamp(236px, 34svh, 330px);
         }
 
-        #pageGrammarPractice.is-particle-practice .syllable-text,
-        #pageGrammarPractice.is-particle-practice .left-base-text,
-        #pageGrammarPractice.is-particle-practice .right-changed-text {
+        #pageGrammarPractice.is-selected-grammar-practice .syllable-text,
+        #pageGrammarPractice.is-selected-grammar-practice .left-base-text,
+        #pageGrammarPractice.is-selected-grammar-practice .right-changed-text {
             top: clamp(68px, 9svh, 104px);
             font-size: clamp(96px, 8vw, 128px);
         }
 
-        #pageGrammarPractice.is-particle-practice .final-marker {
+        #pageGrammarPractice.is-selected-grammar-practice .final-marker {
             bottom: clamp(44px, 6svh, 70px);
         }
 
-        #pageGrammarPractice.is-particle-practice .final-marker,
-        #pageGrammarPractice.is-particle-practice .right-insert-marker,
-        .particle-moving-letter {
+        #pageGrammarPractice.is-selected-grammar-practice .final-marker,
+        #pageGrammarPractice.is-selected-grammar-practice .right-insert-marker,
+        .selected-grammar-moving-letter {
             width: clamp(70px, 5.8vw, 86px);
             height: clamp(58px, 4.8vw, 72px);
             line-height: clamp(58px, 4.8vw, 72px);
@@ -3333,23 +3333,23 @@
             font-size: clamp(42px, 3.8vw, 54px);
         }
 
-        #pageGrammarPractice.is-particle-practice .right-target-marker {
+        #pageGrammarPractice.is-selected-grammar-practice .right-target-marker {
             width: clamp(70px, 5.8vw, 86px);
             height: clamp(58px, 4.8vw, 72px);
         }
 
-        #pageGrammarPractice.is-particle-practice .right-erase-cover {
+        #pageGrammarPractice.is-selected-grammar-practice .right-erase-cover {
             width: clamp(84px, 7vw, 104px);
             height: clamp(70px, 5.8vw, 88px);
             border-radius: 20px;
         }
 
-        #pageGrammarPractice.is-particle-practice .practice-action-row {
+        #pageGrammarPractice.is-selected-grammar-practice .practice-action-row {
             width: 100%;
             justify-content: flex-end;
         }
 
-        #pageGrammarPractice.is-particle-practice #btnGrammarPrev {
+        #pageGrammarPractice.is-selected-grammar-practice #btnGrammarPrev {
             margin-right: auto;
         }
 
@@ -3388,11 +3388,11 @@
                 bottom: clamp(28px, 5svh, 46px);
             }
 
-            #pageGrammarPractice.is-particle-practice .practice-panel {
+            #pageGrammarPractice.is-selected-grammar-practice .practice-panel {
                 gap: 12px;
             }
 
-            #pageGrammarPractice.is-particle-practice .visual-area {
+            #pageGrammarPractice.is-selected-grammar-practice .visual-area {
                 min-height: clamp(236px, 39svh, 330px);
                 align-items: stretch;
                 gap: 12px;
@@ -3400,25 +3400,25 @@
                 overflow: hidden;
             }
 
-            #pageGrammarPractice.is-particle-practice .syllable-wrap {
+            #pageGrammarPractice.is-selected-grammar-practice .syllable-wrap {
                 display: flex;
                 align-items: stretch;
             }
 
-            #pageGrammarPractice.is-particle-practice .syllable-card {
+            #pageGrammarPractice.is-selected-grammar-practice .syllable-card {
                 width: clamp(142px, 37vw, 180px);
                 height: auto;
                 min-height: clamp(170px, 29svh, 246px);
             }
 
-            #pageGrammarPractice.is-particle-practice .syllable-text,
-            #pageGrammarPractice.is-particle-practice .left-base-text,
-            #pageGrammarPractice.is-particle-practice .right-changed-text {
+            #pageGrammarPractice.is-selected-grammar-practice .syllable-text,
+            #pageGrammarPractice.is-selected-grammar-practice .left-base-text,
+            #pageGrammarPractice.is-selected-grammar-practice .right-changed-text {
                 top: clamp(48px, 8svh, 78px);
                 font-size: clamp(68px, 17vw, 92px);
             }
 
-            #pageGrammarPractice.is-particle-practice .final-marker {
+            #pageGrammarPractice.is-selected-grammar-practice .final-marker {
                 bottom: clamp(28px, 5svh, 46px);
             }
 
@@ -3443,9 +3443,9 @@
                 border-radius: 15px;
             }
 
-            #pageGrammarPractice.is-particle-practice .final-marker,
-            #pageGrammarPractice.is-particle-practice .right-insert-marker,
-            .particle-moving-letter {
+            #pageGrammarPractice.is-selected-grammar-practice .final-marker,
+            #pageGrammarPractice.is-selected-grammar-practice .right-insert-marker,
+            .selected-grammar-moving-letter {
                 width: clamp(54px, 13vw, 64px);
                 height: clamp(45px, 10.8vw, 54px);
                 line-height: clamp(45px, 10.8vw, 54px);
@@ -3453,12 +3453,12 @@
                 font-size: clamp(31px, 8vw, 39px);
             }
 
-            #pageGrammarPractice.is-particle-practice .right-target-marker {
+            #pageGrammarPractice.is-selected-grammar-practice .right-target-marker {
                 width: clamp(54px, 13vw, 64px);
                 height: clamp(45px, 10.8vw, 54px);
             }
 
-            #pageGrammarPractice.is-particle-practice .right-erase-cover {
+            #pageGrammarPractice.is-selected-grammar-practice .right-erase-cover {
                 width: clamp(66px, 16vw, 78px);
                 height: clamp(54px, 13vw, 66px);
                 border-radius: 15px;
@@ -3491,7 +3491,7 @@
                 font-size: 23px;
             }
 
-            #pageGrammarPractice.is-particle-practice .visual-area {
+            #pageGrammarPractice.is-selected-grammar-practice .visual-area {
                 min-height: clamp(206px, 36svh, 280px);
                 gap: 7px;
                 padding-left: 6px;
@@ -3499,18 +3499,18 @@
                 padding-bottom: 14px;
             }
 
-            #pageGrammarPractice.is-particle-practice .syllable-card {
+            #pageGrammarPractice.is-selected-grammar-practice .syllable-card {
                 width: clamp(112px, 35vw, 136px);
                 min-height: clamp(150px, 27svh, 204px);
             }
 
-            #pageGrammarPractice.is-particle-practice .syllable-text,
-            #pageGrammarPractice.is-particle-practice .left-base-text,
-            #pageGrammarPractice.is-particle-practice .right-changed-text {
+            #pageGrammarPractice.is-selected-grammar-practice .syllable-text,
+            #pageGrammarPractice.is-selected-grammar-practice .left-base-text,
+            #pageGrammarPractice.is-selected-grammar-practice .right-changed-text {
                 font-size: clamp(60px, 16vw, 78px);
             }
 
-            #pageGrammarPractice.is-particle-practice .arrow {
+            #pageGrammarPractice.is-selected-grammar-practice .arrow {
                 width: 34px;
                 height: 34px;
                 font-size: 23px;
@@ -3537,9 +3537,9 @@
                 border-radius: 13px;
             }
 
-            #pageGrammarPractice.is-particle-practice .final-marker,
-            #pageGrammarPractice.is-particle-practice .right-insert-marker,
-            .particle-moving-letter {
+            #pageGrammarPractice.is-selected-grammar-practice .final-marker,
+            #pageGrammarPractice.is-selected-grammar-practice .right-insert-marker,
+            .selected-grammar-moving-letter {
                 width: clamp(46px, 12vw, 56px);
                 height: clamp(39px, 10vw, 48px);
                 line-height: clamp(39px, 10vw, 48px);
@@ -3547,12 +3547,12 @@
                 font-size: clamp(28px, 7.4vw, 34px);
             }
 
-            #pageGrammarPractice.is-particle-practice .right-target-marker {
+            #pageGrammarPractice.is-selected-grammar-practice .right-target-marker {
                 width: clamp(46px, 12vw, 56px);
                 height: clamp(39px, 10vw, 48px);
             }
 
-            #pageGrammarPractice.is-particle-practice .right-erase-cover {
+            #pageGrammarPractice.is-selected-grammar-practice .right-erase-cover {
                 width: clamp(58px, 15vw, 68px);
                 height: clamp(48px, 12vw, 58px);
                 border-radius: 13px;
@@ -3565,7 +3565,7 @@
             }
 
             body::after {
-                content: "화면 인쇄 및 캡처는 허용되지 않습니다.";
+                content: "?�면 ?�쇄 �?캡처???�용?��? ?�습?�다.";
                 visibility: visible !important;
                 position: fixed;
                 inset: 0;
