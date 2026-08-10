@@ -927,6 +927,137 @@ button {
     background: linear-gradient(135deg, #059669, #10b981);
 }
 
+.phonology-practice-page .practice-panel {
+    gap: clamp(14px, 2.1vh, 22px);
+    padding: clamp(22px, 2.8vw, 34px) clamp(22px, 2.8vw, 34px) clamp(20px, 2.8vh, 28px);
+}
+
+.phonology-practice-page .practice-word-card {
+    min-height: clamp(170px, 21svh, 236px);
+    padding: clamp(24px, 3svh, 36px);
+}
+
+.phonology-practice-page .practice-title {
+    font-size: clamp(88px, 8.8vw, 128px);
+}
+
+.phonology-practice-page .visual-area {
+    min-height: clamp(320px, 42svh, 440px);
+    align-items: center;
+    gap: clamp(24px, 3.2vw, 44px);
+    padding: clamp(50px, 6svh, 68px) clamp(24px, 3vw, 38px) clamp(22px, 3svh, 32px);
+}
+
+.phonology-practice-page .syllable-card {
+    width: clamp(220px, 18vw, 280px);
+    height: clamp(236px, 34svh, 330px);
+}
+
+.phonology-practice-page .syllable-text,
+.phonology-practice-page .left-base-text,
+.phonology-practice-page .changed-syllable {
+    top: clamp(68px, 9svh, 104px);
+    font-size: clamp(96px, 8vw, 128px);
+}
+
+.phonology-practice-page .syllable-text.long-part,
+.phonology-practice-page .changed-syllable.long-part {
+    top: clamp(88px, 12svh, 132px);
+    font-size: clamp(58px, 5vw, 78px);
+}
+
+.phonology-practice-page .arrow {
+    align-self: center;
+}
+
+.phonology-practice-page .practice-action-row {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.phonology-practice-page .practice-action-row .icon-prev {
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+}
+
+.phonology-practice-page .practice-action-row .icon-prev .icon-label {
+    transform: translateX(-1px);
+}
+
+.phonology-practice-page #btnPrev {
+    margin-right: auto;
+}
+
+@media (max-width: 860px) {
+    .phonology-practice-page .practice-panel {
+        gap: 12px;
+        padding: 16px 10px 14px;
+    }
+
+    .phonology-practice-page .practice-word-card {
+        min-height: clamp(126px, 19svh, 168px);
+        padding: 18px 12px;
+    }
+
+    .phonology-practice-page .practice-title {
+        font-size: clamp(58px, 16vw, 88px);
+    }
+
+    .phonology-practice-page .visual-area {
+        min-height: clamp(236px, 39svh, 330px);
+        gap: 12px;
+        padding: 42px 10px 16px;
+    }
+
+    .phonology-practice-page .syllable-card {
+        width: clamp(142px, 37vw, 180px);
+        height: clamp(170px, 29svh, 246px);
+    }
+
+    .phonology-practice-page .syllable-text,
+    .phonology-practice-page .left-base-text,
+    .phonology-practice-page .changed-syllable {
+        top: clamp(48px, 8svh, 78px);
+        font-size: clamp(68px, 17vw, 92px);
+    }
+
+    .phonology-practice-page .syllable-text.long-part,
+    .phonology-practice-page .changed-syllable.long-part {
+        top: clamp(62px, 11svh, 94px);
+        font-size: clamp(36px, 9.4vw, 54px);
+    }
+}
+
+@media (max-width: 420px) {
+    .phonology-practice-page .visual-area {
+        min-height: clamp(206px, 36svh, 280px);
+        gap: 7px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-bottom: 14px;
+    }
+
+    .phonology-practice-page .syllable-card {
+        width: clamp(112px, 35vw, 136px);
+        height: clamp(150px, 27svh, 204px);
+    }
+
+    .phonology-practice-page .syllable-text,
+    .phonology-practice-page .left-base-text,
+    .phonology-practice-page .changed-syllable {
+        font-size: clamp(60px, 16vw, 78px);
+    }
+
+    .phonology-practice-page .syllable-text.long-part,
+    .phonology-practice-page .changed-syllable.long-part {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .phonology-practice-page .arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 23px;
+    }
+}
 html.capture-guard-active,
 body.capture-guard-active {
     overflow: hidden !important;
