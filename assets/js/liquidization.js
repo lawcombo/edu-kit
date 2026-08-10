@@ -15,18 +15,18 @@ function redirectRefreshToLearningType() {
 redirectRefreshToLearningType();
 
 const liquidizationExamples = [
-    { written: "신라", changed: "실라", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "난로", changed: "날로", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "천리", changed: "철리", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "분리", changed: "불리", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "논리", changed: "놀리", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "권력", changed: "궐력", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "연락", changed: "열락", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "전라도", changed: "절라도", changedIndexes: [0], ruleBefore: "ㄴ + ㄹ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "물난리", changed: "물랄리", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "칼날", changed: "칼랄", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "달나라", changed: "달라라", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" },
-    { written: "실내", changed: "실래", changedIndexes: [1], ruleBefore: "ㄹ + ㄴ", ruleAfter: "ㄹ + ㄹ" }
+    { written: "신라", changed: "실라", changedIndexes: [0] },
+    { written: "난로", changed: "날로", changedIndexes: [0] },
+    { written: "천리", changed: "철리", changedIndexes: [0] },
+    { written: "분리", changed: "불리", changedIndexes: [0] },
+    { written: "논리", changed: "놀리", changedIndexes: [0] },
+    { written: "권력", changed: "궐력", changedIndexes: [0] },
+    { written: "연락", changed: "열락", changedIndexes: [0] },
+    { written: "전라도", changed: "절라도", changedIndexes: [0] },
+    { written: "물난리", changed: "물랄리", changedIndexes: [1] },
+    { written: "칼날", changed: "칼랄", changedIndexes: [1] },
+    { written: "달나라", changed: "달라라", changedIndexes: [1] },
+    { written: "실내", changed: "실래", changedIndexes: [1] }
 ];
 
 const $ = (selector) => document.querySelector(selector);
@@ -36,8 +36,6 @@ const practiceScreen = $("#practiceScreen");
 const exampleList = $("#exampleList");
 const writtenWord = $("#writtenWord");
 const resultWord = $("#resultWord");
-const ruleBefore = $("#ruleBefore");
-const ruleAfter = $("#ruleAfter");
 
 let currentIndex = 0;
 let animationTimers = [];
@@ -82,8 +80,6 @@ function setExample(index) {
     const example = liquidizationExamples[currentIndex];
 
     writtenWord.textContent = example.written;
-    ruleBefore.textContent = example.ruleBefore;
-    ruleAfter.textContent = example.ruleAfter;
 
     resetAnimation();
     updateActiveExample();
@@ -109,6 +105,10 @@ function goNextExample() {
     setExample(currentIndex + 1);
 }
 
+function goPrevExample() {
+    setExample(currentIndex - 1);
+}
+
 $("#btnBackHome").addEventListener("click", () => {
     sessionStorage.setItem("eduKitReturnToPhonology", "1");
     window.location.href = "index.html";
@@ -132,6 +132,7 @@ $("#btnToggleLiquidizationList").addEventListener("click", (event) => {
 });
 
 $("#btnPlay").addEventListener("click", playExample);
+$("#btnPrev").addEventListener("click", goPrevExample);
 $("#btnNext").addEventListener("click", goNextExample);
 
 renderExampleList();

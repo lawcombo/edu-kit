@@ -11,9 +11,9 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="assets/icons/icon-192.png">
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-    <link rel="stylesheet" href="assets/css/liquidization.css?v=20260615-double-final-header">
+    <link rel="stylesheet" href="assets/css/liquidization.css?v=20260811-liquidization-practice-layout">
 </head>
-<body>
+<body class="phonology-practice-page">
     <main>
         <section class="screen active" id="infoScreen">
             <div class="container intro-container">
@@ -81,18 +81,13 @@
                             <div class="practice-title" id="writtenWord">신라</div>
                         </div>
 
-                        <div class="sound-rule" aria-label="소리 변화 규칙">
-                            <span id="ruleBefore">ㄴ + ㄹ</span>
-                            <span class="rule-arrow">→</span>
-                            <span id="ruleAfter">ㄹ + ㄹ</span>
-                        </div>
-
                         <div class="liquid-result-card" aria-label="유음화 소리 결과">
                             <div class="liquid-result-label">소리로 말하면</div>
                             <div class="liquid-result-word" id="resultWord" aria-live="polite"></div>
                         </div>
 
                         <div class="control-row practice-action-row">
+                            <button class="btn secondary icon-prev" id="btnPrev" type="button" aria-label="이전" title="이전"><span aria-hidden="true" class="icon-label">&#8592;</span></button>
                             <button class="btn action-main icon-play" id="btnPlay" type="button" aria-label="실행" title="실행"><span aria-hidden="true" class="icon-label">&#9654;</span></button>
                             <button class="btn secondary icon-next" id="btnNext" type="button" aria-label="다음" title="다음"><span aria-hidden="true" class="icon-label">&#8594;</span></button>
                         </div>
@@ -103,7 +98,7 @@
     </main>
 
     <script src="assets/js/tts.js?v=20260616-tts-all"></script>
-    <script src="assets/js/liquidization.js?v=20260616-tts-all"></script>
+    <script src="assets/js/liquidization.js?v=20260811-liquidization-practice-layout"></script>
     <script src="assets/js/pwa.js?v=20260603-pwa"></script>
 </body>
 </html>

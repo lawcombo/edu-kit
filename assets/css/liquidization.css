@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260615-double-final-header");
+@import url("h-deletion.css?v=20260811-liquidization-practice-layout");
 
 .liquid-intro-demo {
     min-height: clamp(260px, 38svh, 480px);
@@ -10,48 +10,6 @@
 
 .liquid-demo-row .demo-arrow {
     margin: 0;
-}
-
-.sound-rule {
-    width: min(100%, 520px);
-    min-height: 78px;
-    margin: 18px auto 20px;
-    padding: 12px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    border: 1px solid rgba(37, 99, 235, 0.14);
-    border-radius: 22px;
-    background: linear-gradient(180deg, #ffffff, #f8fbff);
-    box-shadow: var(--shadow-sm);
-    color: var(--ink);
-    font-family: var(--font-practice);
-    font-size: clamp(25px, 4vw, 38px);
-    font-weight: 800;
-    line-height: 1.1;
-    text-align: center;
-    word-break: keep-all;
-}
-
-.sound-rule span:first-child {
-    color: var(--ink);
-}
-
-.sound-rule .rule-arrow {
-    width: 42px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: #ffffff;
-    color: var(--primary);
-    box-shadow: var(--shadow-sm);
-}
-
-.sound-rule span:last-child {
-    color: var(--danger);
 }
 
 .liquid-result-card {
@@ -105,20 +63,6 @@
 }
 
 @media (max-width: 860px) {
-    .sound-rule {
-        min-height: 64px;
-        margin: 12px auto 14px;
-        padding: 10px 12px;
-        gap: 10px;
-        border-radius: 18px;
-        font-size: clamp(22px, 6.5vw, 30px);
-    }
-
-    .sound-rule .rule-arrow {
-        width: 36px;
-        height: 36px;
-    }
-
     .liquid-result-card {
         min-height: 146px;
         margin: 14px auto;
@@ -136,14 +80,59 @@
     }
 }
 
-@media (max-width: 390px) {
-    .sound-rule {
-        gap: 8px;
-        font-size: clamp(20px, 6vw, 27px);
+.phonology-practice-page #liquidizationPracticeLayout .practice-panel {
+    gap: clamp(14px, 2.1vh, 22px);
+    padding: clamp(22px, 2.8vw, 34px) clamp(22px, 2.8vw, 34px) clamp(20px, 2.8vh, 28px);
+}
+
+.phonology-practice-page #liquidizationPracticeLayout .practice-word-card {
+    min-height: clamp(170px, 21svh, 236px);
+}
+
+.phonology-practice-page .liquid-result-card {
+    width: min(100%, 760px);
+    min-height: clamp(300px, 42svh, 440px);
+    margin: 0 auto;
+    padding: clamp(32px, 4svh, 48px) clamp(24px, 3vw, 38px);
+}
+
+.phonology-practice-page .liquid-result-label {
+    font-size: clamp(17px, 1.8vw, 22px);
+}
+
+.phonology-practice-page .liquid-result-word {
+    min-height: clamp(120px, 19svh, 190px);
+    font-size: clamp(96px, 8vw, 128px);
+}
+
+@media (max-width: 860px) {
+    .phonology-practice-page #liquidizationPracticeLayout .practice-panel {
+        gap: 12px;
+        padding: 16px 10px 14px;
     }
 
-    .sound-rule .rule-arrow {
-        width: 32px;
-        height: 32px;
+    .phonology-practice-page #liquidizationPracticeLayout .practice-word-card {
+        min-height: clamp(126px, 19svh, 168px);
+    }
+
+    .phonology-practice-page .liquid-result-card {
+        min-height: clamp(236px, 39svh, 330px);
+        padding: 24px 14px;
+    }
+
+    .phonology-practice-page .liquid-result-word {
+        min-height: clamp(96px, 16svh, 138px);
+        font-size: clamp(68px, 17vw, 92px);
+    }
+}
+
+@media (max-width: 420px) {
+    .phonology-practice-page .liquid-result-card {
+        min-height: clamp(206px, 36svh, 280px);
+        padding: 20px 10px;
+    }
+
+    .phonology-practice-page .liquid-result-word {
+        font-size: clamp(60px, 16vw, 78px);
     }
 }
