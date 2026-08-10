@@ -556,7 +556,7 @@ let currentIndex = 0;
             const startPoint = getElementCenterPoint($finalMarker);
             const endPoint = getElementCenterPoint($rightTargetMarker);
 
-            const $moving = $("<div class='moving-letter'></div>");
+            const $moving = $("<div class='moving-letter word-moving-letter'></div>");
             $moving.text(item.final);
             $("body").append($moving);
 

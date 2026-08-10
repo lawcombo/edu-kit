@@ -3255,6 +3255,27 @@
             bottom: clamp(44px, 6svh, 70px);
         }
 
+        #pageWordPractice .final-marker,
+        #pageWordPractice .right-insert-marker,
+        .word-moving-letter {
+            width: clamp(70px, 5.8vw, 86px);
+            height: clamp(58px, 4.8vw, 72px);
+            line-height: clamp(58px, 4.8vw, 72px);
+            border-radius: 20px;
+            font-size: clamp(42px, 3.8vw, 54px);
+        }
+
+        #pageWordPractice .right-target-marker {
+            width: clamp(70px, 5.8vw, 86px);
+            height: clamp(58px, 4.8vw, 72px);
+        }
+
+        #pageWordPractice .right-erase-cover {
+            width: clamp(84px, 7vw, 104px);
+            height: clamp(70px, 5.8vw, 88px);
+            border-radius: 20px;
+        }
+
         #pageWordPractice .practice-action-row {
             width: 100%;
             justify-content: flex-end;
@@ -3298,6 +3319,27 @@
             #pageWordPractice .final-marker {
                 bottom: clamp(28px, 5svh, 46px);
             }
+
+            #pageWordPractice .final-marker,
+            #pageWordPractice .right-insert-marker,
+            .word-moving-letter {
+                width: clamp(54px, 13vw, 64px);
+                height: clamp(45px, 10.8vw, 54px);
+                line-height: clamp(45px, 10.8vw, 54px);
+                border-radius: 15px;
+                font-size: clamp(31px, 8vw, 39px);
+            }
+
+            #pageWordPractice .right-target-marker {
+                width: clamp(54px, 13vw, 64px);
+                height: clamp(45px, 10.8vw, 54px);
+            }
+
+            #pageWordPractice .right-erase-cover {
+                width: clamp(66px, 16vw, 78px);
+                height: clamp(54px, 13vw, 66px);
+                border-radius: 15px;
+            }
         }
 
         @media (max-width: 420px) {
@@ -3324,6 +3366,27 @@
                 width: 34px;
                 height: 34px;
                 font-size: 23px;
+            }
+
+            #pageWordPractice .final-marker,
+            #pageWordPractice .right-insert-marker,
+            .word-moving-letter {
+                width: clamp(46px, 12vw, 56px);
+                height: clamp(39px, 10vw, 48px);
+                line-height: clamp(39px, 10vw, 48px);
+                border-radius: 13px;
+                font-size: clamp(28px, 7.4vw, 34px);
+            }
+
+            #pageWordPractice .right-target-marker {
+                width: clamp(46px, 12vw, 56px);
+                height: clamp(39px, 10vw, 48px);
+            }
+
+            #pageWordPractice .right-erase-cover {
+                width: clamp(58px, 15vw, 68px);
+                height: clamp(48px, 12vw, 58px);
+                border-radius: 13px;
             }
         }
 
