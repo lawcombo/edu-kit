@@ -15,18 +15,18 @@ function redirectRefreshToLearningType() {
 redirectRefreshToLearningType();
 
 const palatalizationExamples = [
-    { written: "굳히다", writtenSound: "굳히다", ruleBefore: "ㄷ + 히", ruleAfter: "치", sound: "구치다" },
-    { written: "닫히다", writtenSound: "닫히다", ruleBefore: "ㄷ + 히", ruleAfter: "치", sound: "다치다" },
-    { written: "묻히다", writtenSound: "묻히다", ruleBefore: "ㄷ + 히", ruleAfter: "치", sound: "무치다" },
-    { written: "받히다", writtenSound: "받히다", ruleBefore: "ㄷ + 히", ruleAfter: "치", sound: "바치다" },
-    { written: "굳이", writtenSound: "굳이", ruleBefore: "ㄷ + 이", ruleAfter: "지", sound: "구지" },
-    { written: "곧이", writtenSound: "곧이", ruleBefore: "ㄷ + 이", ruleAfter: "지", sound: "고지" },
-    { written: "해돋이", writtenSound: "해돋이", ruleBefore: "ㄷ + 이", ruleAfter: "지", sound: "해도지" },
-    { written: "미닫이", writtenSound: "미닫이", ruleBefore: "ㄷ + 이", ruleAfter: "지", sound: "미다지" },
-    { written: "같이", writtenSound: "같이", ruleBefore: "ㅌ + 이", ruleAfter: "치", sound: "가치" },
-    { written: "붙이다", writtenSound: "붙이다", ruleBefore: "ㅌ + 이", ruleAfter: "치", sound: "부치다" },
-    { written: "끝이", writtenSound: "끝이", ruleBefore: "ㅌ + 이", ruleAfter: "치", sound: "끄치" },
-    { written: "밭이", writtenSound: "밭이", ruleBefore: "ㅌ + 이", ruleAfter: "치", sound: "바치" }
+    { written: "굳히다", writtenSound: "굳히다", sound: "구치다" },
+    { written: "닫히다", writtenSound: "닫히다", sound: "다치다" },
+    { written: "묻히다", writtenSound: "묻히다", sound: "무치다" },
+    { written: "받히다", writtenSound: "받히다", sound: "바치다" },
+    { written: "굳이", writtenSound: "굳이", sound: "구지" },
+    { written: "곧이", writtenSound: "곧이", sound: "고지" },
+    { written: "해돋이", writtenSound: "해돋이", sound: "해도지" },
+    { written: "미닫이", writtenSound: "미닫이", sound: "미다지" },
+    { written: "같이", writtenSound: "같이", sound: "가치" },
+    { written: "붙이다", writtenSound: "붙이다", sound: "부치다" },
+    { written: "끝이", writtenSound: "끝이", sound: "끄치" },
+    { written: "밭이", writtenSound: "밭이", sound: "바치" }
 ];
 
 const $ = (selector) => document.querySelector(selector);
@@ -36,8 +36,6 @@ const practiceScreen = $("#practiceScreen");
 const exampleList = $("#exampleList");
 const writtenWord = $("#writtenWord");
 const writtenSound = $("#writtenSound");
-const ruleBefore = $("#ruleBefore");
-const ruleAfter = $("#ruleAfter");
 const soundBefore = $("#soundBefore");
 const soundAfter = $("#soundAfter");
 
@@ -83,8 +81,6 @@ function setExample(index) {
 
     writtenWord.textContent = example.written;
     writtenSound.textContent = example.writtenSound;
-    ruleBefore.textContent = example.ruleBefore;
-    ruleAfter.textContent = example.ruleAfter;
     soundBefore.textContent = "?";
     soundAfter.textContent = example.sound;
 
