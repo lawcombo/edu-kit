@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-palatalization-rule-remove";
+const CACHE_NAME = "edu-kit-pwa-20260811-final-double-practice-layout";
 
 const LOCAL_ASSETS = [
     "./",

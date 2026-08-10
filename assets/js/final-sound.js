@@ -221,6 +221,11 @@ function goNextExample() {
     setExample((currentExampleIndex + 1) % group.examples.length);
 }
 
+function goPrevExample() {
+    const group = getCurrentGroup();
+    setExample((currentExampleIndex - 1 + group.examples.length) % group.examples.length);
+}
+
 $("#btnBackHome").addEventListener("click", () => {
     sessionStorage.setItem("eduKitReturnToPhonology", "1");
     window.location.href = "index.html";
@@ -253,6 +258,7 @@ $("#btnToggleFinalSoundList").addEventListener("click", (event) => {
 });
 
 $("#btnPlay").addEventListener("click", playExample);
+$("#btnPrev").addEventListener("click", goPrevExample);
 $("#btnNext").addEventListener("click", goNextExample);
 
 renderFinalGroups();

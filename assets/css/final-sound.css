@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260615-double-final-header");
+@import url("h-deletion.css?v=20260811-final-double-practice-layout");
 
 :root {
     --font-final-sound-glyph: "Nanum Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans CJK KR", "Noto Sans KR", "Droid Sans Fallback", "SamsungOneKorean", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
@@ -299,5 +299,58 @@
         font-size: 13px;
         line-height: 1.32;
         text-align: center;
+    }
+}
+
+.phonology-practice-page #finalSoundPracticeLayout .changed-syllable,
+.phonology-practice-page #finalSoundPracticeLayout .syllable-wrap:last-child .syllable-text {
+    top: clamp(68px, 9svh, 104px);
+    font-size: clamp(96px, 8vw, 128px);
+}
+
+.phonology-practice-page #finalSoundPracticeLayout .changed-syllable.long-part,
+.phonology-practice-page #finalSoundPracticeLayout .syllable-wrap:last-child .syllable-text.long-part {
+    top: clamp(88px, 12svh, 132px);
+    font-size: clamp(58px, 5vw, 78px);
+}
+
+@media (max-width: 860px) {
+    .phonology-practice-page #finalSoundPracticeLayout .visual-area {
+        overflow: hidden;
+    }
+
+    .phonology-practice-page #finalSoundPracticeLayout .syllable-card {
+        width: clamp(142px, 37vw, 180px);
+        height: clamp(170px, 29svh, 246px);
+        overflow: hidden;
+    }
+
+    .phonology-practice-page #finalSoundPracticeLayout .changed-syllable,
+    .phonology-practice-page #finalSoundPracticeLayout .syllable-wrap:last-child .syllable-text {
+        top: clamp(48px, 8svh, 78px);
+        font-size: clamp(68px, 17vw, 92px);
+    }
+
+    .phonology-practice-page #finalSoundPracticeLayout .changed-syllable.long-part,
+    .phonology-practice-page #finalSoundPracticeLayout .syllable-wrap:last-child .syllable-text.long-part {
+        top: clamp(62px, 11svh, 94px);
+        font-size: clamp(36px, 9.4vw, 54px);
+    }
+}
+
+@media (max-width: 420px) {
+    .phonology-practice-page #finalSoundPracticeLayout .syllable-card {
+        width: clamp(112px, 35vw, 136px);
+        height: clamp(150px, 27svh, 204px);
+    }
+
+    .phonology-practice-page #finalSoundPracticeLayout .changed-syllable,
+    .phonology-practice-page #finalSoundPracticeLayout .syllable-wrap:last-child .syllable-text {
+        font-size: clamp(60px, 16vw, 78px);
+    }
+
+    .phonology-practice-page #finalSoundPracticeLayout .changed-syllable.long-part,
+    .phonology-practice-page #finalSoundPracticeLayout .syllable-wrap:last-child .syllable-text.long-part {
+        font-size: clamp(30px, 8vw, 42px);
     }
 }

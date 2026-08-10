@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260615-double-final-header");
+@import url("h-deletion.css?v=20260811-final-double-practice-layout");
 
 .changed-syllable {
     position: absolute;
@@ -39,5 +39,37 @@
     .changed-syllable.long-part {
         top: 50px;
         font-size: 30px;
+    }
+}
+
+.phonology-practice-page #doubleFinalPracticeLayout .changed-syllable {
+    top: clamp(68px, 9svh, 104px);
+    font-size: clamp(96px, 8vw, 128px);
+}
+
+.phonology-practice-page #doubleFinalPracticeLayout .changed-syllable.long-part {
+    top: clamp(88px, 12svh, 132px);
+    font-size: clamp(58px, 5vw, 78px);
+}
+
+@media (max-width: 860px) {
+    .phonology-practice-page #doubleFinalPracticeLayout .changed-syllable {
+        top: clamp(48px, 8svh, 78px);
+        font-size: clamp(68px, 17vw, 92px);
+    }
+
+    .phonology-practice-page #doubleFinalPracticeLayout .changed-syllable.long-part {
+        top: clamp(62px, 11svh, 94px);
+        font-size: clamp(36px, 9.4vw, 54px);
+    }
+}
+
+@media (max-width: 420px) {
+    .phonology-practice-page #doubleFinalPracticeLayout .changed-syllable {
+        font-size: clamp(60px, 16vw, 78px);
+    }
+
+    .phonology-practice-page #doubleFinalPracticeLayout .changed-syllable.long-part {
+        font-size: clamp(30px, 8vw, 42px);
     }
 }
