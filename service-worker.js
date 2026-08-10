@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260810-phonology-practice-layout";
+const CACHE_NAME = "edu-kit-pwa-20260811-tensing-nasal-layout";
 
 const LOCAL_ASSETS = [
     "./",

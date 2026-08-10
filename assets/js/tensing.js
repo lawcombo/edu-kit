@@ -133,6 +133,10 @@ function goNextExample() {
     setExample(currentIndex + 1);
 }
 
+function goPrevExample() {
+    setExample(currentIndex - 1);
+}
+
 $("#btnBackHome").addEventListener("click", () => {
     sessionStorage.setItem("eduKitReturnToPhonology", "1");
     window.location.href = "index.html";
@@ -156,6 +160,7 @@ $("#btnToggleTensingList").addEventListener("click", (event) => {
 });
 
 $("#btnPlay").addEventListener("click", playExample);
+$("#btnPrev").addEventListener("click", goPrevExample);
 $("#btnNext").addEventListener("click", goNextExample);
 
 renderExampleList();
