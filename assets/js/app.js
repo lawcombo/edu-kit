@@ -1849,6 +1849,12 @@ let currentIndex = 0;
             setPractice(nextIndex);
         });
 
+        $("#btnPrev").on("click", function() {
+            const list = getCurrentWordData();
+            const prevIndex = (currentIndex - 1 + list.length) % list.length;
+            setPractice(prevIndex);
+        });
+
         $("#btnGrammarPlay").on("click", function() {
             primeSpeechSynthesis();
             playGrammarAnimation();
