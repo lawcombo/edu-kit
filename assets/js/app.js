@@ -752,7 +752,7 @@ let currentIndex = 0;
         selectedParticle = grammarPracticeMode === "particle" ? (selectedValue || null) : null;
         selectedEnding = grammarPracticeMode === "ending" ? (selectedValue || null) : null;
         currentGrammarIndex = 0;
-        $("#pageGrammarPractice").toggleClass("is-selected-grammar-practice", grammarPracticeMode === "particle" || grammarPracticeMode === "ending");
+        $("#pageGrammarPractice").toggleClass("is-selected-grammar-practice", grammarPracticeMode === "particle" || grammarPracticeMode === "ending" || grammarPracticeMode === "all");
 
         const particleInfo = selectedParticle ? getParticleInfo(selectedParticle) : null;
         const endingInfo = selectedEnding ? getEndingInfo(selectedEnding) : null;
@@ -1024,7 +1024,7 @@ let currentIndex = 0;
             const startPoint = getElementCenterPoint($finalMarker);
             const endPoint = getElementCenterPoint($rightTargetMarker);
 
-            const movingClass = grammarPracticeMode === "particle" || grammarPracticeMode === "ending" ? "moving-letter selected-grammar-moving-letter" : "moving-letter";
+            const movingClass = grammarPracticeMode === "particle" || grammarPracticeMode === "ending" || grammarPracticeMode === "all" ? "moving-letter selected-grammar-moving-letter" : "moving-letter";
             const $moving = $("<div></div>").addClass(movingClass);
             $moving.text(item.final);
             $("body").append($moving);
