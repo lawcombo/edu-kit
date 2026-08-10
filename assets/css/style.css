@@ -3244,6 +3244,11 @@
             min-height: clamp(236px, 34svh, 330px);
         }
 
+        #pageWordPractice .arrow,
+        #pageGrammarPractice.is-selected-grammar-practice .arrow {
+            align-self: center;
+        }
+
         #pageWordPractice .syllable-text,
         #pageWordPractice .left-base-text,
         #pageWordPractice .right-changed-text {
