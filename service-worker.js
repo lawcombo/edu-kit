@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260810-word-practice-animation";
+const CACHE_NAME = "edu-kit-pwa-20260810-particle-practice-layout";
 
 const LOCAL_ASSETS = [
     "./",

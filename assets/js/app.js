@@ -752,6 +752,7 @@ let currentIndex = 0;
         selectedParticle = grammarPracticeMode === "particle" ? (selectedValue || null) : null;
         selectedEnding = grammarPracticeMode === "ending" ? (selectedValue || null) : null;
         currentGrammarIndex = 0;
+        $("#pageGrammarPractice").toggleClass("is-particle-practice", grammarPracticeMode === "particle");
 
         const particleInfo = selectedParticle ? getParticleInfo(selectedParticle) : null;
         const endingInfo = selectedEnding ? getEndingInfo(selectedEnding) : null;
@@ -1023,7 +1024,8 @@ let currentIndex = 0;
             const startPoint = getElementCenterPoint($finalMarker);
             const endPoint = getElementCenterPoint($rightTargetMarker);
 
-            const $moving = $("<div class='moving-letter'></div>");
+            const movingClass = grammarPracticeMode === "particle" ? "moving-letter particle-moving-letter" : "moving-letter";
+            const $moving = $("<div></div>").addClass(movingClass);
             $moving.text(item.final);
             $("body").append($moving);
 
@@ -1875,6 +1877,12 @@ let currentIndex = 0;
             const list = getCurrentGrammarData();
             const nextIndex = (currentGrammarIndex + 1) % list.length;
             setGrammarPractice(nextIndex);
+        });
+
+        $("#btnGrammarPrev").on("click", function() {
+            const list = getCurrentGrammarData();
+            const prevIndex = (currentGrammarIndex - 1 + list.length) % list.length;
+            setGrammarPractice(prevIndex);
         });
 
         $("#btnSentencePlay").on("click", function() {
