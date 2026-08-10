@@ -24,6 +24,7 @@ let currentIndex = 0;
     let longTextStartedAt = 0;
     let longTextRunning = false;
     let longTextPaused = false;
+    let longTextPausedByButton = false;
     let longTextSelectedTokenIndex = -1;
     let longTextRangeStartIndex = -1;
     let longTextRangeActive = false;
@@ -135,7 +136,9 @@ let currentIndex = 0;
         longTextStartedAt = Date.now() - longTextElapsedMs;
         longTextRunning = true;
         longTextPaused = false;
+        longTextPausedByButton = false;
         setLongTextStatus("진행 중");
+        $("#btnLongTextStart").text("중지");
 
         longTextTimerId = setInterval(function() {
             longTextElapsedMs = Date.now() - longTextStartedAt;
@@ -148,6 +151,7 @@ let currentIndex = 0;
         longTextElapsedMs = 0;
         longTextRunning = false;
         longTextPaused = false;
+        longTextPausedByButton = false;
         longTextSelectedTokenIndex = -1;
         longTextRangeStartIndex = -1;
         longTextRangeActive = false;
@@ -156,6 +160,19 @@ let currentIndex = 0;
         $("#longTextCheckpoint").text("-");
         setLongTextStatus("대기");
         clearLongTextHighlight();
+    }
+
+    function pauseLongTextTimerOnly() {
+        if (!longTextRunning) return;
+
+        longTextElapsedMs = Date.now() - longTextStartedAt;
+        stopLongTextTimer();
+        longTextRunning = false;
+        longTextPaused = true;
+        longTextPausedByButton = true;
+        updateLongTextTimerDisplay();
+        $("#btnLongTextStart").text("이어하기");
+        setLongTextStatus("중지");
     }
 
     function syncPracticeListHeight() {
@@ -1394,6 +1411,7 @@ let currentIndex = 0;
         longTextElapsedMs = 0;
         longTextRunning = false;
         longTextPaused = false;
+        longTextPausedByButton = false;
         longTextSelectedTokenIndex = -1;
         longTextRangeStartIndex = -1;
         longTextRangeActive = false;
@@ -1416,6 +1434,7 @@ let currentIndex = 0;
         stopLongTextTimer();
         longTextRunning = false;
         longTextPaused = true;
+        longTextPausedByButton = false;
         longTextSelectedTokenIndex = tokenIndex;
         longTextRangeStartIndex = -1;
         longTextRangeActive = false;
@@ -1431,14 +1450,23 @@ let currentIndex = 0;
     function resumeLongText() {
         if (!longTextPaused) return;
 
+        const shouldResumeRange = longTextPausedByButton && longTextRangeStartIndex >= 0 && !longTextRangeComplete;
         longTextPaused = false;
+        longTextPausedByButton = false;
         longTextSelectedTokenIndex = -1;
-        longTextRangeStartIndex = -1;
-        longTextRangeActive = false;
+        if (shouldResumeRange) {
+            longTextRangeActive = true;
+        } else {
+            longTextRangeStartIndex = -1;
+            longTextRangeActive = false;
+        }
         longTextRangeComplete = false;
-        clearLongTextHighlight();
+        if (shouldResumeRange) {
+            markLongTextRangeStart(longTextRangeStartIndex);
+        } else {
+            clearLongTextHighlight();
+        }
         $("#longTextCheckpoint").text("-");
-        $("#btnLongTextStart").text("진행 중");
         startLongTextTimer();
     }
 
@@ -1448,6 +1476,7 @@ let currentIndex = 0;
         longTextStartedAt = Date.now();
         longTextRunning = true;
         longTextPaused = false;
+        longTextPausedByButton = false;
         longTextSelectedTokenIndex = -1;
         longTextRangeStartIndex = tokenIndex;
         longTextRangeActive = true;
@@ -1455,7 +1484,7 @@ let currentIndex = 0;
 
         updateLongTextTimerDisplay();
         $("#longTextCheckpoint").text("-");
-        $("#btnLongTextStart").text("진행 중");
+        $("#btnLongTextStart").text("중지");
         setLongTextStatus("구간 진행 중");
         markLongTextRangeStart(tokenIndex);
 
@@ -1472,6 +1501,7 @@ let currentIndex = 0;
         stopLongTextTimer();
         longTextRunning = false;
         longTextPaused = true;
+        longTextPausedByButton = false;
         longTextSelectedTokenIndex = tokenIndex;
         longTextRangeActive = false;
         longTextRangeComplete = true;
@@ -1910,7 +1940,10 @@ let currentIndex = 0;
         });
 
         $("#btnLongTextStart").on("click", function() {
-            if (longTextRunning) return;
+            if (longTextRunning) {
+                pauseLongTextTimerOnly();
+                return;
+            }
 
             if (longTextPaused) {
                 if (longTextRangeComplete) {
@@ -1927,7 +1960,6 @@ let currentIndex = 0;
             longTextRangeActive = false;
             longTextRangeComplete = false;
             clearLongTextHighlight();
-            $("#btnLongTextStart").text("진행 중");
             startLongTextTimer();
         });
 
