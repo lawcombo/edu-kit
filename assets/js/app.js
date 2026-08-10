@@ -1904,6 +1904,11 @@ let currentIndex = 0;
             setSentencePractice(nextIndex);
         });
 
+        $("#btnSentencePrev").on("click", function() {
+            const prevIndex = (currentSentenceIndex - 1 + sentenceData.length) % sentenceData.length;
+            setSentencePractice(prevIndex);
+        });
+
         $("#btnLongTextStart").on("click", function() {
             if (longTextRunning) return;
 
