@@ -54,12 +54,15 @@ redirectRefreshToLearningType();
             const className = index === targetIndex ?
                 "phoneme-word-letter phoneme-source-letter" :
                 "phoneme-word-letter";
-            return `<span class="${className}">${escapeHtml(letter)}</span>`;
+            const marker = index === targetIndex ?
+                `<span class="phoneme-source-point ${mode === "initial" ? "is-initial" : "is-final"}" aria-hidden="true"></span>` :
+                "";
+            return `<span class="${className}">${escapeHtml(letter)}${marker}</span>`;
         }).join("");
     }
 
     function animatePhonemeExtraction(stageBody, answer) {
-        const source = stageBody.querySelector(".phoneme-source-letter");
+        const source = stageBody.querySelector(".phoneme-source-point") || stageBody.querySelector(".phoneme-source-letter");
         const target = stageBody.querySelector(".phoneme-answer-chip");
         if (!source || !target) return;
 

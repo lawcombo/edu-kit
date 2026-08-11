@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-phonemic-count-motion2";
+const CACHE_NAME = "edu-kit-pwa-20260811-phonemic-jamo-origin";
 
 const LOCAL_ASSETS = [
     "./",

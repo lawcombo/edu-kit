@@ -230,6 +230,23 @@ body.phonemic-practice-page main {
     position: relative;
 }
 
+.phoneme-source-point {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.phoneme-source-point.is-initial {
+    left: 32%;
+    top: 28%;
+}
+
+.phoneme-source-point.is-final {
+    left: 50%;
+    top: 72%;
+}
+
 .phoneme-answer-chip {
     color: var(--danger);
 }
