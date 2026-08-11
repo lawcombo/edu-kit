@@ -188,6 +188,31 @@ body.phonemic-practice-page main {
     white-space: nowrap;
 }
 
+.phonemic-segmenting-page .visual-area {
+    justify-content: center;
+    padding-top: clamp(18px, 3svh, 34px);
+    padding-bottom: clamp(16px, 2.4svh, 26px);
+}
+
+.phonemic-segmenting-page .phonemic-stage-row {
+    flex-wrap: nowrap;
+    gap: clamp(12px, 1.7vw, 22px);
+}
+
+.phonemic-segmenting-page .sound-chip,
+.phonemic-segmenting-page .answer-chip,
+.phonemic-segmenting-page .choice-card {
+    min-width: clamp(150px, 16vw, 240px);
+    min-height: clamp(160px, 25svh, 250px);
+    font-size: clamp(58px, 6.2vw, 94px);
+    padding: clamp(14px, 1.8vw, 24px);
+    white-space: nowrap;
+}
+
+.phonemic-segmenting-page .arrow {
+    font-size: clamp(52px, 5.6vw, 82px);
+}
+
 .phonemic-guide {
     color: var(--muted);
     font-size: clamp(18px, 2vw, 24px);
@@ -451,6 +476,28 @@ body.phonemic-practice-page main {
         padding: 8px 6px;
     }
 
+    .phonemic-segmenting-page .visual-area {
+        padding-top: 18px;
+        padding-bottom: 12px;
+    }
+
+    .phonemic-segmenting-page .phonemic-stage-row {
+        gap: 7px;
+    }
+
+    .phonemic-segmenting-page .sound-chip,
+    .phonemic-segmenting-page .answer-chip,
+    .phonemic-segmenting-page .choice-card {
+        min-width: clamp(86px, 26vw, 126px);
+        min-height: clamp(126px, 22svh, 166px);
+        font-size: clamp(33px, 8vw, 46px);
+        padding: 8px 6px;
+    }
+
+    .phonemic-segmenting-page .arrow {
+        font-size: clamp(28px, 7vw, 40px);
+    }
+
     .count-display {
         width: clamp(78px, 22vw, 104px);
         height: clamp(78px, 22vw, 104px);
@@ -608,6 +655,23 @@ body.phonemic-practice-page main {
         min-height: clamp(118px, 21svh, 154px);
         font-size: clamp(30px, 7.8vw, 40px);
         padding-inline: 4px;
+    }
+
+    .phonemic-segmenting-page .phonemic-stage-row {
+        gap: 5px;
+    }
+
+    .phonemic-segmenting-page .sound-chip,
+    .phonemic-segmenting-page .answer-chip,
+    .phonemic-segmenting-page .choice-card {
+        min-width: clamp(76px, 25vw, 102px);
+        min-height: clamp(108px, 19svh, 140px);
+        font-size: clamp(27px, 7.2vw, 36px);
+        padding-inline: 4px;
+    }
+
+    .phonemic-segmenting-page .arrow {
+        font-size: clamp(24px, 6vw, 32px);
     }
 
     .phoneme-panel {
