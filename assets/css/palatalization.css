@@ -1,4 +1,4 @@
-@import url("h-deletion.css?v=20260811-palatalization-rule-remove");
+@import url("h-deletion.css?v=20260811-layout-fit-all");
 
 #palatalizationPracticeLayout .practice-panel {
     gap: clamp(10px, 1.8vh, 16px);

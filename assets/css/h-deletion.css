@@ -1975,6 +1975,67 @@ body.capture-guard-active main {
     }
 }
 
+html:has(body.phonology-practice-page) {
+    height: 100%;
+    overflow: hidden;
+}
+
+body.phonology-practice-page {
+    height: 100svh;
+    overflow: hidden;
+}
+
+body.phonology-practice-page main {
+    height: 100svh;
+    overflow: hidden;
+}
+
+.phonology-practice-page .screen {
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.phonology-practice-page .screen.active {
+    align-items: stretch;
+}
+
+.phonology-practice-page .container {
+    height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    min-height: 0;
+    max-height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    overflow: hidden;
+}
+
+.phonology-practice-page .practice-container,
+.phonology-practice-page .practice-layout,
+.phonology-practice-page .practice-panel {
+    min-height: 0;
+}
+
+.phonology-practice-page .practice-layout {
+    flex: 1 1 auto;
+    height: auto;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.phonology-practice-page .practice-panel {
+    height: 100%;
+    overflow: hidden;
+}
+
+.phonology-practice-page .top-nav,
+.phonology-practice-page .practice-word-card,
+.phonology-practice-page .practice-action-row {
+    flex-shrink: 0;
+}
+
+.phonology-practice-page .visual-area,
+.phonology-practice-page .sound-stage {
+    min-height: 0;
+}
+
 @media print {
     body * {
         visibility: hidden !important;

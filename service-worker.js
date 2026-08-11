@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-phonemic-jamo-origin";
+const CACHE_NAME = "edu-kit-pwa-20260811-layout-fit-all";
 
 const LOCAL_ASSETS = [
     "./",

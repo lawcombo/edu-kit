@@ -25,6 +25,7 @@ html {
 }
 
 body {
+    height: 100svh;
     min-width: 320px;
     margin: 0;
     font-family: var(--font-body);
@@ -34,6 +35,21 @@ body {
     background: linear-gradient(135deg, #f8fbff 0%, #f6f7ff 42%, #fff8f1 100%);
     overflow-x: hidden;
     letter-spacing: 0;
+}
+
+html:has(body.decoding-practice-page) {
+    height: 100%;
+    overflow: hidden;
+}
+
+body.decoding-practice-page {
+    height: 100svh;
+    overflow: hidden;
+}
+
+body.decoding-practice-page main {
+    height: 100svh;
+    overflow: hidden;
 }
 
 body::before {
@@ -54,14 +70,16 @@ button {
 
 .screen {
     display: none;
+    height: 100svh;
     min-height: 100vh;
     min-height: 100svh;
     padding: clamp(8px, 1.4vh, 16px) clamp(10px, 1.2vw, 16px);
+    overflow: hidden;
 }
 
 .screen.active {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
 }
 
@@ -69,7 +87,9 @@ button {
     position: relative;
     width: 100%;
     max-width: min(1560px, calc(100vw - 20px));
-    min-height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    min-height: 0;
+    max-height: calc(100svh - clamp(16px, 2.8vh, 32px));
     padding: clamp(22px, min(3vw, 4.2vh), 48px);
     text-align: center;
     background: rgba(255, 255, 255, 0.90);
@@ -94,6 +114,28 @@ button {
 .practice-container {
     display: flex;
     flex-direction: column;
+    min-height: 0;
+}
+
+.decoding-practice-page .intro-layout,
+.decoding-practice-page .practice-layout,
+.decoding-practice-page .practice-panel {
+    min-height: 0;
+}
+
+.decoding-practice-page .lesson-header,
+.decoding-practice-page .intro-copy,
+.decoding-practice-page .info-steps,
+.decoding-practice-page .primary-btn,
+.decoding-practice-page .top-nav,
+.decoding-practice-page .practice-word-card,
+.decoding-practice-page .practice-action-row {
+    flex-shrink: 0;
+}
+
+.decoding-practice-page .intro-demo,
+.decoding-practice-page .visual-area {
+    min-height: 0;
 }
 
 .back-btn {
@@ -891,5 +933,139 @@ body.capture-guard-active main {
         width: 34px;
         height: 34px;
         font-size: 23px;
+    }
+}
+
+.decoding-practice-page .screen {
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.decoding-practice-page .container {
+    height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    min-height: 0;
+    max-height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    overflow: hidden;
+}
+
+.decoding-practice-page .lesson-header {
+    margin-bottom: clamp(10px, 1.5svh, 18px);
+}
+
+.decoding-practice-page .intro-layout {
+    gap: clamp(8px, 1.2svh, 14px);
+}
+
+.decoding-practice-page .intro-copy {
+    min-height: clamp(82px, 11svh, 124px);
+    padding: clamp(12px, 1.8svh, 20px);
+}
+
+.decoding-practice-page .intro-copy h2 {
+    font-size: clamp(17px, 2.1vw, 23px);
+    line-height: 1.22;
+}
+
+.decoding-practice-page .eyebrow {
+    margin-bottom: clamp(7px, 1svh, 10px);
+}
+
+.decoding-practice-page .intro-demo {
+    min-height: clamp(150px, 25svh, 330px);
+    padding: clamp(12px, 2svh, 20px);
+}
+
+.decoding-practice-page .info-steps {
+    gap: clamp(8px, 1.2svh, 12px);
+    margin-top: clamp(8px, 1.2svh, 12px);
+}
+
+.decoding-practice-page .step-card {
+    min-height: 0;
+    padding: clamp(10px, 1.5svh, 16px);
+}
+
+.decoding-practice-page .step-card span {
+    width: clamp(26px, 3.6svh, 32px);
+    height: clamp(26px, 3.6svh, 32px);
+    margin-bottom: 6px;
+}
+
+.decoding-practice-page .step-card strong {
+    font-size: clamp(15px, 1.8vw, 18px);
+}
+
+.decoding-practice-page .step-card p {
+    margin-top: 4px;
+    font-size: clamp(12px, 1.5vw, 14px);
+    line-height: 1.28;
+}
+
+.decoding-practice-page .primary-btn.wide {
+    height: clamp(48px, 7svh, 58px);
+    margin-top: clamp(8px, 1.2svh, 14px);
+}
+
+@media (max-width: 860px) {
+    .decoding-practice-page .container {
+        padding-top: 14px;
+        padding-bottom: 12px;
+    }
+
+    .decoding-practice-page .lesson-header {
+        margin-bottom: 8px;
+    }
+
+    .decoding-practice-page .intro-copy {
+        min-height: 78px;
+        padding: 11px 12px;
+    }
+
+    .decoding-practice-page .eyebrow {
+        margin-bottom: 7px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .decoding-practice-page .intro-copy h2 {
+        font-size: clamp(16px, 4.4vw, 19px);
+        line-height: 1.18;
+    }
+
+    .decoding-practice-page .intro-demo {
+        min-height: clamp(126px, 23svh, 180px);
+        padding: 10px;
+    }
+
+    .decoding-practice-page .info-steps {
+        gap: 7px;
+        margin-top: 7px;
+    }
+
+    .decoding-practice-page .step-card {
+        padding: 9px 10px;
+    }
+
+    .decoding-practice-page .step-card span {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .decoding-practice-page .step-card strong {
+        font-size: 14px;
+    }
+
+    .decoding-practice-page .step-card p {
+        font-size: 12px;
+        line-height: 1.18;
+    }
+
+    .decoding-practice-page .primary-btn.wide {
+        height: 46px;
+        margin-top: 7px;
+        font-size: 16px;
     }
 }
