@@ -300,8 +300,14 @@ body.phonemic-practice-page main {
     gap: clamp(10px, 1.5vh, 16px);
 }
 
+.phonemic-count-page #infoScreen .intro-container {
+    padding-top: clamp(28px, 4.2svh, 44px);
+}
+
 .phonemic-count-page .lesson-header {
-    margin-bottom: clamp(10px, 1.5svh, 18px);
+    min-height: clamp(52px, 7svh, 64px);
+    margin-bottom: clamp(12px, 1.8svh, 20px);
+    padding: 0 clamp(58px, 7vw, 76px);
 }
 
 .phonemic-count-page .intro-layout {
@@ -319,7 +325,7 @@ body.phonemic-practice-page main {
 }
 
 .phonemic-count-page .intro-demo {
-    min-height: clamp(150px, 25svh, 330px);
+    min-height: clamp(142px, 23svh, 310px);
     padding: clamp(12px, 2svh, 20px);
 }
 
@@ -460,12 +466,18 @@ body.phonemic-practice-page main {
     }
 
     .phonemic-count-page .container {
-        padding-top: 14px;
+        padding-top: 20px;
         padding-bottom: 12px;
     }
 
+    .phonemic-count-page #infoScreen .intro-container {
+        padding-top: 20px;
+    }
+
     .phonemic-count-page .lesson-header {
-        margin-bottom: 8px;
+        min-height: 52px;
+        margin-bottom: 10px;
+        padding: 0 54px;
     }
 
     .phonemic-count-page .intro-copy {
@@ -485,7 +497,7 @@ body.phonemic-practice-page main {
     }
 
     .phonemic-count-page .intro-demo {
-        min-height: clamp(126px, 23svh, 180px);
+        min-height: clamp(112px, 20svh, 164px);
         padding: 10px;
     }
 

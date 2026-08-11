@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-layout-fit-all";
+const CACHE_NAME = "edu-kit-pwa-20260811-syllable-count-header";
 
 const LOCAL_ASSETS = [
     "./",
