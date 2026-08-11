@@ -4535,3 +4535,26 @@
         line-height: 1;
     }
 }
+/* Liaison category cards text centering */
+#pageCategory .category-card,
+#pageCategory .category-card > div {
+    text-align: center;
+}
+
+#pageCategory .category-card > div {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pageCategory .category-card .category-title,
+#pageCategory .category-card .category-desc {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+}

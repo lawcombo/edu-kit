@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-phonemic-mobile-row";
+const CACHE_NAME = "edu-kit-pwa-20260812-liaison-category-center";
 
 const LOCAL_ASSETS = [
     "./",
