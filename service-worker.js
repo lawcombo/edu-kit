@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-decoding";
+const CACHE_NAME = "edu-kit-pwa-20260811-phonemic";
 
 const LOCAL_ASSETS = [
     "./",
@@ -16,6 +16,12 @@ const LOCAL_ASSETS = [
     "./decoding-final.html",
     "./decoding-word.html",
     "./decoding-nonsense.html",
+    "./phonemic-syllable-count.html",
+    "./phonemic-initial-sound.html",
+    "./phonemic-final-sound.html",
+    "./phonemic-same-sound.html",
+    "./phonemic-blending.html",
+    "./phonemic-segmenting.html",
     "./manifest.webmanifest",
     "./assets/css/style.css",
     "./assets/css/h-deletion.css",
@@ -27,6 +33,7 @@ const LOCAL_ASSETS = [
     "./assets/css/double-final.css",
     "./assets/css/final-sound.css",
     "./assets/css/decoding.css",
+    "./assets/css/phonemic.css",
     "./assets/js/app.js",
     "./assets/js/data.js",
     "./assets/js/tts.js",
@@ -43,6 +50,13 @@ const LOCAL_ASSETS = [
     "./assets/js/decoding-final.js",
     "./assets/js/decoding-word.js",
     "./assets/js/decoding-nonsense.js",
+    "./assets/js/phonemic-common.js",
+    "./assets/js/phonemic-syllable-count.js",
+    "./assets/js/phonemic-initial-sound.js",
+    "./assets/js/phonemic-final-sound.js",
+    "./assets/js/phonemic-same-sound.js",
+    "./assets/js/phonemic-blending.js",
+    "./assets/js/phonemic-segmenting.js",
     "./assets/js/pwa.js",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png",

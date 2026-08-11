@@ -3712,3 +3712,129 @@
                 display: none;
             }
         }
+        .learning-type-grid {
+            max-width: 1120px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        #pagePhonemicAwarenessType.page {
+            height: 100svh;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        #pagePhonemicAwarenessType.page.active {
+            align-items: stretch;
+        }
+
+        #pagePhonemicAwarenessType .container {
+            height: 100%;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #pagePhonemicAwarenessType .top-nav,
+        #pagePhonemicAwarenessType .sub-title {
+            flex: 0 0 auto;
+        }
+
+        #pagePhonemicAwarenessType .sub-title {
+            margin-bottom: 0;
+        }
+
+        #pagePhonemicAwarenessType .phonemic-type-grid {
+            flex: 1 1 auto;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            gap: clamp(8px, 1.5vh, 18px);
+            margin-top: clamp(12px, 2vh, 24px);
+        }
+
+        #pagePhonemicAwarenessType .phonemic-type-card {
+            min-height: 0;
+            height: 100%;
+            padding: clamp(10px, min(2vw, 2vh), 18px);
+            border-radius: clamp(18px, 2.8vw, 28px);
+        }
+
+        #pagePhonemicAwarenessType .phonemic-type-card .category-title {
+            font-size: clamp(18px, 2.1vw, 24px);
+            line-height: 1.16;
+        }
+
+        #pagePhonemicAwarenessType .phonemic-type-card .category-desc {
+            margin-top: 8px;
+            font-size: clamp(12px, 1.25vw, 15px);
+            line-height: 1.35;
+        }
+
+        @media (max-width: 820px) {
+            .learning-type-grid {
+                max-width: none;
+                grid-template-columns: 1fr;
+            }
+
+            #pagePhonemicAwarenessType .container {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            #pagePhonemicAwarenessType .top-nav {
+                margin-bottom: 8px;
+            }
+
+            #pagePhonemicAwarenessType .sub-title {
+                font-size: 13px;
+                line-height: 1.25;
+            }
+
+            #pagePhonemicAwarenessType .phonemic-type-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            #pagePhonemicAwarenessType .phonemic-type-card {
+                flex-direction: column;
+                justify-content: center;
+                gap: 0;
+                padding: 9px 6px;
+                text-align: center;
+            }
+
+            #pagePhonemicAwarenessType .phonemic-type-card .category-title {
+                font-size: clamp(14px, 4vw, 18px);
+            }
+
+            #pagePhonemicAwarenessType .phonemic-type-card .category-desc {
+                margin-top: 5px;
+                font-size: clamp(10px, 2.7vw, 12px);
+                line-height: 1.25;
+            }
+        }
+
+        @media (max-width: 820px) and (max-height: 700px) {
+            #pagePhonemicAwarenessType .sub-title,
+            #pagePhonemicAwarenessType .phonemic-type-card .category-desc {
+                display: none;
+            }
+
+            #pagePhonemicAwarenessType .phonemic-type-grid {
+                margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            #pagePhonemicAwarenessType .phonemic-type-grid {
+                gap: 7px;
+            }
+
+            #pagePhonemicAwarenessType .phonemic-type-card {
+                padding: 8px 4px;
+                border-radius: 16px;
+            }
+        }

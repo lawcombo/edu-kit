@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=20260811-decoding">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260811-phonemic">
 </head>
 
 <body>
@@ -46,6 +46,13 @@
                 <div>
                     <div class="category-title">해독</div>
                     <div class="category-desc">글자를 보고 소리로 읽는 기초 연습</div>
+                </div>
+            </div>
+
+            <div class="category-card learning-type-card" id="btnPhonemicAwarenessType">
+                <div>
+                    <div class="category-title">음운인식</div>
+                    <div class="category-desc">말소리를 듣고 나누고 찾는 연습</div>
                 </div>
             </div>
 
@@ -99,6 +106,58 @@
                 <div>
                     <div class="category-title">무의미 낱말읽기</div>
                     <div class="category-desc">외운 단어가 아닌 새 낱말을 해독하기</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pagePhonemicAwarenessType" class="page">
+    <div class="container">
+        <div class="top-nav">
+            <h2>음운인식 선택</h2>
+            <div class="top-actions">
+                <button class="btn back-icon-btn" id="btnBackLearningTypeFromPhonemic" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
+            </div>
+        </div>
+
+        <div class="sub-title">말소리를 듣고 구별할 영역을 선택하세요.</div>
+
+        <div class="category-grid phonemic-type-grid">
+            <div class="category-card phonemic-type-card" id="btnSyllableCountType">
+                <div>
+                    <div class="category-title">음절 수 세기</div>
+                    <div class="category-desc">낱말을 소리 덩어리로 나누고 개수 세기</div>
+                </div>
+            </div>
+            <div class="category-card phonemic-type-card" id="btnInitialSoundType">
+                <div>
+                    <div class="category-title">첫소리 찾기</div>
+                    <div class="category-desc">낱말의 맨 앞 소리를 찾기</div>
+                </div>
+            </div>
+            <div class="category-card phonemic-type-card" id="btnFinalSoundAwarenessType">
+                <div>
+                    <div class="category-title">끝소리 찾기</div>
+                    <div class="category-desc">낱말의 마지막 소리를 찾기</div>
+                </div>
+            </div>
+            <div class="category-card phonemic-type-card" id="btnSameSoundType">
+                <div>
+                    <div class="category-title">같은 소리 찾기</div>
+                    <div class="category-desc">기준 낱말과 같은 소리를 가진 낱말 찾기</div>
+                </div>
+            </div>
+            <div class="category-card phonemic-type-card" id="btnSoundBlendingType">
+                <div>
+                    <div class="category-title">소리 합치기</div>
+                    <div class="category-desc">나뉜 소리를 합쳐 낱말 만들기</div>
+                </div>
+            </div>
+            <div class="category-card phonemic-type-card" id="btnSoundSegmentingType">
+                <div>
+                    <div class="category-title">소리 나누기</div>
+                    <div class="category-desc">낱말을 소리 덩어리로 나누기</div>
                 </div>
             </div>
         </div>
@@ -539,7 +598,7 @@
 </section>
 
 <script src="assets/js/data.js?v=20260614-rainy-class-intro-flow"></script>
-<script src="assets/js/app.js?v=20260811-decoding"></script>
+<script src="assets/js/app.js?v=20260811-phonemic"></script>
 <script src="assets/js/pwa.js?v=20260614-pwa-update-notice"></script>
 
 

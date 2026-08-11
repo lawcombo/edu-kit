@@ -79,11 +79,13 @@ let currentIndex = 0;
         const shouldReturnToLearningType = sessionStorage.getItem("eduKitRefreshToLearningType") === "1" || isRefreshNavigation();
         const shouldReturnToPhonology = sessionStorage.getItem("eduKitReturnToPhonology") === "1";
         const shouldReturnToDecoding = sessionStorage.getItem("eduKitReturnToDecoding") === "1";
+        const shouldReturnToPhonemic = sessionStorage.getItem("eduKitReturnToPhonemic") === "1";
         const isAuthenticated = hasValidAuthState();
 
         sessionStorage.removeItem("eduKitRefreshToLearningType");
         sessionStorage.removeItem("eduKitReturnToPhonology");
         sessionStorage.removeItem("eduKitReturnToDecoding");
+        sessionStorage.removeItem("eduKitReturnToPhonemic");
 
         if (!isAuthenticated) {
             showPage("pageIntro");
@@ -97,6 +99,11 @@ let currentIndex = 0;
 
         if (shouldReturnToDecoding) {
             showPage("pageDecodingType");
+            return;
+        }
+
+        if (shouldReturnToPhonemic) {
+            showPage("pagePhonemicAwarenessType");
             return;
         }
 
@@ -1606,11 +1613,19 @@ let currentIndex = 0;
             showPage("pageDecodingType");
         });
 
+        $("#btnPhonemicAwarenessType").on("click", function() {
+            showPage("pagePhonemicAwarenessType");
+        });
+
         $("#btnPhonologyType").on("click", function() {
             showPage("pagePhonologyType");
         });
 
         $("#btnBackLearningTypeFromDecoding").on("click", function() {
+            showPage("pageLearningType");
+        });
+
+        $("#btnBackLearningTypeFromPhonemic").on("click", function() {
             showPage("pageLearningType");
         });
 
@@ -1636,6 +1651,30 @@ let currentIndex = 0;
 
         $("#btnNonsenseReadingType").on("click", function() {
             window.location.href = "decoding-nonsense.html";
+        });
+
+        $("#btnSyllableCountType").on("click", function() {
+            window.location.href = "phonemic-syllable-count.html";
+        });
+
+        $("#btnInitialSoundType").on("click", function() {
+            window.location.href = "phonemic-initial-sound.html";
+        });
+
+        $("#btnFinalSoundAwarenessType").on("click", function() {
+            window.location.href = "phonemic-final-sound.html";
+        });
+
+        $("#btnSameSoundType").on("click", function() {
+            window.location.href = "phonemic-same-sound.html";
+        });
+
+        $("#btnSoundBlendingType").on("click", function() {
+            window.location.href = "phonemic-blending.html";
+        });
+
+        $("#btnSoundSegmentingType").on("click", function() {
+            window.location.href = "phonemic-segmenting.html";
         });
 
         $("#btnLiaisonType").on("click", function() {
