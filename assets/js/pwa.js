@@ -29,6 +29,7 @@
                 transform: translateX(-50%);
                 box-sizing: border-box;
                 letter-spacing: 0;
+                pointer-events: none;
             }
 
             .pwa-update-notice strong,
@@ -63,6 +64,7 @@
                 font-size: 13px;
                 font-weight: 800;
                 cursor: pointer;
+                pointer-events: auto;
             }
 
             @media (max-width: 420px) {

@@ -1,4 +1,4 @@
-@import url("decoding.css?v=20260811-mobile-fit");
+@import url("decoding.css?v=20260811-mobile-app-polish-3");
 
 .phonemic-practice-page {
     height: 100svh;
@@ -689,5 +689,249 @@ body.phonemic-practice-page main {
         width: clamp(42px, 12vw, 56px);
         height: clamp(38px, 10vw, 50px);
         font-size: clamp(24px, 7vw, 32px);
+    }
+}
+
+@media (max-width: 820px) {
+    .phonemic-practice-page .screen {
+        padding: 8px;
+    }
+
+    .phonemic-practice-page .container {
+        width: 100%;
+        max-width: none;
+        height: calc(100svh - 16px);
+        max-height: calc(100svh - 16px);
+        padding: 14px 10px 10px;
+        border-radius: 22px;
+    }
+
+    .phonemic-practice-page .lesson-header,
+    .phonemic-practice-page .top-nav {
+        min-height: 44px;
+        margin-bottom: 8px;
+    }
+
+    .phonemic-practice-page .lesson-header h1,
+    .phonemic-practice-page .top-nav h2 {
+        font-size: clamp(16px, 4.7vw, 20px);
+        line-height: 1.16;
+    }
+
+    .phonemic-practice-page .back-btn,
+    .phonemic-practice-page .back-icon-btn,
+    .phonemic-practice-page .list-toggle {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        border-radius: 14px;
+    }
+
+    .phonemic-practice-page .intro-layout {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 auto;
+        min-height: 0;
+        min-width: 0;
+        gap: 8px;
+        overflow: hidden;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .phonemic-practice-page .intro-copy {
+        width: 100%;
+        max-width: 100%;
+        min-height: 0;
+        min-width: 0;
+        flex: 0 1 auto !important;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .phonemic-practice-page .intro-copy h2 {
+        font-size: clamp(15px, 4.1vw, 18px);
+        line-height: 1.2;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+
+    .phonemic-practice-page .intro-demo {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 auto;
+        min-height: 0;
+        min-width: 0;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .phonemic-practice-page .demo-row {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        gap: clamp(6px, 1.8vw, 12px);
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    .phonemic-practice-page .demo-word,
+    .phonemic-practice-page .demo-result {
+        min-width: clamp(48px, 16vw, 84px);
+        min-height: clamp(54px, 10svh, 78px);
+        padding: 8px 6px;
+        font-size: clamp(22px, 6.4vw, 34px);
+        flex: 0 1 auto;
+    }
+
+    .phonemic-practice-page .demo-plus,
+    .phonemic-practice-page .demo-arrow {
+        flex: 0 0 auto;
+        font-size: clamp(19px, 5.4vw, 28px);
+    }
+
+    .phonemic-practice-page .info-steps {
+        flex: 0 0 auto;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 7px;
+    }
+
+    .phonemic-practice-page .step-card {
+        min-width: 0;
+        padding: 8px 5px;
+        border-radius: 14px;
+    }
+
+    .phonemic-practice-page .step-card strong {
+        font-size: 13px;
+    }
+
+    .phonemic-practice-page .step-card p {
+        font-size: 11px;
+        line-height: 1.18;
+        word-break: keep-all;
+    }
+
+    .phonemic-practice-page .practice-layout,
+    .phonemic-practice-page .practice-panel {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .phonemic-practice-page .practice-panel {
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    .phonemic-practice-page .practice-word-card {
+        min-height: clamp(72px, 13svh, 108px);
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .phonemic-practice-page .practice-title {
+        font-size: clamp(46px, 13vw, 72px);
+        line-height: 1;
+    }
+
+    .phonemic-practice-page .visual-area {
+        flex: 1 1 auto;
+        min-height: 0;
+        gap: clamp(8px, 2svh, 16px);
+        padding: 8px;
+        overflow: hidden;
+    }
+
+    .phonemic-practice-page .practice-action-row {
+        flex: 0 0 auto;
+        margin-top: 6px;
+        gap: 10px;
+    }
+
+    .phonemic-practice-page .practice-action-row .btn {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+    }
+
+    .sound-chip,
+    .answer-chip,
+    .choice-card {
+        min-width: clamp(78px, 25vw, 116px);
+        min-height: clamp(70px, 13svh, 106px);
+        padding: 8px;
+        border-radius: 18px;
+        font-size: clamp(34px, 9.5vw, 50px);
+    }
+
+    .phonemic-same-page .choice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+    }
+
+    .phonemic-same-page .choice-card {
+        width: 100%;
+        min-height: clamp(104px, 19svh, 142px);
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .phonemic-segmenting-page .phonemic-stage-row {
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    .phonemic-segmenting-page .sound-chip,
+    .phonemic-segmenting-page .answer-chip {
+        min-width: clamp(72px, 24vw, 104px);
+        min-height: clamp(92px, 17svh, 128px);
+        font-size: clamp(28px, 7.5vw, 38px);
+    }
+
+    .phoneme-panel {
+        flex: 1 1 auto;
+        min-height: 0;
+        padding: 8px;
+    }
+
+    .phoneme-word-chip,
+    .phoneme-answer-chip {
+        font-size: clamp(44px, 13vw, 66px);
+    }
+
+    .phonemic-count-page #infoScreen .intro-container {
+        padding-top: 14px;
+    }
+
+    .phonemic-count-page .intro-layout {
+        width: 100%;
+    }
+
+    .phonemic-count-page .intro-copy,
+    .phonemic-count-page .intro-demo {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 380px), (max-height: 700px) {
+    .phonemic-practice-page .step-card p {
+        display: none;
+    }
+
+    .phonemic-practice-page .info-steps {
+        gap: 5px;
+    }
+
+    .phonemic-practice-page .practice-word-card {
+        min-height: clamp(64px, 12svh, 90px);
+    }
+
+    .sound-chip,
+    .answer-chip,
+    .choice-card {
+        min-height: clamp(62px, 11svh, 88px);
+        font-size: clamp(28px, 8.4vw, 40px);
     }
 }
