@@ -81,19 +81,23 @@ redirectRefreshToLearningType();
         document.body.appendChild(flyer);
 
         window.requestAnimationFrame(() => {
+            flyer.classList.add("ready");
+        });
+
+        window.setTimeout(() => {
             flyer.style.left = endX + "px";
             flyer.style.top = endY + "px";
             flyer.classList.add("moving");
-        });
+        }, 460);
 
         window.setTimeout(() => {
             target.classList.remove("phoneme-pending");
             flyer.classList.add("arrived");
-        }, 900);
+        }, 1480);
 
         window.setTimeout(() => {
             flyer.remove();
-        }, 1040);
+        }, 1640);
     }
 
     function createStage(example, mode, reveal) {

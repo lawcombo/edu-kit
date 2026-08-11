@@ -1,6 +1,17 @@
 @import url("decoding.css?v=20260811-decoding");
 
 .phonemic-practice-page {
+    height: 100svh;
+    overflow: hidden;
+}
+
+html:has(body.phonemic-practice-page) {
+    height: 100%;
+    overflow: hidden;
+}
+
+body.phonemic-practice-page main {
+    height: 100svh;
     overflow: hidden;
 }
 
@@ -219,18 +230,6 @@
     position: relative;
 }
 
-.phoneme-source-letter::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    width: 54%;
-    height: 5px;
-    border-radius: 999px;
-    background: rgba(239, 68, 68, 0.42);
-    transform: translateX(-50%);
-}
-
 .phoneme-answer-chip {
     color: var(--danger);
 }
@@ -263,12 +262,13 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
     transition:
-        left 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
-        top 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
+        left 1.02s cubic-bezier(0.25, 0.1, 0.25, 1),
+        top 1.02s cubic-bezier(0.25, 0.1, 0.25, 1),
         opacity 0.2s ease,
         transform 0.28s ease;
 }
 
+.phoneme-flying-copy.ready,
 .phoneme-flying-copy.moving {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -281,6 +281,60 @@
 
 .phonemic-count-page .practice-panel {
     gap: clamp(10px, 1.5vh, 16px);
+}
+
+.phonemic-count-page .lesson-header {
+    margin-bottom: clamp(10px, 1.5svh, 18px);
+}
+
+.phonemic-count-page .intro-layout {
+    gap: clamp(8px, 1.2svh, 14px);
+}
+
+.phonemic-count-page .intro-copy {
+    min-height: clamp(82px, 11svh, 124px);
+    padding: clamp(12px, 1.8svh, 20px);
+}
+
+.phonemic-count-page .intro-copy h2 {
+    font-size: clamp(17px, 2.1vw, 23px);
+    line-height: 1.22;
+}
+
+.phonemic-count-page .intro-demo {
+    min-height: clamp(150px, 25svh, 330px);
+    padding: clamp(12px, 2svh, 20px);
+}
+
+.phonemic-count-page .info-steps {
+    gap: clamp(8px, 1.2svh, 12px);
+    margin-top: clamp(8px, 1.2svh, 12px);
+}
+
+.phonemic-count-page .step-card {
+    min-height: 0;
+    padding: clamp(10px, 1.5svh, 16px);
+}
+
+.phonemic-count-page .step-card span {
+    width: clamp(26px, 3.6svh, 32px);
+    height: clamp(26px, 3.6svh, 32px);
+    margin-bottom: 6px;
+}
+
+.phonemic-count-page .step-card strong {
+    font-size: clamp(15px, 1.8vw, 18px);
+}
+
+.phonemic-count-page .step-card p {
+    margin-top: 4px;
+    font-size: clamp(12px, 1.5vw, 14px);
+    line-height: 1.28;
+}
+
+.phonemic-count-page .primary-btn.wide {
+    height: clamp(48px, 7svh, 58px);
+    margin-top: clamp(8px, 1.2svh, 14px);
 }
 
 .phonemic-count-page .practice-word-card {
@@ -386,6 +440,67 @@
 
     .phonemic-count-page .practice-panel {
         gap: 9px;
+    }
+
+    .phonemic-count-page .container {
+        padding-top: 14px;
+        padding-bottom: 12px;
+    }
+
+    .phonemic-count-page .lesson-header {
+        margin-bottom: 8px;
+    }
+
+    .phonemic-count-page .intro-copy {
+        min-height: 78px;
+        padding: 11px 12px;
+    }
+
+    .phonemic-count-page .eyebrow {
+        margin-bottom: 7px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .phonemic-count-page .intro-copy h2 {
+        font-size: clamp(16px, 4.4vw, 19px);
+        line-height: 1.18;
+    }
+
+    .phonemic-count-page .intro-demo {
+        min-height: clamp(126px, 23svh, 180px);
+        padding: 10px;
+    }
+
+    .phonemic-count-page .info-steps {
+        gap: 7px;
+        margin-top: 7px;
+    }
+
+    .phonemic-count-page .step-card {
+        padding: 9px 10px;
+    }
+
+    .phonemic-count-page .step-card span {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .phonemic-count-page .step-card strong {
+        font-size: 14px;
+    }
+
+    .phonemic-count-page .step-card p {
+        font-size: 12px;
+        line-height: 1.18;
+    }
+
+    .phonemic-count-page .primary-btn.wide {
+        height: 46px;
+        margin-top: 7px;
+        font-size: 16px;
     }
 
     .phonemic-count-page .practice-word-card {
