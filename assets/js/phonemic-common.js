@@ -200,7 +200,8 @@ redirectRefreshToLearningType();
                     animatePhonemeExtraction(stageBody, example.answer);
                 }
 
-                if (window.eduKitSpeakText) window.eduKitSpeakText(example.speak || example.answer || example.word);
+                const speechText = config.mode === "blend" ? (example.answer || example.word) : (example.speak || example.answer || example.word);
+                if (window.eduKitSpeakText) window.eduKitSpeakText(speechText);
             }, 180);
         }
 

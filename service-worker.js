@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-liaison-category-center";
+const CACHE_NAME = "edu-kit-pwa-20260812-blend-tts-once";
 
 const LOCAL_ASSETS = [
     "./",
