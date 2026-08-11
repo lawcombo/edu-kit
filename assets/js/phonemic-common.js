@@ -132,11 +132,7 @@ redirectRefreshToLearningType();
         if (mode === "same") {
             return `
                 <div class="phonemic-guide">기준 낱말과 같은 첫소리 낱말을 찾아요</div>
-                <div class="phonemic-stage-row">
-                    <span class="sound-chip">${escapeHtml(example.word)}</span>
-                    <span class="arrow">&rarr;</span>
-                    ${renderChoices(example.options)}
-                </div>
+                ${renderChoices(example.options)}
             `;
         }
 
