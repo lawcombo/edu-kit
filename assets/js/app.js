@@ -78,10 +78,12 @@ let currentIndex = 0;
     function showInitialPage() {
         const shouldReturnToLearningType = sessionStorage.getItem("eduKitRefreshToLearningType") === "1" || isRefreshNavigation();
         const shouldReturnToPhonology = sessionStorage.getItem("eduKitReturnToPhonology") === "1";
+        const shouldReturnToDecoding = sessionStorage.getItem("eduKitReturnToDecoding") === "1";
         const isAuthenticated = hasValidAuthState();
 
         sessionStorage.removeItem("eduKitRefreshToLearningType");
         sessionStorage.removeItem("eduKitReturnToPhonology");
+        sessionStorage.removeItem("eduKitReturnToDecoding");
 
         if (!isAuthenticated) {
             showPage("pageIntro");
@@ -90,6 +92,11 @@ let currentIndex = 0;
 
         if (shouldReturnToPhonology) {
             showPage("pagePhonologyType");
+            return;
+        }
+
+        if (shouldReturnToDecoding) {
+            showPage("pageDecodingType");
             return;
         }
 
@@ -1595,12 +1602,40 @@ let currentIndex = 0;
             }
         });
 
+        $("#btnDecodingType").on("click", function() {
+            showPage("pageDecodingType");
+        });
+
         $("#btnPhonologyType").on("click", function() {
             showPage("pagePhonologyType");
         });
 
+        $("#btnBackLearningTypeFromDecoding").on("click", function() {
+            showPage("pageLearningType");
+        });
+
         $("#btnBackLearningTypeFromPhonology").on("click", function() {
             showPage("pageLearningType");
+        });
+
+        $("#btnJamoReadingType").on("click", function() {
+            window.location.href = "decoding-jamo.html";
+        });
+
+        $("#btnSyllableMakingType").on("click", function() {
+            window.location.href = "decoding-syllable.html";
+        });
+
+        $("#btnFinalReadingType").on("click", function() {
+            window.location.href = "decoding-final.html";
+        });
+
+        $("#btnWordReadingType").on("click", function() {
+            window.location.href = "decoding-word.html";
+        });
+
+        $("#btnNonsenseReadingType").on("click", function() {
+            window.location.href = "decoding-nonsense.html";
         });
 
         $("#btnLiaisonType").on("click", function() {

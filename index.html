@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=20260810-long-text-pause">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260811-decoding">
 </head>
 
 <body>
@@ -42,10 +42,10 @@
         <div class="sub-title">진행할 학습 영역을 선택하세요.</div>
 
         <div class="category-grid learning-type-grid">
-            <div class="category-card learning-type-card is-disabled" id="btnDecodingType" aria-disabled="true">
+            <div class="category-card learning-type-card" id="btnDecodingType">
                 <div>
                     <div class="category-title">해독</div>
-                    <div class="category-desc">준비 중</div>
+                    <div class="category-desc">글자를 보고 소리로 읽는 기초 연습</div>
                 </div>
             </div>
 
@@ -53,6 +53,52 @@
                 <div>
                     <div class="category-title">음운변동</div>
                     <div class="category-desc">음운변동 유형 선택</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pageDecodingType" class="page">
+    <div class="container">
+        <div class="top-nav">
+            <h2>해독 선택</h2>
+            <div class="top-actions">
+                <button class="btn back-icon-btn" id="btnBackLearningTypeFromDecoding" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
+            </div>
+        </div>
+
+        <div class="sub-title">읽기 기초를 연습할 영역을 선택하세요.</div>
+
+        <div class="category-grid decoding-type-grid">
+            <div class="category-card decoding-type-card" id="btnJamoReadingType">
+                <div>
+                    <div class="category-title">자모읽기</div>
+                    <div class="category-desc">자음과 모음의 이름과 소리 익히기</div>
+                </div>
+            </div>
+            <div class="category-card decoding-type-card" id="btnSyllableMakingType">
+                <div>
+                    <div class="category-title">음절 만들기</div>
+                    <div class="category-desc">자음과 모음을 합쳐 한 글자로 읽기</div>
+                </div>
+            </div>
+            <div class="category-card decoding-type-card" id="btnFinalReadingType">
+                <div>
+                    <div class="category-title">받침 읽기</div>
+                    <div class="category-desc">받침이 붙은 글자를 또렷하게 읽기</div>
+                </div>
+            </div>
+            <div class="category-card decoding-type-card" id="btnWordReadingType">
+                <div>
+                    <div class="category-title">낱말 읽기</div>
+                    <div class="category-desc">음절을 이어 실제 낱말로 읽기</div>
+                </div>
+            </div>
+            <div class="category-card decoding-type-card" id="btnNonsenseReadingType">
+                <div>
+                    <div class="category-title">무의미 낱말읽기</div>
+                    <div class="category-desc">외운 단어가 아닌 새 낱말을 해독하기</div>
                 </div>
             </div>
         </div>
@@ -493,7 +539,7 @@
 </section>
 
 <script src="assets/js/data.js?v=20260614-rainy-class-intro-flow"></script>
-<script src="assets/js/app.js?v=20260810-long-text-pause"></script>
+<script src="assets/js/app.js?v=20260811-decoding"></script>
 <script src="assets/js/pwa.js?v=20260614-pwa-update-notice"></script>
 
 

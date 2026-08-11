@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-liquidization-practice-layout";
+const CACHE_NAME = "edu-kit-pwa-20260811-decoding";
 
 const LOCAL_ASSETS = [
     "./",
@@ -11,6 +11,11 @@ const LOCAL_ASSETS = [
     "./liquidization.html",
     "./double-final.html",
     "./final-sound.html",
+    "./decoding-jamo.html",
+    "./decoding-syllable.html",
+    "./decoding-final.html",
+    "./decoding-word.html",
+    "./decoding-nonsense.html",
     "./manifest.webmanifest",
     "./assets/css/style.css",
     "./assets/css/h-deletion.css",
@@ -21,6 +26,7 @@ const LOCAL_ASSETS = [
     "./assets/css/liquidization.css",
     "./assets/css/double-final.css",
     "./assets/css/final-sound.css",
+    "./assets/css/decoding.css",
     "./assets/js/app.js",
     "./assets/js/data.js",
     "./assets/js/tts.js",
@@ -32,6 +38,11 @@ const LOCAL_ASSETS = [
     "./assets/js/liquidization.js",
     "./assets/js/double-final.js",
     "./assets/js/final-sound.js",
+    "./assets/js/decoding-jamo.js",
+    "./assets/js/decoding-syllable.js",
+    "./assets/js/decoding-final.js",
+    "./assets/js/decoding-word.js",
+    "./assets/js/decoding-nonsense.js",
     "./assets/js/pwa.js",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png",
