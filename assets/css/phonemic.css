@@ -120,6 +120,78 @@
     word-break: keep-all;
 }
 
+.phoneme-extract-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    gap: clamp(12px, 2vw, 24px);
+}
+
+.phoneme-panel {
+    position: relative;
+    min-height: clamp(210px, 31svh, 330px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(28px, 3.4vw, 46px);
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.phoneme-panel-label {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    color: var(--muted);
+    font-size: clamp(16px, 1.7vw, 20px);
+    font-weight: 800;
+    text-align: center;
+}
+
+.phoneme-word-chip,
+.phoneme-answer-chip {
+    width: 100%;
+    min-width: 0;
+    min-height: clamp(132px, 18svh, 210px);
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    font-size: clamp(82px, 8.2vw, 128px);
+}
+
+.phoneme-answer-chip {
+    color: var(--danger);
+}
+
+.phoneme-arrow {
+    align-self: center;
+}
+
+.phoneme-fly {
+    animation: phonemeFlyToTarget 0.62s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes phonemeFlyToTarget {
+    0% {
+        opacity: 0;
+        transform: translateX(calc(-50vw + 80px)) scale(0.78);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
 .phonemic-count-page .practice-panel {
     gap: clamp(10px, 1.5vh, 16px);
 }
@@ -191,6 +263,49 @@
         font-size: clamp(14px, 4vw, 18px);
     }
 
+    .phoneme-extract-row {
+        gap: 8px;
+    }
+
+    .phoneme-panel {
+        min-height: clamp(166px, 27svh, 230px);
+        padding: 28px 8px 12px;
+        border-radius: 22px;
+    }
+
+    .phoneme-panel-label {
+        top: 10px;
+        font-size: 13px;
+    }
+
+    .phoneme-word-chip,
+    .phoneme-answer-chip {
+        min-height: clamp(100px, 18svh, 154px);
+        font-size: clamp(54px, 15vw, 82px);
+    }
+
+    .phoneme-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 23px;
+    }
+
+    @keyframes phonemeFlyToTarget {
+        0% {
+            opacity: 0;
+            transform: translateX(calc(-50vw + 44px)) scale(0.78);
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+    }
+
     .phonemic-count-page .practice-panel {
         gap: 9px;
     }
@@ -231,5 +346,16 @@
         min-width: clamp(74px, 25vw, 102px);
         min-height: clamp(68px, 12svh, 96px);
         font-size: clamp(32px, 9vw, 46px);
+    }
+
+    .phoneme-panel {
+        min-height: clamp(148px, 25svh, 204px);
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .phoneme-word-chip,
+    .phoneme-answer-chip {
+        font-size: clamp(44px, 13vw, 66px);
     }
 }

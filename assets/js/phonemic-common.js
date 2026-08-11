@@ -58,10 +58,16 @@ redirectRefreshToLearningType();
         if (mode === "initial" || mode === "final") {
             return `
                 <div class="phonemic-guide">${mode === "initial" ? "맨 앞에서 들리는 소리를 찾아요" : "마지막에 들리는 소리를 찾아요"}</div>
-                <div class="phonemic-stage-row">
-                    <span class="sound-chip">${escapeHtml(example.word)}</span>
-                    <span class="arrow">&rarr;</span>
-                    <span class="answer-chip ${reveal ? "revealed" : ""}">${escapeHtml(example.answer)}</span>
+                <div class="phonemic-stage-row phoneme-extract-row ${reveal ? "is-revealed" : ""}">
+                    <div class="phoneme-panel phoneme-source-panel">
+                        <span class="phoneme-panel-label">&#45231;&#47568;</span>
+                        <span class="sound-chip phoneme-word-chip">${escapeHtml(example.word)}</span>
+                    </div>
+                    <span class="arrow phoneme-arrow">&rarr;</span>
+                    <div class="phoneme-panel phoneme-target-panel">
+                        <span class="phoneme-panel-label">${mode === "initial" ? "&#52395;&#49548;&#47532;" : "&#45149;&#49548;&#47532;"}</span>
+                        <span class="answer-chip phoneme-answer-chip ${reveal ? "revealed phoneme-fly" : ""}">${escapeHtml(example.answer)}</span>
+                    </div>
                 </div>
             `;
         }

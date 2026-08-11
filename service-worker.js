@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-phonemic-count-fit";
+const CACHE_NAME = "edu-kit-pwa-20260811-phoneme-extract";
 
 const LOCAL_ASSETS = [
     "./",
