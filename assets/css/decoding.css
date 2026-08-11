@@ -1233,3 +1233,62 @@ body.capture-guard-active main {
     content: none !important;
     display: none !important;
 }
+
+/* Mobile practice header three-part layout. */
+@media (max-width: 820px) {
+    .practice-container .top-nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        min-height: 46px;
+        gap: 0;
+        padding: 0;
+    }
+
+    .practice-container .top-nav h2 {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+        width: 100%;
+        min-width: 0;
+        padding: 0 4px;
+        text-align: center;
+        white-space: normal;
+        word-break: keep-all;
+    }
+
+    .practice-container .top-nav .back-icon-btn {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        position: static;
+        min-height: 44px;
+        transform: none;
+    }
+
+    .practice-container .top-nav .list-toggle {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        position: static;
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        min-height: 44px;
+        padding: 0;
+        transform: none;
+    }
+
+    .practice-container .top-nav .list-toggle .toggle-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    .practice-container .top-nav .hamburger-icon {
+        font-size: 23px;
+        line-height: 1;
+    }
+}

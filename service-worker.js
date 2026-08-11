@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-no-title-mark";
+const CACHE_NAME = "edu-kit-pwa-20260812-mobile-header-icons-3";
 
 const LOCAL_ASSETS = [
     "./",

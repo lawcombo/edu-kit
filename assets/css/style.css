@@ -4458,3 +4458,80 @@
     content: none !important;
     display: none !important;
 }
+/* Mobile practice header three-part layout */
+@media (max-width: 820px) {
+    #pageWordPractice .top-nav,
+    #pageGrammarPractice .top-nav,
+    #pageSentencePractice .top-nav,
+    #pageLongTextPractice .top-nav {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) !important;
+        min-height: 46px;
+        gap: 0;
+        padding: 0;
+    }
+
+    #pageWordPractice .top-nav .top-actions,
+    #pageGrammarPractice .top-nav .top-actions,
+    #pageSentencePractice .top-nav .top-actions,
+    #pageLongTextPractice .top-nav .top-actions {
+        display: contents;
+    }
+
+    #pageWordPractice .top-nav h2,
+    #pageGrammarPractice .top-nav h2,
+    #pageSentencePractice .top-nav h2,
+    #pageLongTextPractice .top-nav h2 {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+        width: 100%;
+        min-width: 0;
+        padding: 0 4px;
+        text-align: center;
+        white-space: normal;
+        word-break: keep-all;
+    }
+
+    #pageWordPractice .top-nav .back-icon-btn,
+    #pageGrammarPractice .top-nav .back-icon-btn,
+    #pageSentencePractice .top-nav .back-icon-btn,
+    #pageLongTextPractice .top-nav .back-icon-btn {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        position: static !important;
+        transform: none !important;
+    }
+
+    #pageWordPractice .top-nav .list-toggle,
+    #pageGrammarPractice .top-nav .list-toggle,
+    #pageSentencePractice .top-nav .list-toggle {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        position: static !important;
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        padding: 0;
+        transform: none !important;
+    }
+
+    #pageWordPractice .top-nav .list-toggle .toggle-label,
+    #pageGrammarPractice .top-nav .list-toggle .toggle-label,
+    #pageSentencePractice .top-nav .list-toggle .toggle-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    #pageWordPractice .top-nav .hamburger-icon,
+    #pageGrammarPractice .top-nav .hamburger-icon,
+    #pageSentencePractice .top-nav .hamburger-icon {
+        font-size: 23px;
+        line-height: 1;
+    }
+}
