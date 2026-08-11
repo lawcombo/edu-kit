@@ -1226,3 +1226,10 @@ body.capture-guard-active main {
         min-height: clamp(66px, 12svh, 92px);
     }
 }
+
+/* Remove title-side decorative marks from lesson headers. */
+.lesson-header h1::before,
+.top-nav h2::before {
+    content: none !important;
+    display: none !important;
+}

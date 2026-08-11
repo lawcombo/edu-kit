@@ -2057,3 +2057,10 @@ body.phonology-practice-page main {
         text-align: center;
     }
 }
+
+/* Remove title-side decorative marks from lesson headers. */
+.lesson-header h1::before,
+.top-nav h2::before {
+    content: none !important;
+    display: none !important;
+}

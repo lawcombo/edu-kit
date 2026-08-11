@@ -4452,3 +4452,9 @@
         text-align: center !important;
     }
 }
+/* Remove title-side decorative marks from lesson headers. */
+.top-nav h2::before,
+#pageInfo .main-title::before {
+    content: none !important;
+    display: none !important;
+}
