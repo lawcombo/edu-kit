@@ -2682,6 +2682,173 @@
 
 
 
+
+        @media (max-width: 820px) {
+            #pageDecodingType .top-nav,
+            #pagePhonemicAwarenessType .top-nav,
+            #pagePhonologyType .top-nav,
+            #pageCategory .top-nav,
+            #pageParticleCategory .top-nav,
+            #pageEndingCategory .top-nav,
+            #pageFinalCategory .top-nav,
+            #pageLongTextList .top-nav {
+                position: relative;
+                top: auto;
+                z-index: 2;
+                margin: 0;
+                padding: 0;
+                min-height: 50px;
+                border-bottom: 0;
+                border-radius: 0;
+                background: transparent;
+                backdrop-filter: none;
+            }
+
+            #pageDecodingType .top-nav + .sub-title,
+            #pagePhonemicAwarenessType .top-nav + .sub-title,
+            #pagePhonologyType .top-nav + .sub-title,
+            #pageCategory .top-nav + .sub-title,
+            #pageLongTextList .top-nav + .sub-title {
+                position: relative;
+                z-index: 1;
+                margin-top: 8px;
+                margin-bottom: 0;
+                padding: 0 8px;
+            }
+
+            #pageDecodingType .decoding-type-grid,
+            #pagePhonemicAwarenessType .phonemic-type-grid,
+            #pagePhonologyType .phonology-type-grid,
+            #pageCategory .category-grid,
+            #pageLongTextList .long-text-grid {
+                margin-top: 12px;
+            }
+
+            #pageLongTextPractice.page {
+                height: 100svh;
+                min-height: 0;
+                overflow: hidden;
+            }
+
+            #pageLongTextPractice.page.active {
+                align-items: stretch;
+            }
+
+            #pageLongTextPractice .container {
+                height: calc(100svh - 16px);
+                min-height: 0;
+                max-height: calc(100svh - 16px);
+                display: flex;
+                flex-direction: column;
+                padding: 12px 10px;
+                overflow: hidden;
+            }
+
+            #pageLongTextPractice .top-nav {
+                position: relative;
+                top: auto;
+                flex: 0 0 auto;
+                margin: 0 0 8px;
+                padding: 0;
+                min-height: 50px;
+                border-bottom: 0;
+                border-radius: 0;
+                background: transparent;
+                backdrop-filter: none;
+            }
+
+            #pageLongTextPractice .long-text-dashboard {
+                flex: 0 0 auto;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 6px;
+                margin: 0 0 8px;
+            }
+
+            #pageLongTextPractice .long-text-stat {
+                min-height: 54px;
+                padding: 7px 4px;
+                border-radius: 14px;
+            }
+
+            #pageLongTextPractice .long-text-stat-label {
+                margin-bottom: 3px;
+                font-size: 10px;
+                line-height: 1.15;
+            }
+
+            #pageLongTextPractice .long-text-stat-value {
+                font-size: clamp(15px, 4.6vw, 19px);
+                line-height: 1.1;
+            }
+
+            #pageLongTextPractice .long-text-stat-value.status {
+                font-size: clamp(14px, 4.1vw, 17px);
+            }
+
+            #pageLongTextPractice .long-text-stage {
+                flex: 1 1 auto;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+                padding: 12px 10px;
+                border-radius: 18px;
+                overflow: hidden;
+            }
+
+            #pageLongTextPractice .long-text-title {
+                flex: 0 0 auto;
+                margin-bottom: 8px;
+                font-size: clamp(19px, 5.4vw, 24px);
+                line-height: 1.18;
+            }
+
+            #pageLongTextPractice .long-text-body {
+                flex: 1 1 auto;
+                min-height: 0;
+                padding: 12px 10px;
+                border-radius: 16px;
+                font-size: clamp(15px, 4.2vw, 17px);
+                line-height: 1.72;
+                overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            #pageLongTextPractice .long-text-sentence {
+                min-height: 1.72em;
+                line-height: 1.72;
+            }
+        }
+
+        @media (max-width: 420px) {
+            #pageDecodingType .top-nav,
+            #pagePhonemicAwarenessType .top-nav,
+            #pagePhonologyType .top-nav,
+            #pageCategory .top-nav,
+            #pageLongTextList .top-nav,
+            #pageLongTextPractice .top-nav {
+                min-height: 46px;
+            }
+
+            #pageDecodingType .top-nav + .sub-title,
+            #pagePhonemicAwarenessType .top-nav + .sub-title,
+            #pagePhonologyType .top-nav + .sub-title,
+            #pageCategory .top-nav + .sub-title,
+            #pageLongTextList .top-nav + .sub-title {
+                margin-top: 6px;
+                font-size: 12px;
+                line-height: 1.25;
+            }
+
+            #pageLongTextPractice .container {
+                padding: 10px 8px;
+            }
+
+            #pageLongTextPractice .long-text-body {
+                font-size: clamp(14px, 4vw, 16px);
+                line-height: 1.68;
+            }
+        }
         /* ?”ë©´ ìº¡ì²˜ ?µì œ??ê³µí†µ ?¤í???*/
         html.capture-guard-active,
         body.capture-guard-active {

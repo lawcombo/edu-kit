@@ -14,7 +14,7 @@
             .pwa-update-notice {
                 position: fixed;
                 left: 50%;
-                bottom: max(14px, env(safe-area-inset-bottom));
+                top: max(12px, env(safe-area-inset-top));
                 z-index: 9999;
                 width: min(calc(100vw - 28px), 520px);
                 display: flex;
@@ -25,7 +25,7 @@
                 border: 1px solid rgba(219, 234, 254, 0.95);
                 border-radius: 18px;
                 background: #ffffff;
-                box-shadow: 0 18px 44px rgba(15, 23, 42, 0.18);
+                box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
                 transform: translateX(-50%);
                 box-sizing: border-box;
                 letter-spacing: 0;
