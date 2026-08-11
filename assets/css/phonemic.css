@@ -1,5 +1,51 @@
 @import url("decoding.css?v=20260811-decoding");
 
+.phonemic-practice-page {
+    overflow: hidden;
+}
+
+.phonemic-practice-page .screen {
+    height: 100svh;
+    min-height: 100svh;
+    overflow: hidden;
+}
+
+.phonemic-practice-page .screen.active {
+    align-items: stretch;
+}
+
+.phonemic-practice-page .container {
+    height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    min-height: 0;
+    max-height: calc(100svh - clamp(16px, 2.8vh, 32px));
+    overflow: hidden;
+}
+
+.phonemic-practice-page .intro-container,
+.phonemic-practice-page .practice-container,
+.phonemic-practice-page .practice-layout,
+.phonemic-practice-page .practice-panel {
+    min-height: 0;
+}
+
+.phonemic-practice-page .intro-layout {
+    min-height: 0;
+}
+
+.phonemic-practice-page .intro-copy,
+.phonemic-practice-page .info-steps,
+.phonemic-practice-page .primary-btn,
+.phonemic-practice-page .top-nav,
+.phonemic-practice-page .practice-word-card,
+.phonemic-practice-page .practice-action-row {
+    flex-shrink: 0;
+}
+
+.phonemic-practice-page .intro-demo,
+.phonemic-practice-page .visual-area {
+    min-height: 0;
+}
+
 .phonemic-practice-page .practice-title {
     font-size: clamp(84px, 8vw, 118px);
     max-width: 100%;
@@ -198,25 +244,39 @@
 }
 
 .phoneme-flying-copy {
-    position: absolute;
-    z-index: 10;
+    position: fixed;
+    z-index: 9999;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--danger);
+    width: clamp(58px, 5.8vw, 84px);
+    height: clamp(50px, 5vw, 72px);
+    border-radius: clamp(16px, 1.6vw, 22px);
+    color: #ffffff;
     font-family: var(--font-practice);
-    font-size: clamp(82px, 8.2vw, 128px);
+    font-size: clamp(34px, 3.4vw, 48px);
     font-weight: 800;
     line-height: 1;
+    background: linear-gradient(135deg, var(--accent), #fb923c);
+    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.32);
     pointer-events: none;
-    text-shadow: 0 10px 24px rgba(239, 68, 68, 0.18);
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.82);
-    transition: transform 0.62s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.16s ease;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition:
+        left 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
+        top 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
+        opacity 0.2s ease,
+        transform 0.28s ease;
 }
 
 .phoneme-flying-copy.moving {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.phoneme-flying-copy.arrived {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.82);
 }
 
 .phonemic-count-page .practice-panel {
@@ -318,7 +378,10 @@
     }
 
     .phoneme-flying-copy {
-        font-size: clamp(54px, 15vw, 82px);
+        width: clamp(48px, 13vw, 64px);
+        height: clamp(42px, 11vw, 56px);
+        border-radius: 15px;
+        font-size: clamp(27px, 7.8vw, 36px);
     }
 
     .phonemic-count-page .practice-panel {
@@ -375,6 +438,8 @@
     }
 
     .phoneme-flying-copy {
-        font-size: clamp(44px, 13vw, 66px);
+        width: clamp(42px, 12vw, 56px);
+        height: clamp(38px, 10vw, 50px);
+        font-size: clamp(24px, 7vw, 32px);
     }
 }

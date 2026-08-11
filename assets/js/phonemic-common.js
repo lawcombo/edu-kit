@@ -63,32 +63,37 @@ redirectRefreshToLearningType();
         const target = stageBody.querySelector(".phoneme-answer-chip");
         if (!source || !target) return;
 
+        document.querySelectorAll(".phoneme-flying-copy").forEach((element) => element.remove());
         target.classList.add("phoneme-pending");
 
-        const stageRect = stageBody.getBoundingClientRect();
         const sourceRect = source.getBoundingClientRect();
         const targetRect = target.getBoundingClientRect();
-        const startX = sourceRect.left + (sourceRect.width / 2) - stageRect.left;
-        const startY = sourceRect.top + (sourceRect.height / 2) - stageRect.top;
-        const endX = targetRect.left + (targetRect.width / 2) - stageRect.left;
-        const endY = targetRect.top + (targetRect.height / 2) - stageRect.top;
+        const startX = sourceRect.left + (sourceRect.width / 2);
+        const startY = sourceRect.top + (sourceRect.height / 2);
+        const endX = targetRect.left + (targetRect.width / 2);
+        const endY = targetRect.top + (targetRect.height / 2);
 
         const flyer = document.createElement("span");
         flyer.className = "phoneme-flying-copy";
         flyer.textContent = answer;
         flyer.style.left = startX + "px";
         flyer.style.top = startY + "px";
-        stageBody.appendChild(flyer);
+        document.body.appendChild(flyer);
 
         window.requestAnimationFrame(() => {
-            flyer.style.transform = `translate(${endX - startX}px, ${endY - startY}px) translate(-50%, -50%) scale(1.04)`;
+            flyer.style.left = endX + "px";
+            flyer.style.top = endY + "px";
             flyer.classList.add("moving");
         });
 
         window.setTimeout(() => {
             target.classList.remove("phoneme-pending");
+            flyer.classList.add("arrived");
+        }, 900);
+
+        window.setTimeout(() => {
             flyer.remove();
-        }, 680);
+        }, 1040);
     }
 
     function createStage(example, mode, reveal) {
@@ -153,6 +158,7 @@ redirectRefreshToLearningType();
 
         function resetResult() {
             if (window.eduKitCancelSpeech) window.eduKitCancelSpeech();
+            document.querySelectorAll(".phoneme-flying-copy").forEach((element) => element.remove());
             stageBody.innerHTML = createStage(config.examples[currentIndex], config.mode, false);
         }
 
