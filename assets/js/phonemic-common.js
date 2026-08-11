@@ -46,6 +46,51 @@ redirectRefreshToLearningType();
         )).join("")}</div>`;
     }
 
+    function renderPhonemeWord(word, mode) {
+        const letters = Array.from(word);
+        const targetIndex = mode === "initial" ? 0 : letters.length - 1;
+
+        return letters.map((letter, index) => {
+            const className = index === targetIndex ?
+                "phoneme-word-letter phoneme-source-letter" :
+                "phoneme-word-letter";
+            return `<span class="${className}">${escapeHtml(letter)}</span>`;
+        }).join("");
+    }
+
+    function animatePhonemeExtraction(stageBody, answer) {
+        const source = stageBody.querySelector(".phoneme-source-letter");
+        const target = stageBody.querySelector(".phoneme-answer-chip");
+        if (!source || !target) return;
+
+        target.classList.add("phoneme-pending");
+
+        const stageRect = stageBody.getBoundingClientRect();
+        const sourceRect = source.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const startX = sourceRect.left + (sourceRect.width / 2) - stageRect.left;
+        const startY = sourceRect.top + (sourceRect.height / 2) - stageRect.top;
+        const endX = targetRect.left + (targetRect.width / 2) - stageRect.left;
+        const endY = targetRect.top + (targetRect.height / 2) - stageRect.top;
+
+        const flyer = document.createElement("span");
+        flyer.className = "phoneme-flying-copy";
+        flyer.textContent = answer;
+        flyer.style.left = startX + "px";
+        flyer.style.top = startY + "px";
+        stageBody.appendChild(flyer);
+
+        window.requestAnimationFrame(() => {
+            flyer.style.transform = `translate(${endX - startX}px, ${endY - startY}px) translate(-50%, -50%) scale(1.04)`;
+            flyer.classList.add("moving");
+        });
+
+        window.setTimeout(() => {
+            target.classList.remove("phoneme-pending");
+            flyer.remove();
+        }, 680);
+    }
+
     function createStage(example, mode, reveal) {
         if (mode === "count") {
             return `
@@ -61,12 +106,12 @@ redirectRefreshToLearningType();
                 <div class="phonemic-stage-row phoneme-extract-row ${reveal ? "is-revealed" : ""}">
                     <div class="phoneme-panel phoneme-source-panel">
                         <span class="phoneme-panel-label">&#45231;&#47568;</span>
-                        <span class="sound-chip phoneme-word-chip">${escapeHtml(example.word)}</span>
+                        <span class="sound-chip phoneme-word-chip">${renderPhonemeWord(example.word, mode)}</span>
                     </div>
                     <span class="arrow phoneme-arrow">&rarr;</span>
                     <div class="phoneme-panel phoneme-target-panel">
                         <span class="phoneme-panel-label">${mode === "initial" ? "&#52395;&#49548;&#47532;" : "&#45149;&#49548;&#47532;"}</span>
-                        <span class="answer-chip phoneme-answer-chip ${reveal ? "revealed phoneme-fly" : ""}">${escapeHtml(example.answer)}</span>
+                        <span class="answer-chip phoneme-answer-chip ${reveal ? "revealed" : ""}">${escapeHtml(example.answer)}</span>
                     </div>
                 </div>
             `;
@@ -140,6 +185,10 @@ redirectRefreshToLearningType();
                         card.classList.toggle("correct", isCorrect);
                         card.classList.toggle("dimmed", !isCorrect);
                     });
+                }
+
+                if (config.mode === "initial" || config.mode === "final") {
+                    animatePhonemeExtraction(stageBody, example.answer);
                 }
 
                 if (window.eduKitSpeakText) window.eduKitSpeakText(example.speak || example.answer || example.word);

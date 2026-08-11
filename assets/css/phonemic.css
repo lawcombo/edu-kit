@@ -164,32 +164,59 @@
     font-size: clamp(82px, 8.2vw, 128px);
 }
 
+.phoneme-word-letter {
+    display: inline-block;
+    line-height: 1;
+}
+
+.phoneme-source-letter {
+    position: relative;
+}
+
+.phoneme-source-letter::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 54%;
+    height: 5px;
+    border-radius: 999px;
+    background: rgba(239, 68, 68, 0.42);
+    transform: translateX(-50%);
+}
+
 .phoneme-answer-chip {
     color: var(--danger);
+}
+
+.phoneme-answer-chip.phoneme-pending {
+    opacity: 0;
 }
 
 .phoneme-arrow {
     align-self: center;
 }
 
-.phoneme-fly {
-    animation: phonemeFlyToTarget 0.62s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+.phoneme-flying-copy {
+    position: absolute;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--danger);
+    font-family: var(--font-practice);
+    font-size: clamp(82px, 8.2vw, 128px);
+    font-weight: 800;
+    line-height: 1;
+    pointer-events: none;
+    text-shadow: 0 10px 24px rgba(239, 68, 68, 0.18);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.82);
+    transition: transform 0.62s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.16s ease;
 }
 
-@keyframes phonemeFlyToTarget {
-    0% {
-        opacity: 0;
-        transform: translateX(calc(-50vw + 80px)) scale(0.78);
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
+.phoneme-flying-copy.moving {
+    opacity: 1;
 }
 
 .phonemic-count-page .practice-panel {
@@ -290,20 +317,8 @@
         font-size: 23px;
     }
 
-    @keyframes phonemeFlyToTarget {
-        0% {
-            opacity: 0;
-            transform: translateX(calc(-50vw + 44px)) scale(0.78);
-        }
-
-        20% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-        }
+    .phoneme-flying-copy {
+        font-size: clamp(54px, 15vw, 82px);
     }
 
     .phonemic-count-page .practice-panel {
@@ -356,6 +371,10 @@
 
     .phoneme-word-chip,
     .phoneme-answer-chip {
+        font-size: clamp(44px, 13vw, 66px);
+    }
+
+    .phoneme-flying-copy {
         font-size: clamp(44px, 13vw, 66px);
     }
 }

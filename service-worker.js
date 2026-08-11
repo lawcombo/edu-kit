@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-phoneme-extract";
+const CACHE_NAME = "edu-kit-pwa-20260811-phoneme-source-flight";
 
 const LOCAL_ASSETS = [
     "./",
