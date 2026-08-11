@@ -169,6 +169,25 @@ body.phonemic-practice-page main {
     opacity: 0.34;
 }
 
+.phonemic-same-page .visual-area {
+    justify-content: center;
+    padding-top: clamp(18px, 3svh, 34px);
+    padding-bottom: clamp(16px, 2.4svh, 26px);
+}
+
+.phonemic-same-page .choice-grid {
+    width: min(100%, 1120px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 1.8vw, 22px);
+}
+
+.phonemic-same-page .choice-card {
+    min-height: clamp(176px, 27svh, 270px);
+    font-size: clamp(60px, 6.8vw, 100px);
+    padding: clamp(16px, 2vw, 28px);
+    white-space: nowrap;
+}
+
 .phonemic-guide {
     color: var(--muted);
     font-size: clamp(18px, 2vw, 24px);
@@ -417,6 +436,21 @@ body.phonemic-practice-page main {
         font-size: clamp(28px, 7.4vw, 42px);
     }
 
+    .phonemic-same-page .visual-area {
+        padding-top: 18px;
+        padding-bottom: 12px;
+    }
+
+    .phonemic-same-page .choice-grid {
+        gap: 8px;
+    }
+
+    .phonemic-same-page .choice-card {
+        min-height: clamp(130px, 23svh, 176px);
+        font-size: clamp(34px, 8.4vw, 48px);
+        padding: 8px 6px;
+    }
+
     .count-display {
         width: clamp(78px, 22vw, 104px);
         height: clamp(78px, 22vw, 104px);
@@ -568,6 +602,12 @@ body.phonemic-practice-page main {
         min-width: clamp(74px, 25vw, 102px);
         min-height: clamp(68px, 12svh, 96px);
         font-size: clamp(32px, 9vw, 46px);
+    }
+
+    .phonemic-same-page .choice-card {
+        min-height: clamp(118px, 21svh, 154px);
+        font-size: clamp(30px, 7.8vw, 40px);
+        padding-inline: 4px;
     }
 
     .phoneme-panel {
