@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260811-segmenting-large";
+const CACHE_NAME = "edu-kit-pwa-20260811-mobile-fit";
 
 const LOCAL_ASSETS = [
     "./",

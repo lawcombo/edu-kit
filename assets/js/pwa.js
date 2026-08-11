@@ -3,9 +3,97 @@
 
     let refreshing = false;
     let waitingWorker = null;
+    let noticeStylesReady = false;
+
+    function ensureNoticeStyles() {
+        if (noticeStylesReady || document.getElementById("pwa-update-notice-style")) return;
+
+        const style = document.createElement("style");
+        style.id = "pwa-update-notice-style";
+        style.textContent = `
+            .pwa-update-notice {
+                position: fixed;
+                left: 50%;
+                bottom: max(14px, env(safe-area-inset-bottom));
+                z-index: 9999;
+                width: min(calc(100vw - 28px), 520px);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 13px 14px;
+                border: 1px solid rgba(219, 234, 254, 0.95);
+                border-radius: 18px;
+                background: #ffffff;
+                box-shadow: 0 18px 44px rgba(15, 23, 42, 0.18);
+                transform: translateX(-50%);
+                box-sizing: border-box;
+                letter-spacing: 0;
+            }
+
+            .pwa-update-notice strong,
+            .pwa-update-notice span {
+                display: block;
+                letter-spacing: 0;
+            }
+
+            .pwa-update-notice strong {
+                color: #0f172a;
+                font-size: 15px;
+                font-weight: 800;
+                line-height: 1.3;
+            }
+
+            .pwa-update-notice span {
+                margin-top: 3px;
+                color: #64748b;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 1.35;
+            }
+
+            .pwa-update-notice button {
+                min-width: 84px;
+                min-height: 40px;
+                border: 0;
+                border-radius: 14px;
+                background: #2563eb;
+                color: #ffffff;
+                font: inherit;
+                font-size: 13px;
+                font-weight: 800;
+                cursor: pointer;
+            }
+
+            @media (max-width: 420px) {
+                .pwa-update-notice {
+                    width: calc(100vw - 20px);
+                    gap: 8px;
+                    padding: 11px 12px;
+                }
+
+                .pwa-update-notice strong {
+                    font-size: 14px;
+                }
+
+                .pwa-update-notice span {
+                    font-size: 11px;
+                }
+
+                .pwa-update-notice button {
+                    min-width: 76px;
+                    min-height: 38px;
+                    font-size: 12px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        noticeStylesReady = true;
+    }
 
     function showUpdateNotice() {
         if (document.querySelector(".pwa-update-notice")) return;
+        ensureNoticeStyles();
 
         const notice = document.createElement("div");
         notice.className = "pwa-update-notice";
