@@ -1577,6 +1577,32 @@ let currentIndex = 0;
 
         showInitialPage();
 
+        if (window.eduKitNavigation) {
+            window.eduKitNavigation.init({
+                selector: ".page",
+                navigate: function(route) {
+                    showPage(route);
+                },
+                fallbackBack: function(route) {
+                    if (route === "pageDecodingType" ||
+                        route === "pagePhonemicAwarenessType" ||
+                        route === "pagePhonologyType") {
+                        showPage("pageLearningType");
+                        return;
+                    }
+
+                    if (route === "pageInfo") {
+                        showPage("pagePhonologyType");
+                        return;
+                    }
+
+                    if (route === "pageCategory") {
+                        showPage("pageInfo");
+                    }
+                }
+            });
+        }
+
         $(window).on("resize orientationchange", function() {
             applyTargetPosition();
             applyGrammarTargetPosition();

@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-word-marker-mobile";
+const CACHE_NAME = "edu-kit-pwa-20260812-device-back";
 
 const LOCAL_ASSETS = [
     "./",
@@ -36,6 +36,7 @@ const LOCAL_ASSETS = [
     "./assets/css/phonemic.css",
     "./assets/js/app.js",
     "./assets/js/data.js",
+    "./assets/js/navigation.js",
     "./assets/js/tts.js",
     "./assets/js/h-deletion.js",
     "./assets/js/tensing.js",
