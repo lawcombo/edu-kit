@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-vocabulary-wide-start";
+const CACHE_NAME = "edu-kit-pwa-20260812-sentence-comprehension";
 
 const LOCAL_ASSETS = [
     "./",
@@ -27,6 +27,12 @@ const LOCAL_ASSETS = [
     "./vocabulary-similar.html",
     "./vocabulary-meaning.html",
     "./vocabulary-linking.html",
+    "./sentence-who.html",
+    "./sentence-object.html",
+    "./sentence-place.html",
+    "./sentence-action.html",
+    "./sentence-picture.html",
+    "./sentence-order.html",
     "./manifest.webmanifest",
     "./assets/css/style.css",
     "./assets/css/h-deletion.css",
@@ -40,6 +46,7 @@ const LOCAL_ASSETS = [
     "./assets/css/decoding.css",
     "./assets/css/phonemic.css",
     "./assets/css/vocabulary.css",
+    "./assets/css/sentence.css",
     "./assets/js/app.js",
     "./assets/js/data.js",
     "./assets/js/navigation.js",
@@ -70,6 +77,13 @@ const LOCAL_ASSETS = [
     "./assets/js/vocabulary-similar.js",
     "./assets/js/vocabulary-meaning.js",
     "./assets/js/vocabulary-linking.js",
+    "./assets/js/sentence-common.js",
+    "./assets/js/sentence-who.js",
+    "./assets/js/sentence-object.js",
+    "./assets/js/sentence-place.js",
+    "./assets/js/sentence-action.js",
+    "./assets/js/sentence-picture.js",
+    "./assets/js/sentence-order.js",
     "./assets/js/pwa.js",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png",

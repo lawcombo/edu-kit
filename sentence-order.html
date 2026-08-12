@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-title" content="읽기톡톡">
+    <title>문장 순서</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="stylesheet" href="assets/css/sentence.css?v=20260812-sentence-comprehension">
+</head>
+<body class="sentence-practice-page">
+    <main>
+        <section class="screen active" id="infoScreen"><div class="container intro-container"><button class="back-btn" id="btnBackHome" type="button" aria-label="뒤로가기">&larr;</button><header class="lesson-header"><h1>문장 순서란?</h1></header><div class="intro-layout"><div class="intro-copy"><p class="eyebrow">알맞은 문장 고르기</p><h2>낱말의 순서를 보고 자연스러운 문장을 골라요.</h2></div><div class="intro-demo"><div class="demo-row"><span class="demo-word">민수 + 사과 + 먹어요</span><span class="demo-arrow">&rarr;</span><span class="demo-result">민수가 사과를 먹어요</span></div></div><div class="info-steps"><div class="step-card"><span>1</span><strong>뜻 생각</strong><p>누가 무엇을 하는지 봐요</p></div><div class="step-card"><span>2</span><strong>순서 비교</strong><p>보기 문장을 읽어요</p></div><div class="step-card"><span>3</span><strong>문장 고르기</strong><p>자연스러운 문장을 골라요</p></div></div></div><button class="primary-btn wide" id="btnStartPractice" type="button">연습 시작</button></div></section>
+        <section class="screen" id="practiceScreen"><div class="container practice-container"><div class="top-nav"><button class="btn back-icon-btn" id="btnBackInfo" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button><h2>문장 순서 연습하기</h2><button class="btn list-toggle" id="btnToggleList" type="button" aria-expanded="false"><span aria-hidden="true">&#9776;</span><span class="toggle-label">연습목록</span></button></div><div class="practice-layout" id="practiceLayout"><aside class="word-list"><h3>연습 목록</h3><div id="exampleList"></div></aside><section class="practice-panel"><div class="sentence-card"><div class="sentence-text" id="sentenceText"></div></div><div class="visual-area"><div class="scene-card"><div class="scene-emoji" id="sceneEmoji"></div><div class="scene-label" id="sceneLabel"></div></div><div class="choice-area"><p class="question-text" id="questionText"></p><div class="choice-grid" id="choiceGrid"></div><div class="feedback" id="feedbackText"></div></div></div><div class="practice-action-row"><button class="btn secondary icon-prev" id="btnPrev" type="button" aria-label="이전"><span class="icon-label">&#8592;</span></button><button class="btn action-main icon-play" id="btnPlay" type="button" aria-label="실행"><span class="icon-label">&#9654;</span></button><button class="btn secondary icon-next" id="btnNext" type="button" aria-label="다음"><span class="icon-label">&#8594;</span></button></div></section></div></div></section>
+    </main>
+    <script src="assets/js/navigation.js?v=20260812-device-back"></script><script src="assets/js/tts.js?v=20260616-tts-all"></script><script src="assets/js/sentence-common.js?v=20260812-sentence-comprehension"></script><script src="assets/js/sentence-order.js?v=20260812-sentence-comprehension"></script><script src="assets/js/pwa.js?v=20260812-update-modal"></script>
+</body>
+</html>

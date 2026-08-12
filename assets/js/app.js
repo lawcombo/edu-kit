@@ -81,6 +81,7 @@ let currentIndex = 0;
         const shouldReturnToDecoding = sessionStorage.getItem("eduKitReturnToDecoding") === "1";
         const shouldReturnToPhonemic = sessionStorage.getItem("eduKitReturnToPhonemic") === "1";
         const shouldReturnToVocabulary = sessionStorage.getItem("eduKitReturnToVocabulary") === "1";
+        const shouldReturnToSentenceComprehension = sessionStorage.getItem("eduKitReturnToSentenceComprehension") === "1";
         const isAuthenticated = hasValidAuthState();
 
         sessionStorage.removeItem("eduKitRefreshToLearningType");
@@ -88,6 +89,7 @@ let currentIndex = 0;
         sessionStorage.removeItem("eduKitReturnToDecoding");
         sessionStorage.removeItem("eduKitReturnToPhonemic");
         sessionStorage.removeItem("eduKitReturnToVocabulary");
+        sessionStorage.removeItem("eduKitReturnToSentenceComprehension");
 
         if (!isAuthenticated) {
             showPage("pageIntro");
@@ -111,6 +113,11 @@ let currentIndex = 0;
 
         if (shouldReturnToVocabulary) {
             showPage("pageVocabularyType");
+            return;
+        }
+
+        if (shouldReturnToSentenceComprehension) {
+            showPage("pageSentenceComprehensionType");
             return;
         }
 
@@ -1594,7 +1601,8 @@ let currentIndex = 0;
                     if (route === "pageDecodingType" ||
                         route === "pagePhonemicAwarenessType" ||
                         route === "pagePhonologyType" ||
-                        route === "pageVocabularyType") {
+                        route === "pageVocabularyType" ||
+                        route === "pageSentenceComprehensionType") {
                         showPage("pageLearningType");
                         return;
                     }
@@ -1659,6 +1667,10 @@ let currentIndex = 0;
             showPage("pageVocabularyType");
         });
 
+        $("#btnSentenceComprehensionType").on("click", function() {
+            showPage("pageSentenceComprehensionType");
+        });
+
         $("#btnBackLearningTypeFromDecoding").on("click", function() {
             showPage("pageLearningType");
         });
@@ -1672,6 +1684,10 @@ let currentIndex = 0;
         });
 
         $("#btnBackLearningTypeFromVocabulary").on("click", function() {
+            showPage("pageLearningType");
+        });
+
+        $("#btnBackLearningTypeFromSentenceComprehension").on("click", function() {
             showPage("pageLearningType");
         });
 
@@ -1737,6 +1753,30 @@ let currentIndex = 0;
 
         $("#btnVocabularyLinkingType").on("click", function() {
             window.location.href = "vocabulary-linking.html";
+        });
+
+        $("#btnSentenceWhoType").on("click", function() {
+            window.location.href = "sentence-who.html";
+        });
+
+        $("#btnSentenceObjectType").on("click", function() {
+            window.location.href = "sentence-object.html";
+        });
+
+        $("#btnSentencePlaceType").on("click", function() {
+            window.location.href = "sentence-place.html";
+        });
+
+        $("#btnSentenceActionType").on("click", function() {
+            window.location.href = "sentence-action.html";
+        });
+
+        $("#btnSentencePictureType").on("click", function() {
+            window.location.href = "sentence-picture.html";
+        });
+
+        $("#btnSentenceOrderType").on("click", function() {
+            window.location.href = "sentence-order.html";
         });
 
         $("#btnLiaisonType").on("click", function() {

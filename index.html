@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=20260812-vocabulary">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260812-sentence-comprehension">
 </head>
 
 <body>
@@ -67,6 +67,13 @@
                 <div>
                     <div class="category-title">어휘이해</div>
                     <div class="category-desc">낱말의 뜻과 관계를 그림으로 익히는 학습</div>
+                </div>
+            </div>
+
+            <div class="category-card learning-type-card" id="btnSentenceComprehensionType">
+                <div>
+                    <div class="category-title">문장이해</div>
+                    <div class="category-desc">짧은 문장을 듣고 누가, 무엇을, 어디서 했는지 이해해요</div>
                 </div>
             </div>
         </div>
@@ -217,6 +224,57 @@
     </div>
 </section>
 
+<section id="pageSentenceComprehensionType" class="page">
+    <div class="container">
+        <div class="top-nav">
+            <h2>문장이해 선택</h2>
+            <div class="top-actions">
+                <button class="btn back-icon-btn" id="btnBackLearningTypeFromSentenceComprehension" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
+            </div>
+        </div>
+
+        <div class="sub-title">문장을 듣고 핵심 내용을 찾는 영역을 선택하세요</div>
+
+        <div class="category-grid sentence-comprehension-type-grid">
+            <div class="category-card sentence-comprehension-type-card" id="btnSentenceWhoType">
+                <div>
+                    <div class="category-title">누가</div>
+                    <div class="category-desc">문장 속 사람이나 대상을 찾아요</div>
+                </div>
+            </div>
+            <div class="category-card sentence-comprehension-type-card" id="btnSentenceObjectType">
+                <div>
+                    <div class="category-title">무엇을</div>
+                    <div class="category-desc">문장에서 한 일을 받은 대상을 골라요</div>
+                </div>
+            </div>
+            <div class="category-card sentence-comprehension-type-card" id="btnSentencePlaceType">
+                <div>
+                    <div class="category-title">어디서</div>
+                    <div class="category-desc">문장 속 장소를 찾아요</div>
+                </div>
+            </div>
+            <div class="category-card sentence-comprehension-type-card" id="btnSentenceActionType">
+                <div>
+                    <div class="category-title">무엇을 했나요</div>
+                    <div class="category-desc">문장의 행동을 이해해요</div>
+                </div>
+            </div>
+            <div class="category-card sentence-comprehension-type-card" id="btnSentencePictureType">
+                <div>
+                    <div class="category-title">알맞은 그림</div>
+                    <div class="category-desc">문장과 어울리는 장면을 골라요</div>
+                </div>
+            </div>
+            <div class="category-card sentence-comprehension-type-card" id="btnSentenceOrderType">
+                <div>
+                    <div class="category-title">문장 순서</div>
+                    <div class="category-desc">낱말을 알맞은 순서로 이해해요</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="pagePhonologyType" class="page">
     <div class="container">
         <div class="top-nav">
@@ -651,7 +709,7 @@
 </section>
     <script src="assets/js/navigation.js?v=20260812-device-back"></script>
     <script src="assets/js/data.js?v=20260614-rainy-class-intro-flow"></script>
-    <script src="assets/js/app.js?v=20260812-vocabulary"></script>
+    <script src="assets/js/app.js?v=20260812-sentence-comprehension"></script>
     <script src="assets/js/pwa.js?v=20260812-update-modal"></script>
 
 
