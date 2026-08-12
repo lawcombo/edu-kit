@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-letter-discrimination";
+const CACHE_NAME = "edu-kit-pwa-20260812-vocab-liaison-mobile";
 
 const LOCAL_ASSETS = [
     "./",
