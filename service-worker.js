@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-device-back";
+const CACHE_NAME = "edu-kit-pwa-20260812-update-modal";
 
 const LOCAL_ASSETS = [
     "./",

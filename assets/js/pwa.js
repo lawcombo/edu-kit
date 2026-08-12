@@ -11,25 +11,40 @@
         const style = document.createElement("style");
         style.id = "pwa-update-notice-style";
         style.textContent = `
-            .pwa-update-notice {
+            .pwa-update-backdrop {
                 position: fixed;
-                left: 50%;
-                top: max(12px, env(safe-area-inset-top));
-                z-index: 9999;
-                width: min(calc(100vw - 28px), 520px);
+                inset: 0;
+                z-index: 9998;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                gap: 12px;
-                padding: 13px 14px;
-                border: 1px solid rgba(219, 234, 254, 0.95);
-                border-radius: 18px;
-                background: #ffffff;
-                box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
-                transform: translateX(-50%);
+                justify-content: center;
+                padding: 22px;
+                background: rgba(15, 23, 42, 0.46);
+                backdrop-filter: blur(5px);
                 box-sizing: border-box;
+            }
+
+            .pwa-update-notice {
+                position: relative;
+                left: auto;
+                top: auto;
+                z-index: auto;
+                width: min(calc(100vw - 44px), 330px);
+                display: grid;
+                align-items: stretch;
+                justify-content: stretch;
+                gap: 14px;
+                padding: 22px 20px 18px;
+                border: 1px solid rgba(56, 189, 248, 0.28);
+                border-radius: 22px;
+                background: linear-gradient(145deg, #1e40af 0%, #2563eb 52%, #0891b2 100%);
+                box-shadow: 0 24px 60px rgba(15, 23, 42, 0.34);
+                transform: none;
+                box-sizing: border-box;
+                color: #ffffff;
+                text-align: center;
                 letter-spacing: 0;
-                pointer-events: none;
+                pointer-events: auto;
             }
 
             .pwa-update-notice strong,
@@ -39,53 +54,61 @@
             }
 
             .pwa-update-notice strong {
-                color: #0f172a;
-                font-size: 15px;
-                font-weight: 800;
-                line-height: 1.3;
+                color: #ffffff;
+                font-size: 18px;
+                font-weight: 900;
+                line-height: 1.28;
             }
 
             .pwa-update-notice span {
-                margin-top: 3px;
-                color: #64748b;
-                font-size: 12px;
+                margin-top: 6px;
+                color: rgba(239, 246, 255, 0.9);
+                font-size: 13px;
                 font-weight: 700;
-                line-height: 1.35;
+                line-height: 1.45;
             }
 
             .pwa-update-notice button {
-                min-width: 84px;
-                min-height: 40px;
+                width: 100%;
+                min-height: 44px;
                 border: 0;
-                border-radius: 14px;
-                background: #2563eb;
-                color: #ffffff;
+                border-radius: 999px;
+                background: #ffffff;
+                color: #1d4ed8;
                 font: inherit;
-                font-size: 13px;
-                font-weight: 800;
+                font-size: 14px;
+                font-weight: 900;
                 cursor: pointer;
-                pointer-events: auto;
+                box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
+            }
+
+            .pwa-update-notice button:disabled {
+                cursor: wait;
+                opacity: 0.72;
             }
 
             @media (max-width: 420px) {
+                .pwa-update-backdrop {
+                    padding: 18px;
+                }
+
                 .pwa-update-notice {
-                    width: calc(100vw - 20px);
-                    gap: 8px;
-                    padding: 11px 12px;
+                    width: min(calc(100vw - 36px), 310px);
+                    gap: 12px;
+                    padding: 20px 18px 16px;
                 }
 
                 .pwa-update-notice strong {
-                    font-size: 14px;
+                    font-size: 17px;
                 }
 
                 .pwa-update-notice span {
-                    font-size: 11px;
+                    font-size: 12px;
                 }
 
                 .pwa-update-notice button {
-                    min-width: 76px;
-                    min-height: 38px;
-                    font-size: 12px;
+                    min-height: 42px;
+                    font-size: 13px;
                 }
             }
         `;
@@ -94,21 +117,29 @@
     }
 
     function showUpdateNotice() {
-        if (document.querySelector(".pwa-update-notice")) return;
+        if (document.querySelector(".pwa-update-backdrop")) return;
         ensureNoticeStyles();
+
+        const backdrop = document.createElement("div");
+        backdrop.className = "pwa-update-backdrop";
+        backdrop.setAttribute("role", "presentation");
 
         const notice = document.createElement("div");
         notice.className = "pwa-update-notice";
-        notice.setAttribute("role", "status");
+        notice.setAttribute("role", "dialog");
+        notice.setAttribute("aria-modal", "true");
+        notice.setAttribute("aria-labelledby", "pwaUpdateTitle");
         notice.innerHTML = `
             <div>
-                <strong>새 버전이 준비됐어요</strong>
-                <span>업데이트를 적용하려면 새로고침해 주세요.</span>
+                <strong id="pwaUpdateTitle">새 버전이 준비됐어요</strong>
+                <span>새로고침하면 바로 업데이트가 적용돼요</span>
             </div>
             <button type="button">새로고침</button>
         `;
 
         notice.querySelector("button").addEventListener("click", function() {
+            this.disabled = true;
+
             if (!waitingWorker) {
                 window.location.reload();
                 return;
@@ -117,7 +148,8 @@
             waitingWorker.postMessage({ type: "SKIP_WAITING" });
         });
 
-        document.body.appendChild(notice);
+        backdrop.appendChild(notice);
+        document.body.appendChild(backdrop);
     }
 
     function listenForUpdate(registration) {
