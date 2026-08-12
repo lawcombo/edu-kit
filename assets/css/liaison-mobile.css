@@ -96,6 +96,32 @@
         justify-content: center;
         overflow: hidden;
     }
+
+    #pageGrammarPractice .practice-word-card {
+        flex: 0 0 clamp(54px, 8svh, 64px);
+        width: 100%;
+        max-width: 100%;
+        min-height: 0 !important;
+        height: clamp(54px, 8svh, 64px) !important;
+        max-height: clamp(54px, 8svh, 64px) !important;
+        padding: 6px 10px !important;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    #pageGrammarPractice .practice-title {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(28px, 8.2vw, 42px) !important;
+        line-height: 1.05;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 @media (max-width: 420px) {
@@ -118,5 +144,16 @@
     #endingCategoryList .final-card {
         padding: 6px 5px;
         gap: 4px;
+    }
+
+    #pageGrammarPractice .practice-word-card {
+        flex-basis: clamp(50px, 7.6svh, 58px);
+        height: clamp(50px, 7.6svh, 58px) !important;
+        max-height: clamp(50px, 7.6svh, 58px) !important;
+        padding: 5px 8px !important;
+    }
+
+    #pageGrammarPractice .practice-title {
+        font-size: clamp(25px, 7.5vw, 34px) !important;
     }
 }
