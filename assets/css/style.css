@@ -4558,3 +4558,29 @@
     margin-right: auto;
     text-align: center !important;
 }
+/* Word practice mobile marker alignment */
+@media (max-width: 820px) {
+    #pageWordPractice .visual-area {
+        align-items: center;
+        justify-content: center;
+    }
+
+    #pageWordPractice .syllable-wrap {
+        align-self: center;
+        align-items: center;
+        flex: 0 0 auto;
+    }
+
+    #pageWordPractice .syllable-card {
+        height: clamp(168px, 25svh, 190px);
+        min-height: 0;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 420px) {
+    #pageWordPractice .syllable-card {
+        height: clamp(156px, 25svh, 186px);
+        min-height: 0;
+    }
+}
