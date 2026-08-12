@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=20260812-sentence-comprehension">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260812-letter-discrimination">
 </head>
 
 <body>
@@ -74,6 +74,13 @@
                 <div>
                     <div class="category-title">문장이해</div>
                     <div class="category-desc">짧은 문장을 듣고 누가, 무엇을, 어디서 했는지 이해해요</div>
+                </div>
+            </div>
+
+            <div class="category-card learning-type-card" id="btnLetterDiscriminationType">
+                <div>
+                    <div class="category-title">글자변별</div>
+                    <div class="category-desc">비슷한 글자와 음절을 보고 정확히 구별해요</div>
                 </div>
             </div>
         </div>
@@ -271,6 +278,39 @@
                     <div class="category-title">문장 순서</div>
                     <div class="category-desc">낱말을 알맞은 순서로 이해해요</div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="pageLetterDiscriminationType" class="page">
+    <div class="container">
+        <div class="top-nav">
+            <h2>글자변별 선택</h2>
+            <div class="top-actions">
+                <button class="btn back-icon-btn" id="btnBackLearningTypeFromLetterDiscrimination" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
+            </div>
+        </div>
+
+        <div class="sub-title">헷갈리기 쉬운 글자를 보고 정확히 찾는 연습을 선택하세요</div>
+
+        <div class="category-grid letter-discrimination-type-grid">
+            <div class="category-card letter-discrimination-type-card" id="btnLetterSameType">
+                <div><div class="category-title">같은 글자 찾기</div><div class="category-desc">기준 글자와 같은 글자를 골라요</div></div>
+            </div>
+            <div class="category-card letter-discrimination-type-card" id="btnLetterDifferentType">
+                <div><div class="category-title">다른 글자 찾기</div><div class="category-desc">여러 글자 중 다른 하나를 찾아요</div></div>
+            </div>
+            <div class="category-card letter-discrimination-type-card" id="btnLetterVowelType">
+                <div><div class="category-title">비슷한 모음</div><div class="category-desc">ㅏ/ㅓ, ㅗ/ㅜ처럼 방향이 비슷한 모음을 구별해요</div></div>
+            </div>
+            <div class="category-card letter-discrimination-type-card" id="btnLetterConsonantType">
+                <div><div class="category-title">비슷한 자음</div><div class="category-desc">ㄱ/ㅋ/ㄲ처럼 모양과 소리가 가까운 자음을 구별해요</div></div>
+            </div>
+            <div class="category-card letter-discrimination-type-card" id="btnLetterSyllableType">
+                <div><div class="category-title">비슷한 음절</div><div class="category-desc">가/카/까처럼 비슷한 음절을 구별해요</div></div>
+            </div>
+            <div class="category-card letter-discrimination-type-card" id="btnLetterTargetType">
+                <div><div class="category-title">목표 글자 찾기</div><div class="category-desc">많은 글자 속에서 목표 글자를 빠르게 찾아요</div></div>
             </div>
         </div>
     </div>
@@ -709,7 +749,7 @@
 </section>
     <script src="assets/js/navigation.js?v=20260812-device-back"></script>
     <script src="assets/js/data.js?v=20260614-rainy-class-intro-flow"></script>
-    <script src="assets/js/app.js?v=20260812-sentence-comprehension"></script>
+    <script src="assets/js/app.js?v=20260812-letter-discrimination"></script>
     <script src="assets/js/pwa.js?v=20260812-update-modal"></script>
 
 
