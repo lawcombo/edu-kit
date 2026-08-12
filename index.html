@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=20260812-word-marker-mobile">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260812-vocabulary">
 </head>
 
 <body>
@@ -60,6 +60,13 @@
                 <div>
                     <div class="category-title">음운변동</div>
                     <div class="category-desc">음운변동 유형 선택</div>
+                </div>
+            </div>
+
+            <div class="category-card learning-type-card" id="btnVocabularyType">
+                <div>
+                    <div class="category-title">어휘이해</div>
+                    <div class="category-desc">낱말의 뜻과 관계를 그림으로 익히는 학습</div>
                 </div>
             </div>
         </div>
@@ -158,6 +165,52 @@
                 <div>
                     <div class="category-title">소리 나누기</div>
                     <div class="category-desc">낱말을 소리 덩어리로 나누기</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pageVocabularyType" class="page">
+    <div class="container">
+        <div class="top-nav">
+            <h2>어휘이해 선택</h2>
+            <div class="top-actions">
+                <button class="btn back-icon-btn" id="btnBackLearningTypeFromVocabulary" type="button" aria-label="뒤로가기"><span aria-hidden="true">&larr;</span></button>
+            </div>
+        </div>
+
+        <div class="sub-title">낱말의 뜻, 범주, 관계를 이해하는 영역을 선택하세요</div>
+
+        <div class="category-grid vocabulary-type-grid">
+            <div class="category-card vocabulary-type-card" id="btnVocabularyCategoryType">
+                <div>
+                    <div class="category-title">범주 찾기</div>
+                    <div class="category-desc">낱말이 어느 무리에 속하는지 고르기</div>
+                </div>
+            </div>
+            <div class="category-card vocabulary-type-card" id="btnVocabularyOppositeType">
+                <div>
+                    <div class="category-title">반대말</div>
+                    <div class="category-desc">서로 뜻이 반대되는 낱말 연결하기</div>
+                </div>
+            </div>
+            <div class="category-card vocabulary-type-card" id="btnVocabularySimilarType">
+                <div>
+                    <div class="category-title">비슷한 말</div>
+                    <div class="category-desc">뜻이 비슷한 낱말을 찾아 말하기</div>
+                </div>
+            </div>
+            <div class="category-card vocabulary-type-card" id="btnVocabularyMeaningType">
+                <div>
+                    <div class="category-title">뜻 고르기</div>
+                    <div class="category-desc">낱말을 보고 알맞은 설명 고르기</div>
+                </div>
+            </div>
+            <div class="category-card vocabulary-type-card" id="btnVocabularyLinkingType">
+                <div>
+                    <div class="category-title">낱말 연결하기</div>
+                    <div class="category-desc">함께 쓰이거나 관련 있는 낱말 찾기</div>
                 </div>
             </div>
         </div>
@@ -598,7 +651,7 @@
 </section>
     <script src="assets/js/navigation.js?v=20260812-device-back"></script>
     <script src="assets/js/data.js?v=20260614-rainy-class-intro-flow"></script>
-<script src="assets/js/app.js?v=20260812-device-back"></script>
+    <script src="assets/js/app.js?v=20260812-vocabulary"></script>
     <script src="assets/js/pwa.js?v=20260812-update-modal"></script>
 
 

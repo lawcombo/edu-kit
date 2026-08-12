@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-update-modal";
+const CACHE_NAME = "edu-kit-pwa-20260812-vocabulary";
 
 const LOCAL_ASSETS = [
     "./",
@@ -22,6 +22,11 @@ const LOCAL_ASSETS = [
     "./phonemic-same-sound.html",
     "./phonemic-blending.html",
     "./phonemic-segmenting.html",
+    "./vocabulary-category.html",
+    "./vocabulary-opposites.html",
+    "./vocabulary-similar.html",
+    "./vocabulary-meaning.html",
+    "./vocabulary-linking.html",
     "./manifest.webmanifest",
     "./assets/css/style.css",
     "./assets/css/h-deletion.css",
@@ -34,6 +39,7 @@ const LOCAL_ASSETS = [
     "./assets/css/final-sound.css",
     "./assets/css/decoding.css",
     "./assets/css/phonemic.css",
+    "./assets/css/vocabulary.css",
     "./assets/js/app.js",
     "./assets/js/data.js",
     "./assets/js/navigation.js",
@@ -58,6 +64,12 @@ const LOCAL_ASSETS = [
     "./assets/js/phonemic-same-sound.js",
     "./assets/js/phonemic-blending.js",
     "./assets/js/phonemic-segmenting.js",
+    "./assets/js/vocabulary-common.js",
+    "./assets/js/vocabulary-category.js",
+    "./assets/js/vocabulary-opposites.js",
+    "./assets/js/vocabulary-similar.js",
+    "./assets/js/vocabulary-meaning.js",
+    "./assets/js/vocabulary-linking.js",
     "./assets/js/pwa.js",
     "./assets/icons/icon-192.png",
     "./assets/icons/icon-512.png",

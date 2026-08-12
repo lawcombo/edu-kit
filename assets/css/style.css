@@ -4584,3 +4584,43 @@
         min-height: 0;
     }
 }
+/* Vocabulary learning area */
+#pageVocabularyType .vocabulary-type-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#pageVocabularyType .vocabulary-type-card {
+    min-height: 160px;
+}
+
+@media (max-width: 820px) {
+    #pageLearningType .learning-type-grid {
+        grid-template-rows: repeat(4, minmax(0, 1fr));
+    }
+
+    #pageVocabularyType .container {
+        justify-content: flex-start;
+    }
+
+    #pageVocabularyType .top-nav,
+    #pageVocabularyType .sub-title {
+        flex-shrink: 0;
+    }
+
+    #pageVocabularyType .vocabulary-type-grid {
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
+        max-width: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(0, 1fr);
+        gap: 9px;
+        margin-top: 0;
+        overflow: hidden;
+    }
+
+    #pageVocabularyType .vocabulary-type-card {
+        min-height: 0;
+    }
+}

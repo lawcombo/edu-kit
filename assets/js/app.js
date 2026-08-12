@@ -80,12 +80,14 @@ let currentIndex = 0;
         const shouldReturnToPhonology = sessionStorage.getItem("eduKitReturnToPhonology") === "1";
         const shouldReturnToDecoding = sessionStorage.getItem("eduKitReturnToDecoding") === "1";
         const shouldReturnToPhonemic = sessionStorage.getItem("eduKitReturnToPhonemic") === "1";
+        const shouldReturnToVocabulary = sessionStorage.getItem("eduKitReturnToVocabulary") === "1";
         const isAuthenticated = hasValidAuthState();
 
         sessionStorage.removeItem("eduKitRefreshToLearningType");
         sessionStorage.removeItem("eduKitReturnToPhonology");
         sessionStorage.removeItem("eduKitReturnToDecoding");
         sessionStorage.removeItem("eduKitReturnToPhonemic");
+        sessionStorage.removeItem("eduKitReturnToVocabulary");
 
         if (!isAuthenticated) {
             showPage("pageIntro");
@@ -104,6 +106,11 @@ let currentIndex = 0;
 
         if (shouldReturnToPhonemic) {
             showPage("pagePhonemicAwarenessType");
+            return;
+        }
+
+        if (shouldReturnToVocabulary) {
+            showPage("pageVocabularyType");
             return;
         }
 
@@ -1586,7 +1593,8 @@ let currentIndex = 0;
                 fallbackBack: function(route) {
                     if (route === "pageDecodingType" ||
                         route === "pagePhonemicAwarenessType" ||
-                        route === "pagePhonologyType") {
+                        route === "pagePhonologyType" ||
+                        route === "pageVocabularyType") {
                         showPage("pageLearningType");
                         return;
                     }
@@ -1647,6 +1655,10 @@ let currentIndex = 0;
             showPage("pagePhonologyType");
         });
 
+        $("#btnVocabularyType").on("click", function() {
+            showPage("pageVocabularyType");
+        });
+
         $("#btnBackLearningTypeFromDecoding").on("click", function() {
             showPage("pageLearningType");
         });
@@ -1656,6 +1668,10 @@ let currentIndex = 0;
         });
 
         $("#btnBackLearningTypeFromPhonology").on("click", function() {
+            showPage("pageLearningType");
+        });
+
+        $("#btnBackLearningTypeFromVocabulary").on("click", function() {
             showPage("pageLearningType");
         });
 
@@ -1701,6 +1717,26 @@ let currentIndex = 0;
 
         $("#btnSoundSegmentingType").on("click", function() {
             window.location.href = "phonemic-segmenting.html";
+        });
+
+        $("#btnVocabularyCategoryType").on("click", function() {
+            window.location.href = "vocabulary-category.html";
+        });
+
+        $("#btnVocabularyOppositeType").on("click", function() {
+            window.location.href = "vocabulary-opposites.html";
+        });
+
+        $("#btnVocabularySimilarType").on("click", function() {
+            window.location.href = "vocabulary-similar.html";
+        });
+
+        $("#btnVocabularyMeaningType").on("click", function() {
+            window.location.href = "vocabulary-meaning.html";
+        });
+
+        $("#btnVocabularyLinkingType").on("click", function() {
+            window.location.href = "vocabulary-linking.html";
         });
 
         $("#btnLiaisonType").on("click", function() {
