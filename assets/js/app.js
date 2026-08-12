@@ -611,6 +611,7 @@ let currentIndex = 0;
         resetAnimationState();
 
         const item = getCurrentWordData()[currentIndex] || wordData[0];
+        speakText(String(item.result || ""));
 
         const $leftSyllableText = $("#leftSyllableText");
         const $leftBaseText = $("#leftBaseText");
@@ -714,9 +715,7 @@ let currentIndex = 0;
                     $("#pronounceText")
                         .hide()
                         .text(item.result)
-                        .fadeIn(250, function() {
-                            speakText(String(item.result || ""));
-                        });
+                        .fadeIn(250);
 
                     setProcessText(getProcessMessage(item));
 
@@ -1101,6 +1100,7 @@ let currentIndex = 0;
         resetGrammarAnimationState();
 
         const item = getCurrentGrammarData()[currentGrammarIndex] || grammarData[0];
+        speakText(String(item.result || ""));
 
         const $leftSyllableText = $("#grammarLeftSyllableText");
         const $leftBaseText = $("#grammarLeftBaseText");
@@ -1205,9 +1205,7 @@ let currentIndex = 0;
                     $("#grammarPronounceText")
                         .hide()
                         .text(item.result)
-                        .fadeIn(250, function() {
-                            speakText(String(item.result || ""));
-                        });
+                        .fadeIn(250);
 
                     setGrammarProcessText(getGrammarProcessMessage(item));
 
