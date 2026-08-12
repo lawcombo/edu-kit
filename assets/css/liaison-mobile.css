@@ -97,30 +97,21 @@
         overflow: hidden;
     }
 
-    #pageGrammarPractice .practice-word-card {
-        flex: 0 0 clamp(54px, 8svh, 64px);
-        width: 100%;
-        max-width: 100%;
-        min-height: 0 !important;
-        height: clamp(54px, 8svh, 64px) !important;
-        max-height: clamp(54px, 8svh, 64px) !important;
-        padding: 6px 10px !important;
-        border-radius: 18px;
-        display: flex;
+    #pageGrammarPractice.is-selected-grammar-practice .visual-area {
         align-items: center;
         justify-content: center;
-        overflow: hidden;
     }
 
-    #pageGrammarPractice .practice-title {
-        width: 100%;
-        max-width: 100%;
-        font-size: clamp(28px, 8.2vw, 42px) !important;
-        line-height: 1.05;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    #pageGrammarPractice.is-selected-grammar-practice .syllable-wrap {
+        align-self: center;
+        align-items: center;
+        flex: 0 0 auto;
+    }
+
+    #pageGrammarPractice.is-selected-grammar-practice .syllable-card {
+        height: clamp(168px, 25svh, 190px) !important;
+        min-height: 0;
+        flex: 0 0 auto;
     }
 }
 
@@ -146,14 +137,8 @@
         gap: 4px;
     }
 
-    #pageGrammarPractice .practice-word-card {
-        flex-basis: clamp(50px, 7.6svh, 58px);
-        height: clamp(50px, 7.6svh, 58px) !important;
-        max-height: clamp(50px, 7.6svh, 58px) !important;
-        padding: 5px 8px !important;
-    }
-
-    #pageGrammarPractice .practice-title {
-        font-size: clamp(25px, 7.5vw, 34px) !important;
+    #pageGrammarPractice.is-selected-grammar-practice .syllable-card {
+        height: clamp(156px, 25svh, 186px) !important;
+        min-height: 0;
     }
 }
