@@ -454,6 +454,19 @@ let currentIndex = 0;
         };
     }
 
+    function getMobileFinalConsonantStartPoint($fallbackMarker, $syllableText) {
+        if (window.innerWidth > 820 || !$syllableText.length) {
+            return getElementCenterPoint($fallbackMarker);
+        }
+
+        const rect = $syllableText[0].getBoundingClientRect();
+
+        return {
+            x: rect.left + rect.width / 2,
+            y: rect.top + rect.height * 0.72
+        };
+    }
+
     function placeMovingLetterAtCenter($moving, point) {
         const movingWidth = $moving.outerWidth();
         const movingHeight = $moving.outerHeight();
@@ -605,7 +618,7 @@ let currentIndex = 0;
         }, 120);
 
         setTimeout(function() {
-            const startPoint = getElementCenterPoint($finalMarker);
+            const startPoint = getMobileFinalConsonantStartPoint($finalMarker, $leftSyllableText);
             const endPoint = getElementCenterPoint($rightTargetMarker);
 
             const $moving = $("<div class='moving-letter word-moving-letter'></div>");
@@ -1090,7 +1103,7 @@ let currentIndex = 0;
         }, 120);
 
         setTimeout(function() {
-            const startPoint = getElementCenterPoint($finalMarker);
+            const startPoint = getMobileFinalConsonantStartPoint($finalMarker, $leftSyllableText);
             const endPoint = getElementCenterPoint($rightTargetMarker);
 
             const movingClass = grammarPracticeMode === "particle" || grammarPracticeMode === "ending" || grammarPracticeMode === "all" ? "moving-letter selected-grammar-moving-letter" : "moving-letter";

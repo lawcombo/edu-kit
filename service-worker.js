@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-grammar-mobile-marker";
+const CACHE_NAME = "edu-kit-pwa-20260812-mobile-final-start";
 
 const LOCAL_ASSETS = [
     "./",
