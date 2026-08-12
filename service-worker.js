@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-liaison-grammar-visual-card";
+const CACHE_NAME = "edu-kit-pwa-20260812-grammar-mobile-marker";
 
 const LOCAL_ASSETS = [
     "./",

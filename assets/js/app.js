@@ -903,11 +903,26 @@ let currentIndex = 0;
     function applyGrammarTargetPosition() {
         const item = getCurrentGrammarData()[currentGrammarIndex] || grammarData[0];
 
-        const cardWidth = $("#grammarRightCard").innerWidth();
+        const $rightCard = $("#grammarRightCard");
+        const $rightText = $("#grammarRightSyllableText");
+        const cardWidth = $rightCard.innerWidth();
         const cardHeight = $("#grammarRightCard").innerHeight();
 
-        const left = (item.targetLeft / 180) * cardWidth;
+        let left = (item.targetLeft / 180) * cardWidth;
         const top = (item.targetTop / 185) * cardHeight;
+        const isMobileSelectedGrammar =
+            window.innerWidth <= 820 &&
+            $("#pageGrammarPractice").hasClass("is-selected-grammar-practice");
+
+        if (isMobileSelectedGrammar && item.rightSyllable && Array.from(item.rightSyllable).length >= 2) {
+            const syllableCount = Array.from(item.rightSyllable).length;
+            const markerWidth = $("#grammarRightTargetMarker").outerWidth() || 46;
+            const fontSize = parseFloat($rightText.css("font-size")) || 36;
+            const syllableWidth = fontSize * 0.9;
+            const firstSyllableCenter = (cardWidth / 2) - ((syllableCount - 1) * syllableWidth / 2);
+
+            left = Math.max(markerWidth / 2, Math.min(cardWidth - markerWidth / 2, firstSyllableCenter));
+        }
 
         $("#grammarRightTargetMarker").css({
             left: left + "px",
@@ -993,6 +1008,8 @@ let currentIndex = 0;
                 opacity: 0,
                 transform: "translateX(-50%) scale(0.5)"
             });
+
+        applyGrammarTargetPosition();
 
         $("#grammarWrittenText").text(item.written);
         $("#grammarPronounceText").text("?");
