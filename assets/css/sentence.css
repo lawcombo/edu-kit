@@ -196,6 +196,29 @@ main,
     background: #fff7ed;
 }
 
+.sentence-order-page .intro-demo {
+    padding: clamp(12px, 1.8vw, 22px);
+}
+
+.sentence-order-page .demo-row {
+    width: min(1220px, 98%);
+    grid-template-columns: minmax(0, 1.08fr) auto minmax(0, 1.42fr);
+    gap: clamp(10px, 1.4vw, 18px);
+}
+
+.sentence-order-page .demo-word,
+.sentence-order-page .demo-result {
+    min-width: 0;
+    white-space: nowrap;
+    word-break: keep-all;
+    font-size: clamp(22px, 3.15vw, 40px);
+}
+
+.sentence-order-page .demo-result {
+    padding-left: clamp(12px, 1.6vw, 22px);
+    padding-right: clamp(12px, 1.6vw, 22px);
+}
+
 .demo-arrow {
     color: var(--primary);
     font-size: clamp(28px, 5vw, 54px);
@@ -624,6 +647,27 @@ body.capture-guard-active main {
         min-height: clamp(66px, 12vh, 104px);
         border-radius: 18px;
         font-size: clamp(20px, 6.2vw, 32px);
+    }
+
+    .sentence-order-page .intro-demo {
+        padding: 8px;
+    }
+
+    .sentence-order-page .demo-row {
+        width: 99%;
+        gap: 6px;
+        grid-template-columns: minmax(0, 1.04fr) auto minmax(0, 1.48fr);
+    }
+
+    .sentence-order-page .demo-word,
+    .sentence-order-page .demo-result {
+        padding: 8px 9px;
+        font-size: clamp(15px, 4.2vw, 24px);
+        letter-spacing: 0;
+    }
+
+    .sentence-order-page .demo-arrow {
+        font-size: clamp(22px, 6vw, 34px);
     }
 
     .info-steps { gap: 8px; }
