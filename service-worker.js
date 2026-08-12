@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-mobile-final-start";
+const CACHE_NAME = "edu-kit-pwa-20260812-mobile-final-marker-align";
 
 const LOCAL_ASSETS = [
     "./",

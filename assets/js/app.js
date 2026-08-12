@@ -467,6 +467,24 @@ let currentIndex = 0;
         };
     }
 
+    function alignMarkerToViewportPoint($marker, point) {
+        const cardRect = $marker.parent()[0].getBoundingClientRect();
+        const markerWidth = $marker.outerWidth();
+        const markerHeight = $marker.outerHeight();
+
+        $marker.css({
+            left: (point.x - cardRect.left) + "px",
+            top: (point.y - cardRect.top - markerHeight / 2) + "px",
+            bottom: "auto",
+            transform: "translateX(-50%) scale(0.5)"
+        });
+    }
+
+    function alignMobileFinalMarker($marker, $syllableText) {
+        if (window.innerWidth > 820) return;
+        alignMarkerToViewportPoint($marker, getMobileFinalConsonantStartPoint($marker, $syllableText));
+    }
+
     function placeMovingLetterAtCenter($moving, point) {
         const movingWidth = $moving.outerWidth();
         const movingHeight = $moving.outerHeight();
@@ -522,6 +540,9 @@ let currentIndex = 0;
             .stop(true, true)
             .text(item.final)
             .css({
+                left: "50%",
+                top: "",
+                bottom: "",
                 opacity: 0,
                 transform: "translateX(-50%) scale(0.5)"
             });
@@ -603,6 +624,8 @@ let currentIndex = 0;
         setProcessText(getProcessMessage(item));
 
         setTimeout(function() {
+            alignMobileFinalMarker($finalMarker, $leftSyllableText);
+
             $finalMarker.animate({
                 opacity: 1
             }, {
@@ -692,7 +715,7 @@ let currentIndex = 0;
                         .hide()
                         .text(item.result)
                         .fadeIn(250, function() {
-                            speakText(item.result);
+                            speakText(String(item.result || ""));
                         });
 
                     setProcessText(getProcessMessage(item));
@@ -1003,6 +1026,9 @@ let currentIndex = 0;
             .stop(true, true)
             .text(item.final)
             .css({
+                left: "50%",
+                top: "",
+                bottom: "",
                 opacity: 0,
                 transform: "translateX(-50%) scale(0.5)"
             });
@@ -1088,6 +1114,8 @@ let currentIndex = 0;
         setGrammarProcessText(getGrammarProcessMessage(item));
 
         setTimeout(function() {
+            alignMobileFinalMarker($finalMarker, $leftSyllableText);
+
             $finalMarker.animate({
                 opacity: 1
             }, {
@@ -1178,7 +1206,7 @@ let currentIndex = 0;
                         .hide()
                         .text(item.result)
                         .fadeIn(250, function() {
-                            speakText(item.result);
+                            speakText(String(item.result || ""));
                         });
 
                     setGrammarProcessText(getGrammarProcessMessage(item));
