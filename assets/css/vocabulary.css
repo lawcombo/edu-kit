@@ -270,7 +270,8 @@ main,
 }
 
 #infoScreen .primary-btn.wide {
-    width: min(420px, 100%);
+    width: 100%;
+    max-width: none;
     height: 62px;
     min-height: 62px;
     font-size: 21px;
