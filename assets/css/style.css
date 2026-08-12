@@ -5028,3 +5028,262 @@
         line-height: 1.55;
     }
 }
+
+/* Liaison mobile overflow repair */
+@media (max-width: 820px) {
+    #pageFinalCategory .final-grid,
+    #pageParticleCategory .final-grid,
+    #pageEndingCategory .final-grid,
+    #finalCategoryList,
+    #particleCategoryList,
+    #endingCategoryList {
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: minmax(0, 1fr);
+        align-content: stretch;
+        gap: 8px;
+        margin-top: 0;
+        overflow: hidden;
+    }
+
+    #pageFinalCategory .final-card,
+    #pageParticleCategory .final-card,
+    #pageEndingCategory .final-card,
+    #finalCategoryList .final-card,
+    #particleCategoryList .final-card,
+    #endingCategoryList .final-card {
+        min-width: 0;
+        min-height: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 8px 7px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    #pageFinalCategory .final-symbol,
+    #pageParticleCategory .final-symbol,
+    #pageEndingCategory .final-symbol,
+    #finalCategoryList .final-symbol,
+    #particleCategoryList .final-symbol,
+    #endingCategoryList .final-symbol {
+        width: 100%;
+        min-width: 0;
+        font-size: clamp(24px, 7.4vw, 34px);
+        line-height: 1.05;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #pageFinalCategory .final-title,
+    #pageParticleCategory .final-title,
+    #pageEndingCategory .final-title,
+    #finalCategoryList .final-title,
+    #particleCategoryList .final-title,
+    #endingCategoryList .final-title {
+        width: 100%;
+        min-width: 0;
+        font-size: clamp(13px, 3.6vw, 16px);
+        line-height: 1.18;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+
+    #pageFinalCategory .final-desc,
+    #pageParticleCategory .final-desc,
+    #pageEndingCategory .final-desc,
+    #finalCategoryList .final-desc,
+    #particleCategoryList .final-desc,
+    #endingCategoryList .final-desc {
+        width: 100%;
+        min-width: 0;
+        max-height: 2.65em;
+        font-size: clamp(11px, 3.05vw, 13px);
+        line-height: 1.28;
+        white-space: normal;
+        word-break: keep-all;
+        overflow: hidden;
+    }
+
+    #pageFinalCategory .final-meta,
+    #pageParticleCategory .final-meta,
+    #pageEndingCategory .final-meta,
+    #finalCategoryList .final-meta,
+    #particleCategoryList .final-meta,
+    #endingCategoryList .final-meta {
+        width: 100%;
+        min-width: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        overflow: hidden;
+    }
+
+    #pageFinalCategory .final-chip,
+    #pageParticleCategory .final-chip,
+    #pageEndingCategory .final-chip,
+    #finalCategoryList .final-chip,
+    #particleCategoryList .final-chip,
+    #endingCategoryList .final-chip {
+        max-width: 100%;
+        min-width: 0;
+        padding: 3px 6px;
+        font-size: clamp(10px, 2.7vw, 12px);
+        line-height: 1.15;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #pageWordPractice .word-list,
+    #pageGrammarPractice .word-list,
+    #pageSentencePractice .word-list {
+        max-height: calc(100svh - 96px);
+        overflow: auto;
+    }
+
+    #pageWordPractice .practice-word-card,
+    #pageGrammarPractice .practice-word-card {
+        flex: 0 0 auto;
+        min-height: 44px;
+        max-height: 58px;
+        overflow: hidden;
+    }
+
+    #pageWordPractice .practice-title,
+    #pageGrammarPractice .practice-title {
+        width: 100%;
+        min-width: 0;
+        font-size: clamp(25px, 7.2vw, 36px);
+        line-height: 1.08;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #pageWordPractice .syllable-label,
+    #pageGrammarPractice .syllable-label {
+        flex: 0 0 auto;
+        min-height: 20px;
+        font-size: clamp(11px, 3vw, 13px);
+        line-height: 1.15;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #pageWordPractice .visual-area,
+    #pageGrammarPractice.is-selected-grammar-practice .visual-area {
+        min-height: 0 !important;
+        max-height: none;
+        grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+        gap: 6px;
+        padding: 28px 5px 8px;
+    }
+
+    #pageWordPractice .syllable-card,
+    #pageGrammarPractice.is-selected-grammar-practice .syllable-card {
+        width: 100%;
+        max-width: 150px;
+        min-width: 0;
+        min-height: 0 !important;
+        aspect-ratio: 0.78 / 1;
+    }
+
+    #pageWordPractice .syllable-text,
+    #pageWordPractice .left-base-text,
+    #pageWordPractice .right-changed-text,
+    #pageGrammarPractice.is-selected-grammar-practice .syllable-text,
+    #pageGrammarPractice.is-selected-grammar-practice .left-base-text,
+    #pageGrammarPractice.is-selected-grammar-practice .right-changed-text {
+        top: 33%;
+        font-size: clamp(48px, 14vw, 74px);
+        max-width: 96%;
+        white-space: nowrap;
+    }
+
+    #pageWordPractice .final-marker,
+    #pageWordPractice .right-insert-marker,
+    #pageGrammarPractice.is-selected-grammar-practice .final-marker,
+    #pageGrammarPractice.is-selected-grammar-practice .right-insert-marker,
+    .word-moving-letter,
+    .selected-grammar-moving-letter {
+        width: clamp(38px, 10.5vw, 50px);
+        height: clamp(34px, 9vw, 44px);
+        line-height: clamp(34px, 9vw, 44px);
+        font-size: clamp(24px, 6.4vw, 31px);
+        border-radius: 12px;
+    }
+
+    #pageWordPractice .right-target-marker,
+    #pageGrammarPractice.is-selected-grammar-practice .right-target-marker {
+        width: clamp(38px, 10.5vw, 50px);
+        height: clamp(34px, 9vw, 44px);
+    }
+
+    #pageWordPractice .right-erase-cover,
+    #pageGrammarPractice.is-selected-grammar-practice .right-erase-cover {
+        width: clamp(48px, 13vw, 62px);
+        height: clamp(40px, 10.8vw, 52px);
+    }
+}
+
+@media (max-width: 420px) {
+    #pageFinalCategory .final-grid,
+    #pageParticleCategory .final-grid,
+    #pageEndingCategory .final-grid,
+    #finalCategoryList,
+    #particleCategoryList,
+    #endingCategoryList {
+        gap: 6px;
+    }
+
+    #pageFinalCategory .final-card,
+    #pageParticleCategory .final-card,
+    #pageEndingCategory .final-card,
+    #finalCategoryList .final-card,
+    #particleCategoryList .final-card,
+    #endingCategoryList .final-card {
+        padding: 6px 5px;
+        gap: 4px;
+    }
+
+    #pageWordPractice .visual-area,
+    #pageGrammarPractice.is-selected-grammar-practice .visual-area {
+        grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+        padding: 24px 3px 6px;
+        gap: 4px;
+    }
+
+    #pageWordPractice .syllable-card,
+    #pageGrammarPractice.is-selected-grammar-practice .syllable-card {
+        max-width: 124px;
+        border-radius: 16px;
+    }
+
+    #pageWordPractice .syllable-text,
+    #pageWordPractice .left-base-text,
+    #pageWordPractice .right-changed-text,
+    #pageGrammarPractice.is-selected-grammar-practice .syllable-text,
+    #pageGrammarPractice.is-selected-grammar-practice .left-base-text,
+    #pageGrammarPractice.is-selected-grammar-practice .right-changed-text {
+        font-size: clamp(42px, 13vw, 62px);
+    }
+
+    #pageWordPractice .arrow,
+    #pageGrammarPractice.is-selected-grammar-practice .arrow {
+        width: 24px;
+        height: 24px;
+        font-size: 17px;
+    }
+}
