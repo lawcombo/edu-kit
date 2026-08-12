@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-liaison-grammar-mobile-fix";
+const CACHE_NAME = "edu-kit-pwa-20260812-liaison-category-only";
 
 const LOCAL_ASSETS = [
     "./",
