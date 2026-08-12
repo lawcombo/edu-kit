@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-vocabulary-layout";
+const CACHE_NAME = "edu-kit-pwa-20260812-vocabulary-button-fix";
 
 const LOCAL_ASSETS = [
     "./",

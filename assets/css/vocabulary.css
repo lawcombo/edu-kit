@@ -262,9 +262,18 @@ main,
 .primary-btn.wide {
     flex-shrink: 0;
     width: min(420px, 100%);
-    min-height: 54px;
+    height: 62px;
+    min-height: 62px;
     margin: clamp(12px, 2vh, 18px) auto 0;
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: 21px;
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.22);
+}
+
+#infoScreen .primary-btn.wide {
+    width: min(420px, 100%);
+    height: 62px;
+    min-height: 62px;
+    font-size: 21px;
 }
 
 .top-nav {
@@ -508,7 +517,7 @@ main,
     color: #9a3412;
 }
 
-.practice-action-row {
+#practiceScreen .practice-action-row {
     width: 100%;
     flex-shrink: 0;
     display: flex;
@@ -517,7 +526,7 @@ main,
     gap: 10px;
 }
 
-.practice-action-row .btn {
+#practiceScreen .practice-action-row .btn {
     width: 48px;
     min-width: 48px;
     height: 48px;
@@ -531,7 +540,7 @@ main,
     box-shadow: var(--shadow-sm);
 }
 
-.practice-action-row .icon-label {
+#practiceScreen .practice-action-row .icon-label {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -540,19 +549,19 @@ main,
     line-height: 1;
 }
 
-.practice-action-row .icon-prev {
+#practiceScreen .practice-action-row .icon-prev {
     margin-right: auto;
     background: linear-gradient(135deg, #64748b, #94a3b8);
     color: #ffffff;
     border: 0;
 }
 
-.practice-action-row .action-main {
+#practiceScreen .practice-action-row .action-main {
     background: linear-gradient(135deg, var(--primary), #3b82f6);
     color: #ffffff;
 }
 
-.practice-action-row .icon-next {
+#practiceScreen .practice-action-row .icon-next {
     background: linear-gradient(135deg, #059669, #10b981);
     color: #ffffff;
     border: 0;
@@ -664,9 +673,11 @@ body.capture-guard-active main {
         margin-bottom: 4px;
     }
 
-    .primary-btn.wide {
-        min-height: 48px;
+    #infoScreen .primary-btn.wide {
+        height: 54px;
+        min-height: 54px;
         margin-top: 10px;
+        font-size: 17px;
     }
 
     .top-nav {
@@ -750,11 +761,11 @@ body.capture-guard-active main {
         font-size: clamp(17px, 5.2vw, 24px);
     }
 
-    .practice-action-row {
+    #practiceScreen .practice-action-row {
         gap: 8px;
     }
 
-    .practice-action-row .btn {
+    #practiceScreen .practice-action-row .btn {
         width: 48px;
         height: 48px;
     }
