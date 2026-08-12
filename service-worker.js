@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-liaison-mobile-overflow";
+const CACHE_NAME = "edu-kit-pwa-20260812-liaison-grammar-mobile";
 
 const LOCAL_ASSETS = [
     "./",
@@ -41,6 +41,7 @@ const LOCAL_ASSETS = [
     "./letter-target.html",
     "./manifest.webmanifest",
     "./assets/css/style.css",
+    "./assets/css/liaison-mobile.css",
     "./assets/css/h-deletion.css",
     "./assets/css/tensing.css",
     "./assets/css/nasalization.css",
