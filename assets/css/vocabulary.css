@@ -305,6 +305,13 @@ main,
     flex: 1 1 auto;
     min-height: 0;
     display: grid;
+    grid-template-columns: 0 minmax(0, 1fr);
+    gap: 0;
+    overflow: hidden;
+    transition: grid-template-columns 0.28s ease, gap 0.28s ease;
+}
+
+.practice-layout.list-open {
     grid-template-columns: minmax(190px, 240px) minmax(0, 1fr);
     gap: clamp(12px, 1.8vw, 20px);
 }
@@ -316,6 +323,23 @@ main,
     border: 1px solid var(--line);
     border-radius: 22px;
     background: rgba(248, 251, 255, 0.96);
+}
+
+.practice-layout:not(.list-open) .word-list {
+    width: 0;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.practice-layout.list-open .word-list {
+    opacity: 1;
+    visibility: visible;
 }
 
 .word-list h3 {
@@ -485,31 +509,53 @@ main,
 }
 
 .practice-action-row {
+    width: 100%;
     flex-shrink: 0;
-    display: grid;
-    grid-template-columns: 54px 64px 54px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: 10px;
-    justify-content: end;
 }
 
 .practice-action-row .btn {
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     border-radius: 999px;
-    font-size: 24px;
+    font-size: 0;
     box-shadow: var(--shadow-sm);
 }
 
-.practice-action-row .action-main {
-    width: 64px;
-    height: 64px;
-    background: var(--primary);
+.practice-action-row .icon-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 1;
 }
 
-.practice-action-row .secondary {
-    background: #ffffff;
-    color: var(--primary);
-    border: 1px solid #dbeafe;
+.practice-action-row .icon-prev {
+    margin-right: auto;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    color: #ffffff;
+    border: 0;
+}
+
+.practice-action-row .action-main {
+    background: linear-gradient(135deg, var(--primary), #3b82f6);
+    color: #ffffff;
+}
+
+.practice-action-row .icon-next {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: #ffffff;
+    border: 0;
 }
 
 .capture-guard-active body,
@@ -638,6 +684,12 @@ body.capture-guard-active main {
 
     .practice-layout {
         grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .practice-layout.list-open {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .word-list {
@@ -699,18 +751,12 @@ body.capture-guard-active main {
     }
 
     .practice-action-row {
-        grid-template-columns: 48px 58px 48px;
         gap: 8px;
     }
 
     .practice-action-row .btn {
         width: 48px;
         height: 48px;
-    }
-
-    .practice-action-row .action-main {
-        width: 58px;
-        height: 58px;
     }
 }
 

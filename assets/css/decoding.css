@@ -1021,6 +1021,16 @@ body.capture-guard-active main {
     margin-top: clamp(8px, 1.2svh, 14px);
 }
 
+@media (min-width: 861px) {
+    .decoding-practice-page #infoScreen .lesson-header {
+        min-height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: clamp(16px, 2.3svh, 26px);
+    }
+}
+
 @media (max-width: 860px) {
     .decoding-practice-page .container {
         padding-top: 14px;
