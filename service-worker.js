@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-sentence-answer-tts";
+const CACHE_NAME = "edu-kit-pwa-20260812-sentence-soft-feedback";
 
 const LOCAL_ASSETS = [
     "./",
