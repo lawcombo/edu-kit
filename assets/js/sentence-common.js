@@ -79,14 +79,14 @@ function setupSentencePractice(examples, successMessage) {
         if (value === item.answer) {
             feedbackText.className = "feedback good";
             feedbackText.textContent = successMessage;
-            speak("참 잘했어요.");
+            speak("정답입니다.");
             return;
         }
 
         if (button) button.classList.add("wrong");
         feedbackText.className = "feedback try";
-        feedbackText.textContent = "다시 한번 선택해보세요.";
-        speak("다시 한번 선택해보세요.");
+        feedbackText.textContent = "틀렸습니다.";
+        speak("틀렸습니다.");
     }
 
     function setExample(index) {
