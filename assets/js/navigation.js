@@ -1,3 +1,38 @@
+// 전체 화면 보호기 스위치. 다시 사용할 때 true로 변경합니다.
+window.EDU_KIT_CAPTURE_GUARD_ENABLED = false;
+
+(function() {
+    function stopGuardEvent(event) {
+        if (!window.EDU_KIT_CAPTURE_GUARD_ENABLED) {
+            event.stopImmediatePropagation();
+        }
+    }
+
+    function stopGuardShortcut(event) {
+        if (window.EDU_KIT_CAPTURE_GUARD_ENABLED) return;
+
+        const key = (event.key || "").toLowerCase();
+        const code = (event.code || "").toLowerCase();
+        const hasCommandKey = event.ctrlKey || event.metaKey;
+        const isGuardShortcut = key === "printscreen"
+            || code === "printscreen"
+            || (hasCommandKey && (key === "s" || key === "p"))
+            || key === "f12"
+            || (hasCommandKey && event.shiftKey && ["i", "j", "c"].includes(key));
+
+        if (isGuardShortcut) event.stopImmediatePropagation();
+    }
+
+    ["contextmenu", "selectstart", "dragstart", "copy", "cut", "visibilitychange"]
+        .forEach(function(eventName) {
+            document.addEventListener(eventName, stopGuardEvent, true);
+        });
+
+    document.addEventListener("keydown", stopGuardShortcut, true);
+    document.addEventListener("keyup", stopGuardShortcut, true);
+    window.addEventListener("blur", stopGuardEvent, true);
+})();
+
 (function() {
     const STATE_KEY = "eduKitRoute";
     const MANAGED_KEY = "eduKitManaged";
