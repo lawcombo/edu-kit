@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-kit-pwa-20260812-liaison-tts-result-start";
+const CACHE_NAME = "edu-kit-pwa-20260825-capture-guard-off";
 
 const LOCAL_ASSETS = [
     "./",
@@ -134,6 +134,24 @@ self.addEventListener("message", (event) => {
 
 self.addEventListener("fetch", (event) => {
     if (event.request.method !== "GET") return;
+
+    const requestUrl = new URL(event.request.url);
+    const isNavigationScript = requestUrl.pathname.endsWith("/assets/js/navigation.js");
+
+    if (isNavigationScript) {
+        event.respondWith(
+            fetch(event.request, { cache: "no-store" })
+                .then((networkResponse) => {
+                    const responseClone = networkResponse.clone();
+                    caches.open(CACHE_NAME)
+                        .then((cache) => cache.put(event.request, responseClone))
+                        .catch(() => {});
+                    return networkResponse;
+                })
+                .catch(() => caches.match(event.request))
+        );
+        return;
+    }
 
     const isNavigation = event.request.mode === "navigate";
     const acceptsHtml = event.request.headers.get("accept")?.includes("text/html");
